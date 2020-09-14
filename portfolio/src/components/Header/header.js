@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.css';
+import IconBar from '../IconBar/iconbar';
 
 function header() {
     return (
@@ -8,24 +9,22 @@ function header() {
 
             </div>
             <div className="header-content">
-
+                <span>Andrew Miller</span>
             </div>
             <div className="header-menu">
                 <ul>
                     <li>
-                        Item 1
+                        Home
                     </li>
                     <li>
-                        Item2
+                        Projects
                     </li>
                     <li>
-                        Item 3
-                    </li>
-                    <li>
-                        Item 4
+                        Contact
                     </li>
                 </ul>
             </div>
+            <IconBar />
         </div>
     )
 }

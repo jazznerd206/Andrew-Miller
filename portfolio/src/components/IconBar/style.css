@@ -1,7 +1,15 @@
 .iconbar-wrapper {
-    padding-top: 250px;
     left: 0rem;
-    width: 10%;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     background: pink;
+}
+.iconbar-list ul {
+    display: inline-block;
+    list-style-type: none;
+}
+.iconbar-list ul li {
+    display: inline-block;
+    list-style-type: none;
+    width: 5rem;
 }

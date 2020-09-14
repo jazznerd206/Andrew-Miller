@@ -6,10 +6,15 @@ function iconbar() {
         <div className="iconbar-wrapper">
             <div className="iconbar-list">
                 <ul>
-                    <li>Icon 1</li>
-                    <li>Icon 2</li>
-                    <li>Icon 3</li>
-                    <li>Icon 4</li>
+                    <li>Change to icons:</li>
+                    <li>NodeJS</li>
+                    <li>JavaScript</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Express</li>
+                    <li>React</li>
+                    <li>Foundation</li>
+                    <li></li>
                 </ul>
             </div>            
         </div>

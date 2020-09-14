@@ -1,11 +1,22 @@
 import React from 'react';
 import Header from '../../components/Header/header';
-import IconBar from '../../components/IconBar/iconbar';
-export default function home() {
+import MainContent from '../../components/MainContent/maincontent';
+// import Container from "react-materialize/lib/Container";
+import './style.css';
+
+
+function home() {
     return (
         <div>
-            <Header />
-            <IconBar />
+            <div className="home">
+                <Header />
+                <React.Fragment>
+                    <MainContent />
+                </React.Fragment>
+            </div>
+            
         </div>
     )
 }
+
+export default home;

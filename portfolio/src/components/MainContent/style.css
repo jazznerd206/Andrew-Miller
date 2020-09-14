@@ -1,0 +1,24 @@
+.flex {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+
+.flex-item-first {
+    margin-top: 300px;
+    background: orange;
+    width: 100%;
+    min-height: 250px;
+    order: 1;
+}
+
+.flex-item-next {
+    margin-top: 10px;
+    background: orange;
+    width: 100%;
+    min-height: 250px;
+    order: 1;
+}

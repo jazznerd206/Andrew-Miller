@@ -12,7 +12,9 @@
     top: 15px;
     background: blue;
     margin: 0 auto;
+    font-size: 100px;
 }
+
 
 .header-menu {
     position: relative;

@@ -24,7 +24,6 @@ function header() {
                     </li>
                 </ul>
             </div>
-            <IconBar />
         </div>
     )
 }

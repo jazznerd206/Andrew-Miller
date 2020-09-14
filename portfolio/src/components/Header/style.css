@@ -1,13 +1,12 @@
 .header-wrapper {
-    position: absolute;
     height: 5rem;
     width: 100%;
+    height: auto;
     background: #000;
 }
 
 .header-content {
     height: 10rem;
-    position: relative;
     width: 80%;
     top: 15px;
     background: blue;
@@ -17,7 +16,6 @@
 
 
 .header-menu {
-    position: relative;
     display: flex;
     flex-direction: row;
     flex-basis: auto;

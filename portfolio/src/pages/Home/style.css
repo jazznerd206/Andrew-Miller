@@ -1,8 +1,11 @@
 .home {
-    display: inline-block;
+    display: flexbox;
+    flex-direction: column;
     background-color: white;
     min-width: 100%;
-    min-height: 100vh;
-    position: relative;
-    left: 0;
+    height: auto;
+}
+.main {
+    height: auto;
+    width: 100%;
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import Header from '../../components/Header/header';
 import MainContent from '../../components/MainContent/maincontent';
-// import Container from "react-materialize/lib/Container";
+import IconBar from '../../components/IconBar/iconbar';
+import Container from "react-materialize/lib/Container";
 import './style.css';
 
 
@@ -10,10 +11,14 @@ function home() {
         <div>
             <div className="home">
                 <Header />
-                <React.Fragment>
-                    <MainContent />
-                </React.Fragment>
+                <IconBar />
+                <MainContent /> 
             </div>
+            <div className="main">
+               
+            </div>
+
+
             
         </div>
     )

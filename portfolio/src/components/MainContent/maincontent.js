@@ -8,7 +8,7 @@ function maincontent() {
                 <span>Experience</span>
             </div>
             <div className="flex-item-next">
-                <span>Projects</span>
+                <span>Bio/Image</span>
             </div>
         </div>
     )

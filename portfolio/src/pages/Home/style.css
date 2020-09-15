@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
 .home {
+
     font-family: 'Nunito';
     display: flexbox;
     flex-direction: column;

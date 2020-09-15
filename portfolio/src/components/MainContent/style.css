@@ -6,19 +6,29 @@
     justify-content: space-around;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
 
 .flex-item-first {
-    margin-top: 50px;
-    background: orange;
+    /* margin-top: 50px; */
     width: 100%;
-    min-height: 250px;
+    min-height: auto;
     order: 1;
 }
 
 .flex-item-next {
     margin-top: 10px;
-    background: orange;
     width: 100%;
-    min-height: 250px;
+    min-height: auto;
+    order: 1;
+    justify-content: right;
+}
+
+.flex-column-item {
+    width: 100%;
+    min-height: auto;
     order: 1;
 }

@@ -11,8 +11,8 @@ function home() {
         <div>
             <div className="home">
                 <Header />
+                <MainContent />
                 <IconBar />
-                <MainContent /> 
             </div>
             <div className="main">
                

@@ -8,16 +8,10 @@ function header() {
             <div className="header-menu">
                 <ul>
                     <li>
-                        logo
+                        @2020
                     </li>
                     <li>
-                        Home
-                    </li>
-                    <li>
-                        Projects
-                    </li>
-                    <li>
-                        Contact
+                        Pacific Northwest
                     </li>
                 </ul>
             </div>

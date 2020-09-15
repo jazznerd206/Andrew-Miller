@@ -17,10 +17,11 @@
 
 
 .header-menu {
+    text-align: left;
     display: flex;
     flex-direction: row;
-    flex-basis: auto;
-    background: red ;
+    justify-content: space-between;
+    background: #ffffff ;
 }
 .header-menu ul {
     list-style-type: none;
@@ -28,5 +29,5 @@
 }
 .header-menu ul li {
     display: inline-block;
-    width: 5rem;
+    width: 40rem;
 }

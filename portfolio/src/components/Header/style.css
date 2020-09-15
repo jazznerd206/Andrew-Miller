@@ -3,25 +3,25 @@
     height: 5rem;
     width: 100%;
     height: auto;
-    background: #ffffff;
+    background: transparent;
+    padding-bottom: 40px;
 }
 
 .header-content {
     height: auto;
     width: 80%;
     top: 15px;
-    background: #ffffff;
+    background: transparent;
     margin: 0 auto;
     font-size: xx-large;
 }
-
 
 .header-menu {
     text-align: left;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: #ffffff ;
+    background: transparent ;
 }
 .header-menu ul {
     list-style-type: none;

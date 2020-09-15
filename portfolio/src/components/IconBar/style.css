@@ -13,6 +13,9 @@
     margin: 0 auto;
     padding: 0px 0px 5px 0px;
     border-bottom: 3px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    transform: rotateY(15deg);
     display: inline-block;
     list-style-type: none;
 }
@@ -27,7 +30,7 @@
 }
 .iconbar-list-flipped ul {
     margin: 0 auto;
-    padding: 0px 0px 10px 0px;
+    padding: 75px 0px 10px 0px;
     transform: rotateX(180deg);
     display: inline-block;
     list-style-type: none;

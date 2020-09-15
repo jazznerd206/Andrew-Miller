@@ -6,6 +6,9 @@ function maincontent() {
         <div className="flex">
             <div className="flex-item-first">
                 <span>Experience</span>
+            </div>  
+            <div className="flex-item-first">
+                <span>Experience</span>
             </div>
             <div className="flex-item-next">
                 <span>Bio/Image</span>

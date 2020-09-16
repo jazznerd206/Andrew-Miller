@@ -10,11 +10,6 @@ const bodyParser = require('body-parser');
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use((request, response, next) => {
-  response.header("Access-Control-Allow-Origin", "*");
-  response.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -36,16 +31,16 @@ transporter.verify(function(error, success) {
 });
 
 
-router.post('/api/access', (req, res, next) => {
+app.post('/access', (req, res, next) => {
   var email = req.body.email;
   var message = req.body.message;
   var content = `email: ${email} \n message: ${message} `;
   console.log(`this is a new comment ${email, message}`)
 
   var mail = {
-    from: name, 
-    to: name, 
-    message: subject,
+    from: email, 
+    to: '206alm@gmail.com', 
+    // message: subject,
     text: content
   }
   console.log(`mail json ${mail}`);
@@ -55,10 +50,13 @@ router.post('/api/access', (req, res, next) => {
       res.json({
         status: 'fail'
       })
+      console.log('mail fail');
+      console.log(err);
     } else {
       res.json({
        status: 'success'
       })
+      console.log('mail win')
     }
   })
 })

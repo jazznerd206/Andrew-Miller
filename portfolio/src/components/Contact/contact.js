@@ -6,18 +6,18 @@ const Contact = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    const submitRequest = async (e) => {
+    const submitRequest = (e) => {
         e.preventDefault();
         console.log({ email, message });
-        await axios.post('/access', {
-        email: 'Fred',
-        message: 'Flintstone'
+        axios.post('/access', {
+        email: email,
+        message: message
       })
       .then(function (response) {
-        console.log(response);
+        console.log(`this is the response ${response}`);
       })
       .catch(function (error) {
-        console.log(error);
+        console.log(`this is the response ${error}`);
       });
     //     const response = await fetch("/access", { 
     //       method: 'POST', 

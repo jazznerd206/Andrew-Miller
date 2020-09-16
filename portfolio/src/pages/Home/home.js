@@ -3,8 +3,6 @@ import Header from '../../components/Header/header';
 import MainContent from '../../components/MainContent/maincontent';
 import IconBar from '../../components/IconBar/iconbar';
 import Contact from "../../components/Contact/contact";
-import Container from "react-materialize/lib/Container";
-import M from 'materialize-css';
 import './style.css';
 
 
@@ -14,8 +12,8 @@ function home() {
             <div className="home">
                 <Header />
                 <IconBar />
-                <MainContent /> 
                 <Contact />
+                <MainContent />
             </div>
             <div className="main">
                

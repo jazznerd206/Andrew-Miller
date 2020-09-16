@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css';
-import IconBar from '../IconBar/iconbar';
 
 function header() {
     return (

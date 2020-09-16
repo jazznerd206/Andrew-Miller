@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-function iconbar() {
+function Iconbar() {
     return (
         <div className="iconbar-wrapper">
             <div className="iconbar-list">
@@ -46,4 +46,4 @@ function iconbar() {
     )
 }
 
-export default iconbar;
+export default Iconbar;

@@ -6,7 +6,7 @@ import Contact from "../../components/Contact/contact";
 import './style.css';
 
 
-function home() {
+function Home() {
     return (
         <div>
             <div className="home">
@@ -25,4 +25,4 @@ function home() {
     )
 }
 
-export default home;
+export default Home;

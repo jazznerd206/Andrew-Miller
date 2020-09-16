@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 
-function header() {
+function Header() {
     return (
         <div className="header-wrapper">
             <div className="header-menu">
@@ -25,4 +25,4 @@ function header() {
     )
 }
 
-export default header;
+export default Header;

@@ -1,8 +1,35 @@
 .contact-form-wrapper {
-    max-width: 400px;
+    background-image: linear-gradient(to top, #303841, #eeeeee);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: auto;
     margin: 0 auto;
     padding: 50px 20px 50px 20px;
     align-content: center;
     /* box-shadow: 5px 10px 25px 10px #000; */
 }
 
+.form-container {
+    padding: 25px 30px 25px 30px;
+    width: 400px;
+    flex-basis: auto;
+    order: 1;
+    background-image: linear-gradient(to bottom, #303841, #eeeeee);
+    border: 5px outset #7e8a97;
+}
+
+.target-container {
+    width: 400px;
+    flex-basis: auto;
+    order: 1;
+    height: auto;
+    width: 100px;
+}
+
+.button {
+    color: black;
+    background-color: #7e8a97;
+    margin: 0 auto;
+    width: 10em;
+}

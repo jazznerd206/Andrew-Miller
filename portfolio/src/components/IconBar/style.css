@@ -19,7 +19,6 @@
     list-style-type: none;
 }
 .iconbar-list ul li {
-
     display: inline-block;
     list-style-type: none;
     width: 5rem;
@@ -40,3 +39,20 @@
     list-style-type: none;
     width: 5rem;
 }
+
+.small-iconbar-list {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .small-iconbar-list {
+        padding-left: 45%;
+        display: flex;
+    }
+    .iconbar-list {
+        display: none;
+    }
+    .iconbar-list-flipped {
+        display: none;
+    }
+  }

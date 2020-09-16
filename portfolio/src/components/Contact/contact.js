@@ -37,25 +37,28 @@ const Contact = () => {
     };
 
     return (
-        <div>
-          <div className="flex flex-col items-center justify-center bg-gray-200"></div>
-          <div className="w-full max-w-sm m-auto flex flex-col my-32">
+      <div>
+        <div className="contact-form-wrapper">
+          <div className="target-container">
+            <span><p>IMAGE HERE</p></span>
+          </div>
+          <div className="form-container">
             <form
-              className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 border-gray-200 border"
+              className=""
               onSubmit={submitRequest}
             >
-              <h2 className="text-2xl pt-6 pb-10 text-center font-medium text-gray-800">
+              <h2 className="">
                 Say hello!!
               </h2>
-              <div className="mb-4">
+              <div className="">
                 <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className=""
                   htmlFor="Email"
                 >
                   Your Email
                 </label>
                 <textarea
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className=""
                   type="text"
                   name="email"
                   placeholder="Email Address"
@@ -64,15 +67,15 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="mb-4">
+              <div className="">
                 <label
-                  className="block text-gray-700 text-sm font-bold mb-2"
+                  className=""
                   htmlFor="message"
                 >
                   Message For Us
                 </label>
                 <textarea
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className=""
                   name="message"
                   type="text"
                   placeholder="Tell us your purpose"
@@ -83,7 +86,7 @@ const Contact = () => {
               </div>
               <div className="flex items-center justify-between">
                 <button
-                  className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 mt-6 w-full rounded focus:outline-none focus:shadow-outline"
+                  className="button"
                   type="submit"
                 >
                   Hello World!!
@@ -92,6 +95,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
+      </div>
       );
     };
 

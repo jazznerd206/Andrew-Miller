@@ -8,9 +8,9 @@ function maincontent() {
     <div className="main-content-wrapper">
         <div className="flex-column">
             <div className="flex-item">
-                {/* <div className="exp-image">
-                    <img src={music_1}/>
-                </div> */}
+                <div className="exp-title">
+                    <span><h1>Goals</h1></span>
+                </div>
             </div>
             <div className="flex-item">
                 <div className="text-item-right">
@@ -37,14 +37,15 @@ function maincontent() {
                 </div>
             </div>
             <div className="flex-item">
-                {/* <div className="exp-image">
-                    <img src={glass_img}/>
-                </div> */}
+            <div className="exp-title">
+                    <span><h1>About Me</h1></span>
+                </div>
             </div>
         </div>
         <div className="flex">
             <span><h3>Projects</h3></span>
-            <div className="flex-item-first flex-column">
+            <span><h3>-- Coming Soon --</h3></span>
+            {/* <div className="flex-item-first flex-column">
                 <div className="flex-column-item flip-card-inner">Green Grub
                     <div className="flip-front">
                         <span><p>Tech Stack:</p></span>
@@ -84,7 +85,7 @@ function maincontent() {
                         
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
 {/*         
         <div className="flex">

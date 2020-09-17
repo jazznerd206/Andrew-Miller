@@ -1,0 +1,11 @@
+.footer-wrapper {
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to bottom, #303841, #ffffff);
+}
+.footer-layer-one {
+    margin: 0 auto;
+    width: 80%;
+    height: 80px;
+    background: white
+}

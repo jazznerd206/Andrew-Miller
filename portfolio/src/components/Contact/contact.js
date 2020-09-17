@@ -39,16 +39,13 @@ const Contact = () => {
     return (
       <div>
         <div className="contact-form-wrapper">
-          <div className="target-container">
-            <span><p>IMAGE HERE</p></span>
-          </div>
           <div className="form-container">
             <form
               className=""
               onSubmit={submitRequest}
             >
               <h2 className="">
-                Say hello!!
+                Contact Me
               </h2>
               <div className="">
                 <label

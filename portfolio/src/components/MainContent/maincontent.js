@@ -8,9 +8,9 @@ function maincontent() {
     <div className="main-content-wrapper">
         <div className="flex-column">
             <div className="flex-item">
-                <div className="exp-image">
+                {/* <div className="exp-image">
                     <img src={music_1}/>
-                </div>
+                </div> */}
             </div>
             <div className="flex-item">
                 <div className="text-item-right">
@@ -30,13 +30,16 @@ function maincontent() {
                     <span>Decades of experience as an artist, captivated and delighted by web development.</span>
                 </div>
                 <div className="text-item-right">
-                    <span>Experience as both team member and leader across many disciplines, always looking for new way to improve myself and those around me.</span>
+                    <span>Valued as both team member and leader across many disciplines -- keenly developed skills of improvisation and collaboration.</span>
+                </div>
+                <div className="text-item-right">
+                    <span>Always in search of new ways to improve myself and support those around me.</span>
                 </div>
             </div>
             <div className="flex-item">
-                <div className="exp-image">
+                {/* <div className="exp-image">
                     <img src={glass_img}/>
-                </div>
+                </div> */}
             </div>
         </div>
         <div className="flex">

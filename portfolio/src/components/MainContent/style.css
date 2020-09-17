@@ -1,7 +1,7 @@
 .main-content-wrapper {
     color: #f6c90e;
-    background-image: linear-gradient(to top, #303841, #eeeeee);
-    padding-top: 150px;
+    background-image: linear-gradient(to top, #303841, #ffffff);
+    padding-top: 500px;
 }
 
 .flex {
@@ -27,7 +27,7 @@
     background-image: url("https://picsum.photos/200");
     background-position: center;
     background-size: cover;
-    box-shadow: 0px 0px 8px 5px #eeeeee;
+    box-shadow: 0px 0px 8px 5px #ffffff;
     border-radius: 25%;
     width: 400px;
     height: auto;

@@ -1,9 +1,44 @@
 import React from 'react';
 import './style.css';
+import music_1 from "../../public/images/sheet_music_3.png";
+import glass_img from '../../public/images/glassblower_mold.jpg';
 
 function maincontent() {
     return (
     <div className="main-content-wrapper">
+        <div className="flex-column">
+            <div className="flex-item">
+                <div className="exp-image">
+                    <img src={music_1}/>
+                </div>
+            </div>
+            <div className="flex-item">
+                <div className="text-item-right">
+                    <span>Create streamlined user experiences combined with elegant code.</span>
+                </div>
+                <div className="text-item-left">
+                    <span>Build clean, aesthetically and visually pleasing designs. Simple is beautiful.</span>
+                </div>
+                <div className="text-item-right">
+                    <span>Deploy useful, meaningful tech.</span>
+                </div>
+            </div>
+        </div>
+        <div className="flex-column">
+            <div className="flex-item">
+                <div className="text-item-right">
+                    <span>Decades of experience as an artist, captivated and delighted by web development.</span>
+                </div>
+                <div className="text-item-right">
+                    <span>Experience as both team member and leader across many disciplines, always looking for new way to improve myself and those around me.</span>
+                </div>
+            </div>
+            <div className="flex-item">
+                <div className="exp-image">
+                    <img src={glass_img}/>
+                </div>
+            </div>
+        </div>
         <div className="flex">
             <span><h3>Projects</h3></span>
             <div className="flex-item-first flex-column">
@@ -48,56 +83,7 @@ function maincontent() {
                 </div>
             </div>
         </div>
-        <div className="flex">
-            <span><h3>Experience</h3></span>
-            <div className="flex-item-first flex-column"> 
-            <div className="flex-column-item flip-card-inner">Leadership
-                    <div className="flip-front">
-                        <span><p>Experience</p></span>
-                            <ul>
-                                <li>
-                                    Music
-                                </li>
-                                <li>
-                                    Inventory
-                                </li>
-                            </ul>
-                        </div>
-                    <div className="flip-back">
-                        
-                    </div>
-                </div>
-                <div className="flex-column-item flip-card-inner">Artistry
-                    <div className="flip-front">
-                        <span><p>Experience</p></span>
-                            <ul>
-                                <li>
-                                    Music
-                                </li>
-                                <li>
-                                    Glass
-                                </li>
-                            </ul>
-                        </div>
-                    <div className="flip-back">
-                        
-                    </div>
-                </div>
-                <div className="flex-column-item flip-card-inner">Full Stack Development
-                    <div className="flip-front">
-                        <span><p>Tech Stack:</p></span>
-                            <ul>
-                                <li>
-                                    Express JS
-                                </li>
-                            </ul>
-                        </div>
-                    <div className="flip-back">
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
+{/*         
         <div className="flex">
             <span><h3>Bio</h3></span>
             <div className="flex-item-next flex-column">
@@ -113,7 +99,7 @@ function maincontent() {
                     <img src="https://picsum.photos/200" alt="placeholder" />
                 </div>
             </div>
-        </div>
+        </div> */}
     </div>
     )
 }

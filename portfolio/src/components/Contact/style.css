@@ -1,5 +1,5 @@
 .contact-form-wrapper {
-    background-image: linear-gradient(to top, #303841, #eeeeee);
+    background: #303841;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

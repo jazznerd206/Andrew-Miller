@@ -16,7 +16,7 @@ app.use(function(req, res) {
 });
 
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  service: 'smtp.gmail.com',
     port: 465,
     secure: false,
   auth: {

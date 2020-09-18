@@ -11,6 +11,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../portfolio/build/index.html"));
+});
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
     port: 465,
@@ -30,9 +34,7 @@ transporter.verify(function(error, success) {
   }
 });
 
-app.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-});
+
 
 app.post('/access', (req, res, next) => {
   var email = req.body.email;

@@ -10,15 +10,13 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(function(req, res) {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "../portfolio/build/index.html"));
 });
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("portfolio/build"));
-} else {
-  require('dotenv').config();
 }
 
 // const transporter = nodemailer.createTransport({

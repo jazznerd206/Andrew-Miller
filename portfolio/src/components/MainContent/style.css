@@ -1,6 +1,6 @@
 .main-content-wrapper {
     color: #f6c90e;
-    background-image: linear-gradient(to top, #303841, #ffffff);
+    background-image: linear-gradient(to top, #303841 70%, #ffffff);
     padding-top: 300px;
 }
 

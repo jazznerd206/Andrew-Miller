@@ -21,7 +21,7 @@ app.use(function(req, res) {
 //     secure: false,
 //   auth: {
 //     user: '206alm',
-//     pass: 'shy%NUT^'
+//     pass: ''
 //   }
 // });
 

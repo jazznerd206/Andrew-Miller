@@ -30,6 +30,9 @@ transporter.verify(function(error, success) {
   }
 });
 
+app.use(function(req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 app.post('/access', (req, res, next) => {
   var email = req.body.email;

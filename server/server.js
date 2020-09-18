@@ -15,82 +15,56 @@ app.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../portfolio/build/index.html"));
 });
 
-const transporter = nodemailer.createTransport({
-  service: 'smtp.gmail.com',
-    port: 465,
-    secure: false,
-  auth: {
-    user: '206alm',
-    pass: 'SHY%nut^'
-  }
-});
-
-// verifying the connection configuration
-transporter.verify(function(error, success) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Server is ready to take our messages!");
-  }
-});
-
-
-
-app.post('/access', (req, res, next) => {
-  var email = req.body.email;
-  var message = req.body.message;
-  var content = `email: ${email} \n message: ${message} `;
-  console.log(`this is a new comment ${email, message}`)
-
-  var mail = {
-    from: email, 
-    to: '206alm@gmail.com', 
-    // message: subject,
-    text: content
-  }
-  console.log(`mail json ${mail}`);
-
-  transporter.sendMail(mail, (err, data) => {
-    if (err) {
-      res.json({
-        status: 'fail'
-      })
-      console.log('mail fail');
-      console.log(err);
-    } else {
-      res.json({
-       status: 'success'
-      })
-      console.log('mail win')
-    }
-  })
-})
-
 // const transporter = nodemailer.createTransport({
 //   service: 'gmail',
+//     port: 465,
+//     secure: false,
 //   auth: {
 //     user: '206alm',
-//     pass: 'SHY%nut^'
+//     pass: 'shy%NUT^'
 //   }
 // });
 
-// var mailOptions = {
-//   from: '206alm@gmail.com',
-//   to: '206alm@gmail.com',
-//   subject: 'Sending Email using Node.js',
-//   text: 'That was easy!'
-// };
-
-// transporter.sendMail(mailOptions, function(error, info){
+// // verifying the connection configuration
+// transporter.verify(function(error, success) {
 //   if (error) {
 //     console.log(error);
 //   } else {
-//     console.log('Email sent: ' + info.response);
+//     console.log("Server is ready to take our messages!");
 //   }
 // });
 
-// Static folder
-app.use('/public', express.static(path.join(__dirname, 'public')));
+
+
+// app.post('/access', (req, res, next) => {
+//   var email = req.body.email;
+//   var message = req.body.message;
+//   var content = `email: ${email} \n message: ${message} `;
+//   console.log(`this is a new comment ${email, message}`)
+
+//   var mail = {
+//     from: email, 
+//     to: '206alm@gmail.com', 
+//     // message: subject,
+//     text: content
+//   }
+//   console.log(`mail json ${mail}`);
+
+//   transporter.sendMail(mail, (err, data) => {
+//     if (err) {
+//       res.json({
+//         status: 'fail'
+//       })
+//       console.log('mail fail');
+//       console.log(err);
+//     } else {
+//       res.json({
+//        status: 'success'
+//       })
+//       console.log('mail win')
+//     }
+//   })
+// })
 
 app.listen(PORT, () => {
     console.log(`${PORT}`);

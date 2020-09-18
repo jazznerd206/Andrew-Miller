@@ -14,7 +14,7 @@ function Home() {
                 <Header />
                 <IconBar />
                 <MainContent />
-                <Contact />
+                {/* <Contact /> */}
                 <Footer />
             </div>
             <div className="main">

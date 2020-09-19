@@ -8,7 +8,7 @@ let nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../portfolio/build')));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "../portfolio/build/index.html"));

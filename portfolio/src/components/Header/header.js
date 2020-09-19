@@ -13,9 +13,9 @@ function Header() {
             </div>
             <div className="header-content">
                 <span><h1 className="nunito">Andrew Miller</h1></span>
-                <span><h1 className="raleway">Experience</h1></span>
-                <span><h1 className="raleway">Portfolio</h1></span>
-                <span><h1 className="raleway">Contact</h1></span>
+                <span><h1 className="raleway"><a href="#experience">Experience</a></h1></span>
+                <span><h1 className="raleway"><a href="#projects">Portfolio</a></h1></span>
+                <span><h1 className="raleway"><a href="#contact">Contact</a></h1></span>
             </div>
             
         </div>

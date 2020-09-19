@@ -8,10 +8,10 @@ import GreenGrub from '../../public/images/GreenGrub.JPG';
 function Projects() {
   
     return (
-      <div className="project-wrapper">
-        <img src={StudyBuddy}/>
-        <img src={GreenLogo}/>
-        <img src={GreenGrub}/>
+      <div className="project-wrapper" id="projects">
+        <img src={StudyBuddy} alt="StudyBuddy"/>
+        <img src={GreenLogo} alt="Golf"/>
+        <img src={GreenGrub} alt="GreenGrub "/>
       </div>      
     );
   }

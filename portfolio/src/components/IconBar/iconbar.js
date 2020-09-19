@@ -11,9 +11,9 @@ function Iconbar() {
                     <li><i className="fas fa-coffee fa-2x icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-3x"></i></li>
                     <li><i className="fab fa-node-js fa-3x"></i></li>
-                    <li><i className="fab fa-js-square fa-3x"></i></li>
+                    <li><i className="fas fa-terminal fa-3x"></i></li>
                     <li><i className="fas fa-code fa-3x"></i></li>
-                    <li><i className="fas fa-file-code fa-3x"></i></li>
+                    <li><i className="fas fa-headphones fa-3x"></i></li>
                     <li><i className="fab fa-react fa-3x"></i></li>
                     <li><i className="fas fa-database fa-3x"></i></li>
                     <li><i className="fas fa-mobile fa-3x"></i></li>
@@ -30,9 +30,9 @@ function Iconbar() {
                     <li><i className="fas fa-coffee fa-2x icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-3x"></i></li>
                     <li><i className="fab fa-node-js fa-3x"></i></li>
-                    <li><i className="fab fa-js-square fa-3x"></i></li>
+                    <li><i className="fas fa-terminal fa-3x"></i></li>
                     <li><i className="fas fa-code fa-3x"></i></li>
-                    <li><i className="fas fa-file-code fa-3x"></i></li>
+                    <li><i className="fas fa-headphones fa-3x"></i></li>
                     <li><i className="fab fa-react fa-3x"></i></li>
                     <li><i className="fas fa-database fa-3x"></i></li>
                     <li><i className="fas fa-mobile fa-3x"></i></li>

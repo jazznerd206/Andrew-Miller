@@ -6,7 +6,7 @@ import Projects from '../Projects/Projects.js';
 
 function Maincontent() {
     return (
-    <div className="main-content-wrapper" id="experience-anchor">
+    <div className="main-content-wrapper" id="experience">
         <div className="flex-column">
             <div className="flex-item">
                 <div className="exp-title">

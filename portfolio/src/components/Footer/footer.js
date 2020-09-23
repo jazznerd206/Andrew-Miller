@@ -5,7 +5,7 @@ function Footer() {
     return (
         <div className="footer-wrapper">
             <div className="title">
-                <i className="fas fa-arrow-down fa-3x footer-icon"></i><span><h1>Find me here </h1></span><i className="fas fa-arrow-down fa-3x footer-icon"></i>
+                <i className="fas fa-arrow-down fa-3x footer-icon"></i><span><h1>Social Media</h1></span><i className="fas fa-arrow-down fa-3x footer-icon"></i>
             </div>
             <div className="footer-layer-one">
                 <div className="icon-wrapper">

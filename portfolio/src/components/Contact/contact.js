@@ -44,10 +44,12 @@ const Contact = () => {
               className=""
               onSubmit={submitRequest}
             >
-              <h2 className="">
-                Contact Me
-              </h2>
-              <div className="">
+              <div className="contact-title">
+                <h2 className="">
+                  Contact Me
+                </h2>
+              </div>
+              <div className="contact-email">
                 <label
                   className=""
                   htmlFor="Email"
@@ -58,13 +60,13 @@ const Contact = () => {
                   className=""
                   type="text"
                   name="email"
-                  placeholder="Email Address"
+                  placeholder="you@example.com"
                   onChange={e => setEmail(e.target.value)}
                   value={email}
                   required
                 />
               </div>
-              <div className="">
+              <div className="contact-message">
                 <label
                   className=""
                   htmlFor="message"
@@ -75,7 +77,7 @@ const Contact = () => {
                   className=""
                   name="message"
                   type="text"
-                  placeholder="Tell us your purpose"
+                  placeholder="Your message here..."
                   onChange={e => setMessage(e.target.value)}
                   value={message}
                   required
@@ -86,7 +88,7 @@ const Contact = () => {
                   className="button"
                   type="submit"
                 >
-                  Hello World!!
+                  Send to Andrew!!
                 </button>
               </div>
             </form>

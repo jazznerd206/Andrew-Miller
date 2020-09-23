@@ -13,6 +13,7 @@ function Projects() {
     return (
       <div className="project-wrapper" id="projects">
         <Tabs 
+          className="project-tabs"
           id="controlled-tab-example"
           activeKey={key}
           onSelect={(k) => setKey(k)}

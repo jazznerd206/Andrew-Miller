@@ -1,8 +1,32 @@
 .project-wrapper {
+    background: linear-gradient(0.25turn, #303841, #ffffff, #303841);
     margin: 0 auto;
     height: auto;
-    max-width: 750px;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 10px 10px 10px 10px #46515e;
 }
+
+.project-tabs {
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    background-color: #46515e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.project-tabs > a {
+    background-color: 46515e;
+    color: white;
+}
+.project-tabs > a:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
 
 img {
     max-width: 750px;

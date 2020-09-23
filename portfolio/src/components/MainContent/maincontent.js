@@ -27,24 +27,23 @@ function Maincontent() {
         </div>
         <div className="flex-column">
             <div className="flex-item">
+                <div className="exp-title">
+                    <span><h1>About Me</h1></span>
+                </div>
+            </div>
+            <div className="flex-item">
                 <div className="text-item-right">
                     <span>Decades of experience as an artist, captivated and delighted by web development.</span>
                 </div>
-                <div className="text-item-right">
+                <div className="text-item-left">
                     <span>Valued as both team member and leader across many disciplines -- keenly developed skills of improvisation and collaboration.</span>
                 </div>
                 <div className="text-item-right">
                     <span>Always in search of new ways to improve myself and support those around me.</span>
                 </div>
             </div>
-            <div className="flex-item">
-            <div className="exp-title">
-                    <span><h1>About Me</h1></span>
-                </div>
-            </div>
         </div>
         <div className="flex" id="portfolio-anchor">
-            <span><h3>Projects</h3></span>
             <Projects />
         </div>
     </div>

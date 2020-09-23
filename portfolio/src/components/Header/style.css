@@ -5,24 +5,42 @@
     width: 100%;
     height: auto;
     background: transparent;
-    /* padding-top: 250px; */
+    padding-top: 50px;
     padding-bottom: 100px;
-    background-image: url('../..//public/images/ALM_Logo.jpg');
+    /* background-image: url('../..//public/images/ALM_Logo.jpg'); */
     background-position: top left;
     background-size: 400px;
     background-attachment: local;
     background-repeat: no-repeat;
 }
 
+span a {
+    color: #303841;
+}
+
 .nunito {
     font-size: 80px;
     font-weight: bold;
+    transition: .2s;
+}
+
+.nunito:hover {
+    letter-spacing: 3.4rem;
+    animation: animate 0.5s infinite
 }
 
 .raleway {
     font-size: 50px;
     font-weight: lighter;
     font-family: 'Raleway';
+    transition: .15s;
+    transition-timing-function: ease-in;
+}
+
+.raleway:hover {
+    letter-spacing: 3rem;
+    font-size: 72px;
+    font-weight: bolder;
 }
 
 .header-content {
@@ -49,3 +67,17 @@
     display: inline-block;
     width: 40rem;
 }
+
+@keyframes animate { 
+    0% { 
+        transform: translateY(0px); 
+    } 
+
+    50% { 
+        transform: translateX(-20px); 
+    } 
+
+    100% { 
+        transform: translateY(0px); 
+    } 
+} 

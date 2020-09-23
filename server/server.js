@@ -5,6 +5,9 @@ const path = require('path');
 const PORT = process.env.PORT || 8080;
 let nodemailer = require('nodemailer');
 
+//.env config
+require('dotenv').config();
+
 const bodyParser = require('body-parser');
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,56 +22,61 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("../portfolio/build"));
 }
 
-// const transporter = nodemailer.createTransport({
-//   service: 'gmail',
-//     port: 465,
-//     secure: false,
-//   auth: {
-//     user: '206alm',
-//     pass: ''
-//   }
-// });
+const transporter = nodemailer.createTransport({
+  host: 'smtp.gmail.com',
+    port: 465,
+    service:'gmail',
+    secure: false,
+  auth: {
+    user: 'nodemailer999',
+    pass: process.env.GMAIL_PASSWORD,
+  },
+  debug: false,
+  logger: true
+});
 
-// // verifying the connection configuration
-// transporter.verify(function(error, success) {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("Server is ready to take our messages!");
-//   }
-// });
+// verifying the connection configuration
+transporter.verify(function(error, success) {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log("Server is ready to take our messages!");
+  }
+});
 
 
 
-// app.post('/access', (req, res, next) => {
-//   var email = req.body.email;
-//   var message = req.body.message;
-//   var content = `email: ${email} \n message: ${message} `;
-//   console.log(`this is a new comment ${email, message}`)
+app.post('/access', (req, res, next) => {
+  var email = req.body.email;
+  var message = req.body.message;
+  var content = `email: ${email} \n message: ${message} `;
+  console.log(`this is a new comment ${email, message}`)
 
-//   var mail = {
-//     from: email, 
-//     to: '206alm@gmail.com', 
-//     // message: subject,
-//     text: content
-//   }
-//   console.log(`mail json ${mail}`);
+  var mail = {
+    from: email, 
+    to: '206alm@gmail.com', 
+    // message: subject,
+    text: content
+  }
+  console.log(`mail json ${mail}`);
 
-//   transporter.sendMail(mail, (err, data) => {
-//     if (err) {
-//       res.json({
-//         status: 'fail'
-//       })
-//       console.log('mail fail');
-//       console.log(err);
-//     } else {
-//       res.json({
-//        status: 'success'
-//       })
-//       console.log('mail win')
-//     }
-//   })
-// })
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        status: 'fail'
+      })
+      console.log('mail fail');
+      console.log(err);
+    } else {
+      res.json({
+       status: 'success'
+      })
+      console.log('mail win')
+    }
+  })
+})
+
+transporter.close();
 
 app.listen(PORT, () => {
     console.log(`${PORT}`);

@@ -47,12 +47,13 @@ transporter.verify(function(error, success) {
 
 
 app.post('/access', (req, res, next) => {
-  var email = req.body.email;
-  var message = req.body.message;
-  var content = `email: ${email} \n message: ${message} `;
-  console.log(`this is a new comment ${email, message}`)
+  const name = req.body.name;
+  const email = req.body.email;
+  const message = req.body.message;
+  const content = `name: ${name}  |  email: ${email} \n message: ${message} `;
+  console.log(`this is a new comment ${name, email, message}`)
 
-  var mail = {
+  const mail = {
     from: email, 
     to: '206alm@gmail.com', 
     // message: subject,

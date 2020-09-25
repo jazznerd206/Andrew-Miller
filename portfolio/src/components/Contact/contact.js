@@ -3,84 +3,103 @@ import axios from 'axios';
 import './style.css';
 
 const Contact = () => {
+
+    // SET FORM FIELD ENTRY WITH HOOKS
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
+    // HANDLE FORM STEPS WITH HOOKS
+    const [formIndex, setFormIndex] = useState(0);
+
+    // SUBMIT DATA AFTER FIRST STEP
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        setFormIndex(formIndex + 1);
+        //console.log(name, email, message);
+    }
+
+    // AXIOS POST -- SEND EMAIL TO SERVER
     const submitRequest = async (e) => {
         e.preventDefault();
-        console.log({ email, message });
+        //console.log({ name, email, message });
         axios.post('/access', {
+        name: name,
         email: email,
         message: message
       })
       .then(function (response) {
-        console.log(`this is the response ${response}`);
+        // console.log(`this is the response ${response}`);
+        setName('');
         setEmail('');
         setMessage('');
+        setFormIndex(0);
       })
       .catch(function (error) {
-        console.log(`this is the error ${error}`);
+        // console.log(`this is the error ${error}`);
       });
     };
 
     return (
-      <div>
-        <div className="contact-form-wrapper" id="contact">
-          <div className="form-container">
-            <form
-              className=""
-              onSubmit={submitRequest}
-            >
-              <div className="contact-title">
-                <h2 className="">
-                  Contact Me
-                </h2>
+    <div>
+        
+  
+      {/* First section of the form */}
+      {formIndex === 0 && (
+      <div className="contact-form-wrapper">
+        <div className="form-container">
+          <form onSubmit={handleFormSubmit} autoComplete="off">
+              <p></p>
+              <div className="input-row">
+                <label htmlFor="name">Name</label>
+                <input id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
               </div>
-              <div className="contact-email">
-                <label
-                  className=""
-                  htmlFor="Email"
-                >
-                  Your Email
-                </label>
-                <textarea
-                  className=""
-                  type="text"
-                  name="email"
-                  placeholder="you@example.com"
-                  onChange={e => setEmail(e.target.value)}
-                  value={email}
-                  required
-                />
+              <div className="input-row">
+                <label htmlFor="email">Email</label>
+                <input id="email" type="email" onChange={e => setEmail(e.target.value)} />
               </div>
-              <div className="contact-message">
-                <label
-                  className=""
-                  htmlFor="message"
-                >
-                  Message For Us
-                </label>
-                <textarea
-                  className=""
-                  name="message"
-                  type="text"
-                  placeholder="Your message here..."
-                  onChange={e => setMessage(e.target.value)}
-                  value={message}
-                  required
-                />
-              </div>
-              <div className="flex items-center justify-between">
-                <button
-                  className="button"
-                  type="submit"
-                >
-                  Send to Andrew!!
-                </button>
+              <div>
+                <button type="submit" disabled={!name || !email}>Continue to message</button>
               </div>
             </form>
+        </div>
+      </div>
+      )}
+
+      {/* Second section of the form */}
+      {formIndex === 1 && (
+      <div className="contact-form-wrapper">
+        <div className="form-container">
+          <form onSubmit={handleFormSubmit} autoComplete="off">
+            <p>Your social profiles</p>
+            <div className="input-row">
+              <label htmlFor="message">Message</label>
+              <input id="message" type="text" onChange={e => setMessage(e.target.value)} />
+            </div>
+            <div>
+              <button type="submit" disabled={!message}>One more step!!</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      )}
+
+      {/* Thank you message */}
+      
+      {formIndex === 2 && (
+      <div className="contact-form-wrapper">
+        <div className="form-container">
+          <div>
+            <p>Thanks!</p>
+            <button type="button" onClick={submitRequest}>
+              Send
+            </button>
           </div>
         </div>
+      </div>
+        
+      )}
+
       </div>
       );
     };

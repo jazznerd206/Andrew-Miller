@@ -80,4 +80,10 @@ span a {
     100% { 
         transform: translateY(0px); 
     } 
-} 
+}
+
+@media only screen and (max-width: 600px) {
+    .header-wrapper {
+      padding-bottom: 25px;
+    }
+  }

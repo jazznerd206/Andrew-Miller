@@ -15,25 +15,12 @@ const Contact = () => {
       })
       .then(function (response) {
         console.log(`this is the response ${response}`);
+        setEmail('');
+        setMessage('');
       })
       .catch(function (error) {
         console.log(`this is the error ${error}`);
       });
-        const response = await fetch("/access", { 
-          method: 'POST', 
-          headers: { 
-              'Content-type': 'application/json',
-              'Accept': 'application/json'
-          }, 
-          body: JSON.stringify({email, message})
-      }); 
-        const resData = await response.text();
-        if (resData.status === 'success'){
-          alert("Message Sent."); 
-          this.resetForm()
-      }else if(resData.status === 'fail'){
-          alert("Message failed to send.")
-      }
     };
 
     return (

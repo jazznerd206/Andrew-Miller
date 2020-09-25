@@ -24,7 +24,7 @@
 
 .contact-email {
     text-align: left;
-    width: 400px;
+    width: auto;
 }
 
 .contact-message {
@@ -39,3 +39,12 @@
 }
 
 
+@media only screen and (max-width: 600px) {
+    .contact-form-wrapper {
+      width: 100%;
+      padding-top: 50px;
+    }
+    .form-container {
+        width: 100%;
+    }
+  }

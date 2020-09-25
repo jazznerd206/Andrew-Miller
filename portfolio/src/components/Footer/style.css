@@ -23,3 +23,12 @@
 .footer-icon {
     padding: 100px 100px 100px 50px;
 }
+
+@media only screen and (max-width: 600px) {
+    img {
+      width: 80vw;
+    }
+    .footer-icon {
+        padding: 25px;
+    }
+  }

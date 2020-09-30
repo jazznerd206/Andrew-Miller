@@ -42,17 +42,35 @@ const Contact = () => {
 
     return (
     <div>
-        
-  
       {/* First section of the form */}
       {formIndex === 0 && (
-      <div className="contact-form-wrapper">
+      <div className="contact-form-wrapper" id="contact">
         <div className="form-container">
+          <div className="form-title">
+            <span className="nunito">
+              <h2>DIRECT LINE TO ANDREW</h2>
+            </span>
+            <span>
+              <p>Have a question?</p>
+            </span>
+            <span>
+              <p>Have a critique?</p>
+            </span>
+            <span>
+              <p>Have a burning desire to share your latest novel?</p>
+            </span>
+            <span>
+              <p>Just leave your name and email and a short message. I'd love to hear from you!!</p>             
+            </span>
+
+
+          </div>
+
           <form onSubmit={handleFormSubmit} autoComplete="off">
               <p></p>
               <div className="input-row">
-                <label htmlFor="name">Name</label>
-                <input id="name" type="text" value={name} onChange={e => setName(e.target.value)} />
+                <label htmlFor="name">Message</label>
+                <input id="name" type="text" onChange={e => setName(e.target.value)} />
               </div>
               <div className="input-row">
                 <label htmlFor="email">Email</label>
@@ -71,7 +89,7 @@ const Contact = () => {
       <div className="contact-form-wrapper">
         <div className="form-container">
           <form onSubmit={handleFormSubmit} autoComplete="off">
-            <p>Your social profiles</p>
+            <p>Your message:</p>
             <div className="input-row">
               <label htmlFor="message">Message</label>
               <input id="message" type="text" onChange={e => setMessage(e.target.value)} />

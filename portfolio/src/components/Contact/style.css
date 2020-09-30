@@ -38,6 +38,22 @@
     width: 10em;
 }
 
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.nunito {
+    font-size: 50px;
+    font-weight: lighter;
+    font-family: 'Nunito';
+    transition: .15s;
+    transition-timing-function: ease-in;
+}
+
 
 @media only screen and (max-width: 600px) {
     .contact-form-wrapper {

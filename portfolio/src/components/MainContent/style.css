@@ -1,7 +1,7 @@
 .main-content-wrapper {
     color: #f6c90e;
-    background-image: linear-gradient(to top, #303841 70%, #ffffff);
-    padding-top: 300px;
+    background-image: linear-gradient(to top, #303841 90%, #ffffff);
+    padding-top: 50px;
 }
 
 .flex {
@@ -60,6 +60,8 @@
     font-size: 100;
     font-weight: 900;
     font-style: italic;
+    text-decoration: underline;
+    text-decoration-style: dotted;
 }
 
 .flex-item .experience-title {

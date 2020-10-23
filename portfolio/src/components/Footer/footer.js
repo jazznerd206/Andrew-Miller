@@ -4,9 +4,9 @@ import './style.css';
 function Footer() {
     return (
         <div className="footer-wrapper">
-            <div className="title">
+            {/* <div className="title">
                 <i className="fas fa-arrow-down fa-3x footer-icon"></i><span><h1>-- Find me here --</h1></span><i className="fas fa-arrow-down fa-3x footer-icon"></i>
-            </div>
+            </div> */}
             <div className="footer-layer-one">
                 <div className="icon-wrapper">
                     <i className="fab fa-github fa-3x footer-icon"></i>

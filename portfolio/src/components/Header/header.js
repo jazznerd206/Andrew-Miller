@@ -4,10 +4,10 @@ import './style.css';
 function Header() {
     return (
         <div className="header-wrapper">
-            <div className="header-menu">
+            {/* <div className="header-menu">
                 <ul>
                 </ul>
-            </div>
+            </div> */}
             <div className="header-logo">
                 
             </div>

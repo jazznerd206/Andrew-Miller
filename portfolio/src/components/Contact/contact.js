@@ -46,7 +46,7 @@ const Contact = () => {
       {formIndex === 0 && (
       <div className="contact-form-wrapper" id="contact">
         <div className="form-container">
-          <div className="form-title">
+          <div className="contact-title">
             <span className="nunito">
               <h2>DIRECT LINE TO ANDREW</h2>
             </span>

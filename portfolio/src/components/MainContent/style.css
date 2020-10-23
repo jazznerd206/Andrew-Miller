@@ -6,7 +6,7 @@
 
 .flex {
     margin: 0 auto;
-    width: 80%;
+    /* width: 80%; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -17,6 +17,14 @@
     width: 60%;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.flex-row {
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 
@@ -31,7 +39,7 @@
     line-height: 1.5;
     letter-spacing: 1.1;
     text-align: left;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0px;
 }
 
 .text-item-right {
@@ -46,4 +54,41 @@
     border: 10px solid black;
     max-width: 400;
     height: auto;
+}
+
+.exp-title h1 {
+    font-size: 100;
+    font-weight: 900;
+    font-style: italic;
+}
+
+.flex-item .experience-title {
+    font-size: 200;
+    font-weight: 900;
+    font-style: italic;
+}
+
+ul li {
+    padding: 5px 0;
+    line-height: 1.8;
+    font-size: larger;
+}
+
+.first-column {
+    background: grey;
+    padding: 0 10px;
+    /* border-radius: 25px; */
+}
+
+.about-me {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.about-me span {
+    font-size: x-large;
+}
+
+.about-me .italic {
+    font-style: italic;
 }

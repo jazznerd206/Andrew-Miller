@@ -69,7 +69,7 @@ const Contact = () => {
           <form onSubmit={handleFormSubmit} autoComplete="off">
               <p></p>
               <div className="input-row">
-                <label htmlFor="name">Message</label>
+                <label htmlFor="name">Name</label>
                 <input id="name" type="text" onChange={e => setName(e.target.value)} />
               </div>
               <div className="input-row">

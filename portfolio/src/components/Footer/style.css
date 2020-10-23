@@ -4,8 +4,11 @@
     width: 100%;
     height: auto;
     background-image: linear-gradient(to bottom, #46515e, #23282F);
-
     -webkit-text-stroke: 2px  #515E46; /* width and color */
+}
+
+a {
+    color: white;
 }
 
 .title {
@@ -28,7 +31,7 @@
 }
 
 .footer-icon {
-    padding: 50px 50px 50px 50px;
+    padding: 0 50px 50px 50px;
 }
 
 @media only screen and (max-width: 600px) {

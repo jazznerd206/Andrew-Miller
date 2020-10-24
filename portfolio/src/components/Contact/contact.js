@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="form-container">
           <div className="contact-title">
             <span className="nunito">
-              <i class="fas fa-comments 9x"></i>
+              <i className="fas fa-comments"></i>
             </span>
             <span>
               <p>Have a question?</p>

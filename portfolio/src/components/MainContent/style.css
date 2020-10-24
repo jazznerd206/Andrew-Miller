@@ -1,6 +1,6 @@
 .main-content-wrapper {
     /* color: #f6c90e; */
-    background-image: linear-gradient(to top, #303841 90%, #ffffff);
+    background-image: linear-gradient(to top, #303841 75%, #CFCFCF);
     padding-top: 50px;
 }
 
@@ -32,7 +32,16 @@
 .flex-item {
     width: 100%;
     color: #eeeeee;
-    padding: 50px 30px 50px 0px;
+    padding: 50px 0px;
+}
+
+.headshot img {
+    height: 400px;
+    width: auto;
+}
+.certs img {
+    height: 600px;
+    width: auto;
 }
 
 .text-item-left {
@@ -74,6 +83,7 @@
     text-decoration: underline;
     text-decoration-style: dotted;
     color: #303841;
+    height: auto;
 }
 
 .flex-column .exp-title h1 {
@@ -84,6 +94,7 @@
     text-decoration-style: dotted;
     background: #CFCFCF;
     padding: 25px 25px;
+    height: auto;
     border-top-right-radius: 300%;
     border-top-left-radius: 25px;
     color: #303841;
@@ -98,6 +109,8 @@
 .content {
     background: #303841;
     border-top-left-radius: 25px;
+    border-right: 1px solid #CFCFCF;
+    border-top: 1px solid #CFCFCF;
 }
 
 ul li {
@@ -117,8 +130,7 @@ ul li {
     width: 80%;
     margin: 0 auto;
     background: #303841;
-    padding: 25px 25px;
-    box-shadow: 10px 0px 10px 0 #303841;
+    padding: 25px 0px;
 }
 
 .about-me span {

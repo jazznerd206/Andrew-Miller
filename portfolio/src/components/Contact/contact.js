@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="form-container">
           <div className="contact-title">
             <span className="nunito">
-              <h2>DIRECT LINE TO ANDREW</h2>
+              <i class="fas fa-comments 9x"></i>
             </span>
             <span>
               <p>Have a question?</p>

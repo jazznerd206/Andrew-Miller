@@ -35,13 +35,14 @@
     padding: 50px 0px;
 }
 
+.headshot {
+    overflow: hidden;
+}
+
 .headshot img {
     height: 400px;
     width: auto;
-}
-.certs img {
-    height: 600px;
-    width: auto;
+    border-radius: 100%;
 }
 
 .text-item-left {

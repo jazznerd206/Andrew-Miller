@@ -1,8 +1,7 @@
 import React from 'react';
 import './style.css';
 import Projects from '../Projects/Projects.js';
-import Headshot from '../../public/images/HeadshotPost2.png'
-import Certs from '../../public/images/Certs.JPG'
+import Headshot from '../../public/images/HeadshotPost1.jpg'
 // import music_1 from "../../public/images/sheet_music_3.png";
 // import glass_img from '../../public/images/glassblower_mold.jpg';
 

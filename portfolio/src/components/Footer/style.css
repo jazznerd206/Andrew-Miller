@@ -54,4 +54,7 @@ a {
     .footer-icon {
         padding: 25px;
     }
+    .footer-layer-one {
+        width: 100%;
+    }
   }

@@ -21,28 +21,40 @@ function Projects() {
         >
           <Tab eventKey="fullStack" title="Full Stack">
             <div className="tab-wrapper">
-              <div className="project-card studyBuddy">
+            <div className="project-card rareBirdSociety">
                 <div className="card-title">
-                  <h3>StudyBuddy</h3>
-                  <p>Meet, study, learn.</p>
+                  <h3>#RareBirdSociety</h3>
+                  <p>Golf mental game skill builder</p>
                 </div> 
                 <div className="button">
-                  Vist Site
+                  <a href="https://birdiehunter.herokuapp.com/" target="_blank" rel="noopener noreferrer">Vist Site</a>
                 </div>
                 <div className="button">
-                  View Code
+                  <a href="https://github.com/jazznerd206/Golf_App" target="_blank" rel="noopener noreferrer">View Code</a>
                 </div>
               </div>
-              <div className="project-card greenGrub">
+              <div className="project-card newsScraper">
                 <div className="card-title">
-                  <h3>Green Grub</h3>
-                  <p>Plan your next meal.</p>
+                  <h3>World News Scraper</h3>
+                  <p>NYT News and Database</p>
                 </div> 
                 <div className="button">
-                  Vist Site
+                  <a href="https://still-cove-06577.herokuapp.com/" target="_blank" rel="noopener noreferrer">Vist Site</a>
                 </div>
                 <div className="button">
-                  View Code
+                  <a href="https://github.com/jazznerd206/nyt-scraper" target="_blank" rel="noopener noreferrer">View Code</a>
+                </div>
+              </div>
+              <div className="project-card googleBooks">
+                <div className="card-title">
+                  <h3>Book your own adventure.</h3>
+                  <p>GoogleBooks API and Database</p>
+                </div> 
+                <div className="button">
+                  <a href="https://enigmatic-oasis-28658.herokuapp.com/" target="_blank" rel="noopener noreferrer">Vist Site</a>
+                </div>
+                <div className="button">
+                  <a href="https://github.com/jazznerd206/Google-Books-Search-Engine" target="_blank" rel="noopener noreferrer">View Code</a>
                 </div>
               </div>
             </div>
@@ -55,10 +67,10 @@ function Projects() {
                   <p>Meet, study, learn.</p>
                 </div> 
                 <div className="button">
-                  Vist Site
+                  <a href="https://jlcoden.github.io/Study-Buddy/" target="_blank" rel="noopener noreferrer">Vist Site</a>
                 </div>
                 <div className="button">
-                  View Code
+                  <a href="https://github.com/jlcoden/Study-Buddy" target="_blank" rel="noopener noreferrer">View Code</a>
                 </div>
               </div>
             </div>
@@ -71,10 +83,10 @@ function Projects() {
                   <p>Plan your next meal.</p>
                 </div> 
                 <div className="button">
-                  Vist Site
+                  <a href="https://enigmatic-oasis-28658.herokuapp.com/" target="_blank" rel="noopener noreferrer">Vist Site</a>
                 </div>
                 <div className="button">
-                  View Code
+                  <a href="https://github.com/jazznerd206/Green-Grub" target="_blank" rel="noopener noreferrer">View Code</a>
                 </div>
               </div>
             </div>

@@ -83,6 +83,27 @@
     background-repeat: no-repeat;
 }
 
+.googleBooks {
+    background-image: url('../../public/images/GoogleBooks.JPG');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.newsScraper {
+    background-image: url('../../public/images/NewsScraper.JPG');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.rareBirdSociety {
+    background-image: url('../../public/images/RBSTN.JPG');
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 button {
     margin: 0px 0px;
     padding: 0 0;

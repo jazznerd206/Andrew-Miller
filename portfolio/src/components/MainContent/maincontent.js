@@ -31,7 +31,7 @@ function Maincontent() {
             </div>
             <div className="flex-item">
                 <div className="text-item-left content">
-                    <div className="experience-title"><h2>Art:</h2></div>
+                    <div className="experience-title"><h2>Employment:</h2></div>
                     <ul>
                         <li>20+ years experience studying, performing and recording music.</li>
                         
@@ -40,7 +40,7 @@ function Maincontent() {
                     </ul>
                 </div>
                 <div className="text-item-left content">
-                    <div className="experience-title"><h2>Certifications:</h2></div>
+                    <div className="experience-title"><h2>Certificates:</h2></div>
                     <ul>
                         <li>LinkedIn: 
                             <ul>
@@ -61,7 +61,7 @@ function Maincontent() {
                         </li>
                     </ul>
                 </div>
-                <div className="text-item-left content">
+                {/* <div className="text-item-left content">
                     <div className="experience-title"><h2>Technology I love:</h2></div>
                     <ul>
                         <li>JavaScript</li>
@@ -73,7 +73,7 @@ function Maincontent() {
                         <li>D3.JS</li>
                         <li>WebAudio API</li>
                     </ul>
-                </div>
+                </div> */}
                 <div className="text-item-left content">
                     <div className="experience-title"><h2>Other:</h2></div>
                     <ul>

@@ -141,3 +141,46 @@ ul li {
 .about-me .italic {
     font-style: italic;
 }
+
+@media only screen and (max-width: 600px) {
+    .main-content-wrapper {
+        padding-top: 0px;
+    }
+    .flex {
+        width: 100%;
+    }
+    .flex-column {
+        width: 100%;
+    }
+    .flex-row {
+        width: 100%;
+        padding: 0px 0px;
+    }
+    .text-item-right {
+        padding: 0px 5px;
+        font-size: large;
+        letter-spacing: .5px;
+    }
+    .text-item-left {
+        padding: 0px 5px;
+        
+    }
+    .flex-column .exp-title h1 {
+        text-align: left;
+    }
+    .about-me {
+        opacity: .7;
+    }
+    .about-me span {
+        padding: 0px 0px;
+        font-size: large;
+        letter-spacing: .5px;
+    }
+    .headshot img {
+        border: 3px solid #CFCFCF;
+        box-shadow: inset 10px 0px 30px #CFCFCF;
+        max-width: 250px;
+        height: auto;
+    }
+
+}

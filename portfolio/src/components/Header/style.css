@@ -18,18 +18,20 @@ span a {
     color: #303841;
 }
 
-.nunito {
+.nunito h1{
     font-size: 80px;
     font-weight: bold;
     transition: .2s;
+    width: auto;
 }
 
-.nunito:hover {
-    letter-spacing: 3.4rem;
-    animation: animate 0.5s infinite
+.nunito h1:hover {
+    letter-spacing: 2rem;
+    animation: animate 5s forwards;
+    text-transform: uppercase;
 }
 
-.raleway {
+.raleway a {
     font-size: 50px;
     font-weight: lighter;
     font-family: 'Raleway';
@@ -37,10 +39,12 @@ span a {
     transition-timing-function: ease-in;
 }
 
-.raleway:hover {
+.raleway a:hover {
     letter-spacing: 3rem;
     font-size: 72px;
     font-weight: bolder;
+    color: #303841;
+    text-transform: uppercase;
 }
 
 .header-content {
@@ -59,31 +63,43 @@ span a {
     justify-content: space-between;
     background: transparent ;
 }
-.header-menu ul {
-    list-style-type: none;
-    margin: 0 auto;
-}
-.header-menu ul li {
-    display: inline-block;
-    width: 40rem;
-}
 
 @keyframes animate { 
     0% { 
-        transform: translateY(0px); 
-    } 
-
+        transform: translateY(0%); 
+    }
+    
     50% { 
-        transform: translateX(-20px); 
-    } 
+        transform: translateX(-50%); 
+    }
+
+    81% { 
+        transform: translateX(-150%); 
+    }
+
+    90% {
+        transform: translateX(50%);
+    }
 
     100% { 
-        transform: translateY(0px); 
+        transform: translateY(0%); 
     } 
 }
 
 @media only screen and (max-width: 600px) {
     .header-wrapper {
       padding-bottom: 25px;
+    }
+    .nunito h1:hover {
+        letter-spacing: normal;
+        text-transform: none;
+        animation: none;
+    }
+    .raleway a:hover {
+        letter-spacing: normal;
+        font-size: normal;
+        font-weight: 'lighter';
+        color: #303841;
+        text-transform: none;
     }
   }

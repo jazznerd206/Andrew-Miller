@@ -62,7 +62,7 @@
 .button {
     margin: 10px 5px;
     padding: 10px 10px;
-    background: #CFCFCF;
+    background: none;
 }
 
 .button:hover {

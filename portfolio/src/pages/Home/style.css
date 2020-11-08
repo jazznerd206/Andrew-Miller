@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Josefin%20Sans&display=swap');
 
 body {
     color: #303841;
 }
 
 .home {
-    font-family: 'Nunito';
+    font-family: 'Josefin Sans';
     display: flexbox;
     flex-direction: column;
     background-color: #CFCFCF;

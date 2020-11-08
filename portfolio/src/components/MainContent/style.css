@@ -1,7 +1,10 @@
+
+
 .main-content-wrapper {
     /* color: #f6c90e; */
     background-image: linear-gradient(to top, #303841 75%, #CFCFCF);
     padding-top: 50px;
+    font-family: 'Josefin Sans';
 }
 
 .flex {
@@ -46,7 +49,7 @@
 }
 
 .text-item-left {
-    font-family: 'Raleway';
+    font-family: 'Lora';
     line-height: 1.5;
     letter-spacing: 1.1;
     text-align: left;
@@ -62,7 +65,7 @@
 
 .text-item-right {
     text-align: right;
-    font-family: 'Raleway';
+    font-family: 'Lora';
     line-height: 1.5;
     letter-spacing: 1.1;
     padding: 25px 25px;
@@ -140,6 +143,8 @@ ul li {
 
 .about-me .italic {
     font-style: italic;
+    font-size: larger;
+    text-transform: block;
 }
 
 @media only screen and (max-width: 600px) {

@@ -19,7 +19,14 @@ function Maincontent() {
                     <img src={Headshot}></img>
                 </div>
                 <div className="about-me">
-                    <span>With decades of art industry experience under his belt, Andrew draws inspiration from all perspectives. A simple birdsong turned into a symphony, a grain of wood translated into glass. Applying these philosophies and working methods to development, Andrew has found a voice creating unique, beautiful and immersive experiences for all kinds of users. Combining artistic experience with technical knowledge and an insatiable desire to keep learning, he stays busy exploring new ways to translate his vision into <span className="italic"> useful, meaningful technology </span> to expose to the world.</span>
+                    <span>
+                        <h3>With decades of art industry experience under his belt, Andrew draws inspiration from all perspectives. A simple birdsong turned into a symphony, a grain of wood translated into glass. Applying these philosophies and working methods to development, Andrew has found a voice creating unique and beautiful experiences for all kinds of users.</h3>
+                    </span>
+                    <hr></hr>
+                    <span>
+                        <h2>Combining artistic experience with technical knowledge with an insatiable desire to keep learning, he stays busy exploring new ways to translate his vision into <span className="italic"> useful, meaningful technology </span> to expose to the world.
+                        </h2>
+                    </span>
                 </div>
             </div>
         </div>

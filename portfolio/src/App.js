@@ -1,11 +1,13 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Home from './pages/Home/home';
 import Nav from './components/Nav/Nav.js';
 import Footer from './components/Footer/footer.js';
-import Particles from 'react-particles-js';
-import particlesConfig from './config/configParticles.js';
+import Header from './components/Header/header.js';
+import Contact from './components/Contact/contact.js';
+import Projects from './components/Projects/Projects.js';
+
 
 function App() {
 
@@ -13,14 +15,40 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ position: 'absolute'}}>
+      {/* <div style={{ position: 'absolute'}}>
         <Particles height="100vh" width="100vw" params={particlesConfig} />
-      </div>
-      <Nav />
-        <Router>
-          <Route exact path="/" component={() => <Home/>}/>
+      </div> */}
+      <Router>
+            <div className="nav-container">
+                <div className="nav-left">
+                    <div className="nav-item">
+                        <Link to="/">Home</Link>
+                    </div>
+                    <div className="nav-item">
+                        <Link to="/contact">Contact</Link>
+                    </div>
+                    <div className="nav-item">
+                        <Link to="/projects">Projects</Link>
+                    </div>
+                </div>
+                <div className="nav-right">
+                    <div className="nav-item">
+            
+                    </div>
+                    <div className="nav-item">
+                        
+                    </div>  
+                </div>
+            </div>
+                <Switch>
+                    <Route exact path="/" component={() => <Home />}/>
+                    <Route exact path="/projects" component={Projects}/>
+                    <Route exact path="/contact" component={Contact} />
+                </Switch>
         </Router>
       <Footer />
+
+      
     </div>
   );
 }

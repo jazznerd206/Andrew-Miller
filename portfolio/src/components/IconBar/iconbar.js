@@ -6,7 +6,7 @@ function Iconbar() {
         <div className="iconbar-wrapper">
             <div className="iconbar-list">
                 <ul>
-                    <li><i className="fas fa-coffee fa-sm icon-hide"></i></li>
+                    {/* <li><i className="fas fa-coffee fa-sm icon-hide"></i></li> */}
                     <li><i className="fas fa-coffee fa-lg icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-2x icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-3x"></i></li>
@@ -20,12 +20,12 @@ function Iconbar() {
                     <li><i className="fas fa-coffee fa-3x"></i></li>
                     <li><i className="fas fa-coffee fa-2x icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-lg icon-hide"></i></li>
-                    <li><i className="fas fa-coffee fa-sm icon-hide"></i></li>
+                    {/* <li><i className="fas fa-coffee fa-sm icon-hide"></i></li> */}
                 </ul>
             </div>
             <div className="iconbar-list-flipped">
                 <ul>
-                    <li><i className="fas fa-coffee fa-sm icon-hide"></i></li>
+                    {/* <li><i className="fas fa-coffee fa-sm icon-hide"></i></li> */}
                     <li><i className="fas fa-coffee fa-lg icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-2x icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-3x"></i></li>
@@ -39,7 +39,7 @@ function Iconbar() {
                     <li><i className="fas fa-coffee fa-3x"></i></li>
                     <li><i className="fas fa-coffee fa-2x icon-hide"></i></li>
                     <li><i className="fas fa-coffee fa-lg icon-hide"></i></li>
-                    <li><i className="fas fa-coffee fa-sm icon-hide"></i></li>
+                    {/* <li><i className="fas fa-coffee fa-sm icon-hide"></i></li> */}
                 </ul>
             </div>
             <div className="small-iconbar-list">

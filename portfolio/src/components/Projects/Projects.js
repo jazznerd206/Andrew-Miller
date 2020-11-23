@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './style.css'
-import StudyBuddy from '../../public/images/SBProjPic.PNG';
-import GreenLogo from '../../public/images/GreenLogo.jpg';
-import GreenGrub from '../../public/images/GreenGrub.JPG';
+// import StudyBuddy from '../../public/images/SBProjPic.PNG';
+// import GreenLogo from '../../public/images/GreenLogo.jpg';
+// import GreenGrub from '../../public/images/GreenGrub.JPG';
 import { Tabs, Tab } from 'react-bootstrap';
 
 

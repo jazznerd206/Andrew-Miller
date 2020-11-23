@@ -9,7 +9,7 @@
 }
 .iconbar-list ul {
     margin: 0 auto;
-    padding: 0px 0px 5px 0px;
+    padding: 0px 5px 0px 5px;
     border-bottom: 3px solid black;
     border-right: 3px solid black;
     border-left: 3px solid black;
@@ -20,7 +20,7 @@
 .iconbar-list ul li {
     display: inline-block;
     list-style-type: none;
-    width: 5rem;
+    width: 6rem;
 }
 .iconbar-list-flipped {
     background: radial-gradient(ellipse at top, #949494, transparent 45%);
@@ -36,7 +36,7 @@
     opacity: .5;
     display: inline-block;
     list-style-type: none;
-    width: 5rem;
+    width: 6rem;
 }
 
 .small-iconbar-list {
@@ -45,7 +45,7 @@
 
 @media only screen and (max-width: 600px) {
     .small-iconbar-list {
-        padding-left: 45%;
+        padding-left: 40%;
         display: flex;
     }
     .iconbar-list {
@@ -53,5 +53,19 @@
     }
     .iconbar-list-flipped {
         display: none;
+    }
+  }
+  @media only screen and (max-width: 1400px) {
+    .small-iconbar-list {
+        padding-left: 40%;
+        display: flex;
+    }
+    .iconbar-list {
+        display: none;
+        width: 3rem;
+    }
+    .iconbar-list-flipped {
+        display: none;
+        width: 3rem;
     }
   }

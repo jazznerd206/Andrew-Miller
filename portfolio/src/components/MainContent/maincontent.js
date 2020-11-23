@@ -16,7 +16,7 @@ function Maincontent() {
             </div>
             <div className="flex-item content">
                 <div className="headshot">
-                    <img src={Headshot}></img>
+                    <img src={Headshot} alt="headshot"></img>
                 </div>
                 <div className="about-me">
                     <span>

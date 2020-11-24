@@ -60,7 +60,7 @@ const Contact = () => {
               <p>Have a burning desire to share your favorite novel?</p>
             </span>
             <span>
-              <p>Just leave your name and email and a short message. I'd love to hear from you!!</p>             
+              <p>Leave your name, email and a short message. I'd love to hear from you!!</p>             
             </span>
 
 
@@ -77,7 +77,7 @@ const Contact = () => {
                 <input id="email" type="email" onChange={e => setEmail(e.target.value)} />
               </div>
               <div>
-                <button type="submit" disabled={!name || !email}>Continue to message</button>
+                <button type="submit" disabled={!name && !email}>Continue to message</button>
               </div>
             </form>
         </div>

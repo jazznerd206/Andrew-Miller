@@ -1,105 +1,60 @@
 .header-wrapper {
-    text-align: right;
+    text-align: center;
     line-height: 1.5;
-    height: 5rem;
+    min-height: 100vh;
     width: 100%;
     height: auto;
-    background: transparent;
-    padding-top: 50px;
-    padding-bottom: 100px;
-    /* background-image: url('../..//public/images/ALM_Logo.jpg'); */
-    background-position: top left;
-    background-size: 400px;
-    background-attachment: local;
-    background-repeat: no-repeat;
-}
-
-span a {
-    color: #303841;
-}
-
-.nunito h1{
-    font-size: 80px;
-    font-weight: bold;
-    transition: .2s;
-    width: auto;
-}
-
-.nunito h1:hover {
-    letter-spacing: 2rem;
-    animation: animate 5s forwards;
-    text-transform: uppercase;
-}
-
-.raleway a {
-    font-size: 50px;
-    font-weight: lighter;
-    font-family: 'Raleway';
-    transition: .15s;
-    transition-timing-function: ease-in;
-}
-
-.raleway a:hover {
-    letter-spacing: 3rem;
-    font-size: 72px;
-    font-weight: bolder;
-    color: #303841;
-    text-transform: uppercase;
+    background: radial-gradient(#080808, #00001a);
+    /* padding-top: 50px; */
+    /* padding-bottom: 100px; */
+    color: #add8e6;
 }
 
 .header-content {
+    margin: 0px 25px;
     height: auto;
-    width: 80%;
+    width: 100%;
     top: 15px;
+    text-align: center;
     background: transparent;
     margin: 0 auto;
-    font-size: xx-large;
-}
-
-.header-menu {
-    text-align: left;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    background: transparent ;
 }
 
-@keyframes animate { 
-    0% { 
-        transform: translateY(0%); 
-    }
-    
-    50% { 
-        transform: translateX(-50%); 
-    }
+.header-title {
+    text-align: center;
+    padding: 100px 0px;
+    /* height: 50vh; */
+}
 
-    81% { 
-        transform: translateX(-150%); 
-    }
+.header-message {
+    padding: 10px 10px;
+    font-family: 'Raleway';
+    font-size: xx-large;
+    font-weight: 100;
+}
 
-    90% {
-        transform: translateX(50%);
-    }
+.header-message .name {
+    font-family: 'Julius Sans One';
+    font-size: 70px;
+    font-weight: 500;
+    color: orangered;
+}
 
-    100% { 
-        transform: translateY(0%); 
-    } 
+
+.icons {
+    margin: 0 auto;
+    padding: 25px 0;
 }
 
 @media only screen and (max-width: 600px) {
     .header-wrapper {
       padding-bottom: 25px;
+      text-align: center;
     }
-    .nunito h1:hover {
-        letter-spacing: normal;
-        text-transform: none;
-        animation: none;
-    }
-    .raleway a:hover {
-        letter-spacing: normal;
-        font-size: normal;
-        font-weight: 'lighter';
-        color: #303841;
-        text-transform: none;
+    .header-title h1 {
+        font-size: 1.5em;
     }
   }

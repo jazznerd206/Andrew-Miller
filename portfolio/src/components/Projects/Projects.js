@@ -12,6 +12,16 @@ function Projects() {
   
     return (
       <div className="project-wrapper" id="projects">
+
+        <div className="project-bar">
+          <div className="project-name">
+            <h2>#RareBirdSociety</h2>
+          </div>
+          <div className="open-bar">
+            X
+          </div>
+        </div>
+
         <h1>PROJECTS</h1>
         <Tabs 
           className="project-tabs"

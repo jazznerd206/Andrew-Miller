@@ -1,31 +1,27 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Home from './pages/Home/home';
-import Nav from './components/Nav/Nav.js';
-import Footer from './components/Footer/footer.js';
-import Header from './components/Header/header.js';
-import Contact from './components/Contact/contact.js';
-import Projects from './components/Projects/Projects.js';
+import Switch from 'react-bootstrap/esm/Switch';
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import Contact from '../Contact/contact.js'
+import Projects from '../Projects/Projects.js'
+import Home from '../../pages/Home/home.js'
 
+import './styles.css';
 
-function App() {
-
-  
-
-  return (
-    <div className="App">
-      <Router>
+function Nav() {
+    return (
+    <div>
+        
+        <Router>
             <div className="nav-container">
                 <div className="nav-left">
                     <div className="nav-item">
-                        <Link to="/">Home</Link>
+                    <a><NavLink to="/">Home</NavLink></a>
                     </div>
                     <div className="nav-item">
-                        <Link to="/contact">Contact</Link>
+                        <NavLink to="/contact">Contact</NavLink>
                     </div>
                     <div className="nav-item">
-                        <Link to="/projects">Projects</Link>
+                        <NavLink to="/projects">Projects</NavLink>
                     </div>
                 </div>
                 <div className="nav-right">
@@ -38,16 +34,14 @@ function App() {
                 </div>
             </div>
                 <Switch>
-                    <Route exact path="/" component={() => <Home />}/>
+                    <Route exact path="/home" component={Home}/>
                     <Route exact path="/projects" component={Projects}/>
                     <Route exact path="/contact" component={Contact} />
                 </Switch>
         </Router>
-      <Footer />
-
-      
     </div>
-  );
+        
+    )
 }
 
-export default App;
+export default Nav;

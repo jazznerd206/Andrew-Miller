@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open%20Sans&display=swap');
 
 body {
-    color: #303841;
+    color: #add8e6;
 }
 
 .home {
@@ -15,7 +15,7 @@ body {
     display: flexbox;
     flex-direction: column;
     background-color: #CFCFCF;
-    color: #303841;
+    color: #add8e6;
     min-width: 100%;
     height: auto;
 }

@@ -11,7 +11,8 @@ function Header() {
                 </div>
                 <div className="header-message">
                     <div className="message">
-                        <span>Hey!! I am a full stack web developer. I deliver solutions using innovative technology and creative problem solving.</span>
+                        <div>Hey!! My name is <span className="name">Andrew Miller.</span></div>
+                        <div>I deliver solutions using innovative technology and creative problem solving.</div>
                     </div>
                 </div>
             </div>

@@ -15,9 +15,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <div style={{ position: 'absolute'}}>
-        <Particles height="100vh" width="100vw" params={particlesConfig} />
-      </div> */}
       <Router>
             <div className="nav-container">
                 <div className="nav-left">

@@ -1,6 +1,6 @@
 .contact-form-wrapper {
     color: white;
-    background: linear-gradient(to top, #46515e, #303841);
+    background: linear-gradient(to top, #080808, #00001a);
     width: 100%;
     margin: 0 auto;
     padding: 150px 20px 150px 20px;
@@ -12,11 +12,12 @@
     display: inline-block;
     padding: 25px 30px 25px 30px;
     width: 60%;
-    background-color: #505e6d;
+    background-color: none;
     border-radius: 10px;
 }
 
 .contact-title {
+    color: white;
     height: 100%;
     width: auto;
     vertical-align: middle;
@@ -29,6 +30,10 @@
 
 .contact-message {
     text-align: left;
+}
+
+.input-row input {
+    color: #7e8a97;
 }
 
 .button {

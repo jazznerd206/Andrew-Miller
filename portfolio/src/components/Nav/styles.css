@@ -5,6 +5,7 @@
     height: auto;
     width: 100%;
     background: #00001a;
+    color: #add8e6;
     padding: 0 25px;
 }
 
@@ -25,7 +26,10 @@
     font-size: xx-large;
     width: auto;
     padding: 10px 20px;
-    color: white;
     font-family: 'Open Sans';
     display: inline;
+}
+
+.nav-item a {
+    color: #add8e6;
 }

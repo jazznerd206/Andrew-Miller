@@ -1,6 +1,6 @@
 import React from 'react';
 import Switch from 'react-bootstrap/esm/Switch';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import Contact from '../Contact/contact.js'
 import Projects from '../Projects/Projects.js'
 import Home from '../../pages/Home/home.js'
@@ -15,13 +15,13 @@ function Nav() {
             <div className="nav-container">
                 <div className="nav-left">
                     <div className="nav-item">
-                        <Link to="/">Home</Link>
+                    <a><NavLink to="/">Home</NavLink></a>
                     </div>
                     <div className="nav-item">
-                        <Link to="/contact">Contact</Link>
+                        <NavLink to="/contact">Contact</NavLink>
                     </div>
                     <div className="nav-item">
-                        <Link to="/projects">Projects</Link>
+                        <NavLink to="/projects">Projects</NavLink>
                     </div>
                 </div>
                 <div className="nav-right">

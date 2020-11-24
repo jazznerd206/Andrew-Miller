@@ -60,7 +60,7 @@ const Contact = () => {
               <p>Have a burning desire to share your favorite novel?</p>
             </span>
             <span>
-              <p>Just leave your name and email and a short message. I'd love to hear from you!!</p>             
+              <p>Leave your name, email and a short message. I'd love to hear from you!!</p>             
             </span>
 
 

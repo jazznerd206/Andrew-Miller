@@ -1,5 +1,5 @@
 .contact-form-wrapper {
-    color: white;
+    color: #add8e6;
     background: radial-gradient(#080808, #00001a);
     width: auto;
     margin: 0 auto;
@@ -17,7 +17,7 @@
 }
 
 .contact-title {
-    color: white;
+    color: #add8e6;
     height: 100%;
     width: auto;
     vertical-align: middle;

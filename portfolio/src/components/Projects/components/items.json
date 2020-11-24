@@ -1,0 +1,21 @@
+[
+    {
+        "key": 1,
+        "name": "RareBirdSociety",
+        "url": "https://birdiehunter.herokuapp.com",
+        "code": "https://github.com/jazznerd206/Golf_App"
+    },
+    {
+        "key": 3,
+        "name": "GreenGrub",
+        "url": "https://enigmatic-oasis-28658.herokuapp.com/",
+        "code": "https://github.com/jazznerd206/Green-Grub"
+    },
+    {
+        "key": 3,
+        "name": "StudyBuddy",
+        "url": "https://jlcoden.github.io/Study-Buddy/",
+        "code": "https://github.com/jlcoden/Study-Buddy",
+        "image": "../../../public/images/SBProjPic.PNG"
+    }
+]

@@ -1,28 +1,43 @@
 import React, { useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import './style.css'
+import './style.css';
+import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import Item from './components/Item';
 // import StudyBuddy from '../../public/images/SBProjPic.PNG';
 // import GreenLogo from '../../public/images/GreenLogo.jpg';
 // import GreenGrub from '../../public/images/GreenGrub.JPG';
 import { Tabs, Tab } from 'react-bootstrap';
+import itemsJSON from './components/items.json'
 
 
 function Projects() {
+
     const [key, setKey] = useState('fullStack');
+
+
+    const items = itemsJSON;
+    console.log(items)
   
     return (
-      <div className="project-wrapper" id="projects">
+    <AnimatePresence>
+      <motion.div 
+        className="project-wrapper" 
+        id="projects"
+        initial={{ opacity: 0}}
+        animate={{ opacity: 1 }}
+        >
+        <div className="project-row">
 
-        <div className="project-bar">
-          <div className="project-name">
-            <h2>#RareBirdSociety</h2>
-          </div>
-          <div className="open-bar">
-            X
-          </div>
+        <AnimateSharedLayout>
+          <motion.ul layout initial={{ borderRadius: 25 }}>
+            {items.map(item => (
+              <Item key={item.key} name={item.name} code={item.code} url={item.url} image={item.image}/>
+            ))}
+          </motion.ul>
+        </AnimateSharedLayout>
         </div>
 
-        <h1>PROJECTS</h1>
+        {/* <h1>PROJECTS</h1>
         <Tabs 
           className="project-tabs"
           id="controlled-tab-example"
@@ -101,8 +116,9 @@ function Projects() {
               </div>
             </div>
           </Tab>
-        </Tabs>
-      </div>    
+        </Tabs> */}
+      </motion.div>  
+    </AnimatePresence>  
     );
   }
 

@@ -1,29 +1,74 @@
 .project-wrapper {
-    color: #CFCFCF;
+    /* color: #CFCFCF; */
     padding: 50px 50px;
     background: radial-gradient(#080808, #00001a);
     margin: 0 auto;
     height: auto;
     width: 100%;
-    box-shadow: inset 0px 10px 10px 10px #46515e;
+    /* box-shadow: inset 0px 10px 10px 10px #46515e; */
+}
+ul {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 25px;
+  }
+
+li {
+    /* background-color: rgba(214, 214, 214, 0.5); */
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
 }
 
-.project-bar {
-    margin: 0 auto;
-    width: auto;
-    height: 100px;
-    background-color: paleturquoise;
-    border-radius: 25px;
+.project-row {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+.project-box {
+    margin: 0 auto;
+    width: auto;
+    height: 300px;
+    margin: 10px 10px;
+    border: .5px solid goldenrod;
+    /* border-radius: 25px; */
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     vertical-align: middle;
-    color: black;
+    color: white;
 }
 
 .project-name {
     padding: 30px 25px;
 
+}
+
+.title_StudyBuddy {
+    height: 300px;
+    background-image: url('../../public/images/SBProjPic.PNG');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.title_GreenGrub {
+    height: 300px;
+    background-image: url('../../public/images/GreenGrub.JPG');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.title_RareBirdSociety {
+    height: 300px;
+    background-image: url('../../public/images/RBSTN.JPG');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 

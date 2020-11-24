@@ -1,29 +1,23 @@
-import React, { useState, useEffect} from 'react';
-import IconBar from '../IconBar/iconbar.js';
+import React from 'react';
 import { motion } from 'framer-motion';
 import './style.css';
 
 function Header() {
 
-    const [position, setPosition] = useState({x: 0, y: 0});
-    console.log(position);
-
-    useEffect(() => {
-        addEventListeners();
-        return () => removeEventListeners();
-    }, []);
-    
-    const addEventListeners = () => {
-        document.addEventListener("mousemove", onMouseMove);
-    };
-    
-    const removeEventListeners = () => {
-        document.removeEventListener("mousemove", onMouseMove);
-    };
-    
-    const onMouseMove = (e) => {
-        setPosition({x: e.clientX, y: e.clientY});
-    };
+    // const [position, setPosition] = useState({x: 0, y: 0});
+    // useEffect(() => {
+    //     addEventListeners();
+    //     return () => removeEventListeners();
+    // }, []);
+    // const addEventListeners = () => {
+    //     document.addEventListener("mousemove", onMouseMove);
+    // };
+    // const removeEventListeners = () => {
+    //     document.removeEventListener("mousemove", onMouseMove);
+    // }; 
+    // const onMouseMove = (e) => {
+    //     setPosition({x: e.clientX, y: e.clientY});
+    // };
 
 
     return (

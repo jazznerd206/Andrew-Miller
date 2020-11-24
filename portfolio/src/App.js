@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
-import Home from './pages/Home/home';
-import Nav from './components/Nav/Nav.js';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Home from './pages/Home/home.js';
 import Footer from './components/Footer/footer.js';
-import Header from './components/Header/header.js';
 import Contact from './components/Contact/contact.js';
 import Projects from './components/Projects/Projects.js';
 

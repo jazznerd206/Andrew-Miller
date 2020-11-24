@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import '../style.css'
 
 function Content(props) {
 
-    const [isHovered, setHovered] = useState(false);
+    // const [isHovered, setHovered] = useState(false);
 
     return (
         <motion.div 

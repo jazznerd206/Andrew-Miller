@@ -70,7 +70,7 @@ function Header() {
                 
             </div>
     )
-    } else if (601 < width < 1199) {
+    } else if (width > 600) {
         return (
             <div className="header-wrapper">
                 <div className="header-content">
@@ -127,20 +127,20 @@ function Header() {
                                 Hey!!
                             </motion.p>                        
                             <motion.p 
-                                animate={{ x: -10, fontSize: '25px' }} 
+                                animate={{ x: -10, fontSize: '35px' }} 
                                 transition={{ duration: .5 }}
                             >
                                 My name is
                             </motion.p>
                             <motion.h2 
                                 className="name"
-                                animate={{fontSize: '30px', color: '#add8e6'}} 
+                                animate={{fontSize: '85px', color: '#add8e6'}} 
                                 transition={{fontSize: { type: 'spring', bounce: .5 }, color: {type: 'spring', bounce: .5 }, delay: .5, duration: 1}}
                             >
                                 Andrew Miller
                             </motion.h2>
                             <motion.p 
-                                animate={{ x: 10 }} 
+                                animate={{ x: 0 }} 
                                 transition={{ duration: 1 }}
                             >
                                 I deliver solutions using innovative technology and creative problem solving.

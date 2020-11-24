@@ -10,7 +10,7 @@
 
 .project-bar {
     margin: 0 auto;
-    width: 80%;
+    width: auto;
     height: 100px;
     background-color: paleturquoise;
     border-radius: 25px;
@@ -18,10 +18,12 @@
     flex-direction: row;
     justify-content: space-between;
     vertical-align: middle;
+    color: black;
 }
 
 .project-name {
     padding: 30px 25px;
+
 }
 
 

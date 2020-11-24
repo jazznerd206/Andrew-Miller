@@ -27,15 +27,7 @@ function App() {
                         <Link to="/projects">Projects</Link>
                     </div>
                 </div>
-                <div className="nav-right">
-                    <div className="nav-item">
-            
-                    </div>
-                    <div className="nav-item">
-                        
-                    </div>  
                 </div>
-            </div>
                 <Switch>
                     <Route exact path="/">
                         <Home />

@@ -16,7 +16,6 @@ body {
     flex-direction: column;
     background-color: #CFCFCF;
     color: #add8e6;
-    min-width: 100%;
     height: auto;
 }
 .main {

@@ -39,3 +39,9 @@
 .nav-item a {
   color: #add8e6;
 }
+
+@media only screen and (max-width: 600px) {
+  .nav-item {
+    font-size: larger;
+  }
+}

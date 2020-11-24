@@ -25,7 +25,7 @@ function Projects() {
             animate={{ opacity: 1 }}
           >
             {items.map(item => (
-              <Item key={item.key} name={item.name} code={item.code} url={item.url} image={item.image}/>
+              <Item key={item.key} dataKey={item.key} name={item.name} code={item.code} url={item.url} image={item.image}/>
             ))}
           </motion.ul>
         </AnimateSharedLayout>

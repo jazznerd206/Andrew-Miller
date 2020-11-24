@@ -11,7 +11,7 @@ function Item(props) {
     return (
         <motion.li layout onClick={toggleOpen} initial={{ borderRadius: 10 }}>
             <motion.div className={`title_${props.name}`} layout></motion.div>            
-            <AnimatePresence>{isOpen && <Content key={props.key} name={props.name} code={props.code} url={props.url}/>}</AnimatePresence>
+            <AnimatePresence>{isOpen && <Content dataKey={props.dataKey} name={props.name} code={props.code} url={props.url}/>}</AnimatePresence>
         </motion.li>
     );
 }

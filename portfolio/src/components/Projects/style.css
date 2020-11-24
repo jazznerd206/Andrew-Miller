@@ -1,12 +1,43 @@
 .project-wrapper {
     color: #CFCFCF;
     padding: 50px 50px;
-    background: #303841;
+    background: radial-gradient(#080808, #00001a);
     margin: 0 auto;
     height: auto;
     width: 100%;
     box-shadow: inset 0px 10px 10px 10px #46515e;
 }
+
+.project-bar {
+    margin: 0 auto;
+    width: 80%;
+    height: 100px;
+    background-color: paleturquoise;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    vertical-align: middle;
+}
+
+.project-name {
+    padding: 30px 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .project-tabs {
     border-top-right-radius: 25px;

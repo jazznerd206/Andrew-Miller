@@ -77,7 +77,7 @@ const Contact = () => {
                 <input id="email" type="email" onChange={e => setEmail(e.target.value)} />
               </div>
               <div>
-                <button type="submit" disabled={!name || !email}>Continue to message</button>
+                <button type="submit" disabled={!name && !email}>Continue to message</button>
               </div>
             </form>
         </div>

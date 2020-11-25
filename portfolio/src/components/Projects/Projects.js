@@ -3,7 +3,7 @@ import React from 'react';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import Item from './components/Item';
 import itemsJSON from './components/items.json';
-import './style.css';
+import './styles.css';
 
 
 function Projects() {
@@ -25,7 +25,7 @@ function Projects() {
             animate={{ opacity: 1 }}
           >
             {items.map(item => (
-              <Item key={item.key} dataKey={item.key} name={item.name} code={item.code} url={item.url} image={item.image}/>
+              <Item key={item.key} dataKey={item.key} name={item.name} code={item.code} url={item.url} image={item.image} stack={item.techStack} purpose={item.purpose} contribution={item.contribution}/>
             ))}
           </motion.ul>
         </AnimateSharedLayout>

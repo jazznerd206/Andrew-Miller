@@ -3,19 +3,28 @@
         "key": 1,
         "name": "RareBirdSociety",
         "url": "https://birdiehunter.herokuapp.com",
-        "code": "https://github.com/jazznerd206/Golf_App"
+        "code": "https://github.com/jazznerd206/Golf_App",
+        "techStack": ["NodeJS", "Express", "MySQL", "Sequelize", "D3JS", "React", "ContextAPI"],
+        "purpose": "A place to track scores and statistics for golf. Sharpen your game by deepening knowledge of your mental process before your swing.",
+        "contribution": "Developed full stack, front and back end. This is a passion project of mine, I use it to develop my front end skills."
     },
     {
         "key": 2,
         "name": "GreenGrub",
         "url": "https://enigmatic-oasis-28658.herokuapp.com/",
-        "code": "https://github.com/jazznerd206/Green-Grub"
+        "code": "https://github.com/jazznerd206/Green-Grub",
+        "techStack": ["NodeJS", "Express", "MongoDB", "Mongoose", "React", "PassportJS", "GoogleNews API", "Spoonacular API"],
+        "purpose": "A recipe curation app, using SpoonacularAPI, to provide recipes based on user diet filters. Also curates articles based on common diet types from GoogleNews API.",
+        "contribution": "Team leader of four developers to project delivery. Personally responsible for database design and authentication package using React Redux and PassportJS"
     },
     {
         "key": 3,
         "name": "StudyBuddy",
         "url": "https://jlcoden.github.io/Study-Buddy/",
         "code": "https://github.com/jlcoden/Study-Buddy",
-        "image": "../../../public/images/SBProjPic.PNG"
+        "image": "../../../public/images/SBProjPic.PNG",
+        "techStack": ["NodeJS", "Express", "Express Handlebars", "Firebase", "PassportJS", "GoogleMaps API"],
+        "purpose": "StudyBuddy provides a place for students and teachers to organize study sessions. Select meeting time, date and location and submit to study group for approval. GoogleMaps API provides mapped location data for meetup location.",
+        "contribution": "Team leader of four developers to project delivery. Personally responsible for UI design."
     }
 ]

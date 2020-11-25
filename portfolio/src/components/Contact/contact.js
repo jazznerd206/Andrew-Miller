@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { motion, AnimatePresence } from 'framer-motion';
 import './style.css';
 
 const Contact = () => {
@@ -41,11 +42,21 @@ const Contact = () => {
     };
 
     return (
+  <AnimatePresence
+    layout 
+    initial={{ opacity: .5}}
+    animate={{ opacity: 1 }}
+  >
     <div>
       {/* First section of the form */}
       {formIndex === 0 && (
       <div className="contact-form-wrapper" id="contact">
-        <div className="form-container">
+        <motion.div 
+          className="form-container"
+          layout 
+          initial={{ opacity: 0}}
+          animate={{ opacity: 1 }}
+        >
           <div className="contact-title">
             <span className="nunito">
               <i className="fas fa-comments"></i>
@@ -80,14 +91,19 @@ const Contact = () => {
                 <button type="submit" disabled={!name && !email}>Continue to message</button>
               </div>
             </form>
-        </div>
+        </motion.div>
       </div>
       )}
 
       {/* Second section of the form */}
       {formIndex === 1 && (
       <div className="contact-form-wrapper">
-        <div className="form-container">
+        <motion.div 
+          className="form-container"
+          layout 
+          initial={{ opacity: .5}}
+          animate={{ opacity: 1 }}
+        >
           <form onSubmit={handleFormSubmit} autoComplete="off">
             <p>Your message:</p>
             <div className="input-row">
@@ -98,7 +114,7 @@ const Contact = () => {
               <button type="submit" disabled={!message}>One more step!!</button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
       )}
 
@@ -106,19 +122,25 @@ const Contact = () => {
       
       {formIndex === 2 && (
       <div className="contact-form-wrapper">
-        <div className="form-container">
+        <motion.div 
+          className="form-container"
+          layout 
+          initial={{ opacity: .5}}
+          animate={{ opacity: 1 }}
+        >
           <div>
             <p>Thanks!</p>
             <button type="button" onClick={submitRequest}>
               Send
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
         
       )}
 
       </div>
+    </AnimatePresence>
       );
     };
 

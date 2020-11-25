@@ -1,0 +1,17 @@
+.graphics-wrapper {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.image {
+    width: 250px;
+    height: 250px;
+    background: grey;
+}

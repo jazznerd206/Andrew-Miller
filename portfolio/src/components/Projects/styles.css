@@ -1,0 +1,121 @@
+.project-wrapper {
+    padding: 50px 50px;
+    background: radial-gradient(#080808, #00001a);
+    margin: 0 auto;
+    height: auto;
+    width: 100%;
+}
+ul {
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    /* padding: 5px; */
+    border-radius: 25px;
+}
+
+li {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.project-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.project-box {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    margin: 10px 10px;
+    border: .5px solid goldenrod;
+    /* border-radius: 25px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    vertical-align: middle;
+    color: white;
+}
+
+.data {
+    padding: 30px 25px;
+}
+
+.title_StudyBuddy {
+    height: 300px;
+    background-image: url('../../public/images/SBProjPic.PNG');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.title_GreenGrub {
+    height: 300px;
+    background-image: url('../../public/images/GreenGrub.JPG');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.title_RareBirdSociety {
+    height: 300px;
+    background-image: url('../../public/images/RBSTN.JPG');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.project-row {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* border: .5px solid goldenrod; */
+}
+
+.row-member {
+    padding: 10px 5px;
+    width: 33%;
+    border: .5px solid goldenrod;
+}
+
+.tech-list {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.tech-list-item {
+    height: auto;
+    width: auto;
+    margin: 0px 0px;
+    padding: 5px 0px;
+}
+
+
+@media only screen and (max-width: 600px) {
+    li {
+        padding: 0px 0px;
+    }
+    .project-wrapper {
+        padding: 2px 2px;
+    }
+    .project-box {
+        margin: 0px 0px;
+    }
+    .row-member {
+        padding: 1px 1px;
+    }
+    .project-row {
+        font-size: small;
+    }
+  }
+
+
+
+

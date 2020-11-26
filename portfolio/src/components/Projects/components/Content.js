@@ -26,7 +26,7 @@ function Content(props) {
             </div>
             <div className="project-row">
               <div className="tech-stack row-member">
-                <ul className="tech-list"><p>Tech Stack:</p>
+                <ul className="tech-title"><p>Tech Stack:</p>
                   {props.stack.map((item, index) => (
                     <li className="tech-list-item" key={index}>
                       {item}
@@ -35,12 +35,12 @@ function Content(props) {
                 </ul>
               </div>
               <div className="project-purpose row-member">
-                <p>Project Purpose</p>
-                <p>{props.purpose}</p>
+                <p className="tech-title">Project Purpose</p>
+                <p className="tech-list-item">{props.purpose}</p>
               </div>
               <div className="personal-contribution row-member">
-                <p>My Contribution</p>
-                <p>{props.contribution}</p>
+                <p className="tech-title">My Contribution</p>
+                <p className="tech-list-item">{props.contribution}</p>
               </div>
             </div>
             

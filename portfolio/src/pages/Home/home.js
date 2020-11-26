@@ -10,11 +10,14 @@ function Home() {
     return (
         <div>
             <div style={{ position: 'absolute', pointerEvents: 'none', overflow: 'none'}}>
-                <Particles height="100%" width="100%" params={particlesConfig} />
+                <Particles height="auto" width="100%" params={particlesConfig} style={{pointerEvents: 'none'}}/>
             </div>
-            <div className="home">
+            <div className="header">
                 <Header />
-            </div>            
+            </div>   
+            {/* <div className="graphics">
+                <Graphics />
+            </div>             */}
         </div>
     )
 }

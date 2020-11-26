@@ -38,7 +38,7 @@ li {
     flex-direction: column;
     justify-content: space-between;
     vertical-align: middle;
-    color: white;
+    color: #add8e6;
 }
 
 .data {
@@ -82,12 +82,14 @@ li {
     border: .5px solid goldenrod;
 }
 
-.tech-list {
+.tech-title {
     width: auto;
     display: flex;
     flex-direction: column;
     padding: 5px;
     border-radius: 25px;
+    font-weight: 600;
+    font-size: larger;
 }
 
 .tech-list-item {
@@ -95,6 +97,8 @@ li {
     width: auto;
     margin: 0px 0px;
     padding: 5px 0px;
+    font-weight: 300;
+    font-size: large;
 }
 
 

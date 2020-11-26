@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.css'
 
 function Graphics() {
     return (
@@ -6,7 +7,7 @@ function Graphics() {
             <div className="row">
                 <div className="row-left">
                     <div className="text">
-                        <p>SHORT LINE OF TEXT</p>
+                        <p>Who am I?</p>
                     </div>
                 </div>
                 <div className="row-right">
@@ -15,7 +16,6 @@ function Graphics() {
                     </div>
                 </div>
             </div>
-            
         </div>
     )
 }

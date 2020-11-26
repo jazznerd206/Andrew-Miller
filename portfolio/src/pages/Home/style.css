@@ -10,9 +10,9 @@ body {
     color: #add8e6;
 }
 
-.home {
+.header {
     font-family: 'Josefin Sans';
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     background-color: #CFCFCF;
     color: #add8e6;

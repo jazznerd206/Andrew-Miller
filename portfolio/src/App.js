@@ -6,6 +6,7 @@ import Home from './pages/Home/home.js';
 import Footer from './components/Footer/footer.js';
 import Contact from './components/Contact/contact.js';
 import Projects from './components/Projects/Projects.js';
+// import Graphics from './components/Graphics/Graphics.js';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                 <Switch>
                     <Route exact path="/">
                         <Home />
+                        {/* <Graphics /> */}
                     </Route>
                     <Route exact path="/projects">
                         <Projects />

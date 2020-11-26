@@ -1,16 +1,40 @@
 .graphics-wrapper {
+    background: radial-gradient(#080808, #00001a);
+    padding-top: 200px;
+    width: 100%;
+    margin: 0 auto;
     height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .row {
+    width: auto;
     height: auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.image {
+.row-left {
+    display: flex;
+    justify-content: right;
+    padding-right: 50px;
+}
+
+.row-left .text {
+    width: 100%;
+    text-align: right;
+}
+
+.row-right {
+    display: flex;
+    justify-content: right;
+    padding-left: 50px;
+}
+
+.row-right .image {
     width: 250px;
     height: 250px;
     background: grey;

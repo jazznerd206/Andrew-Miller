@@ -6,6 +6,7 @@ import Home from './pages/Home/home.js';
 import Footer from './components/Footer/footer.js';
 import Contact from './components/Contact/contact.js';
 import Projects from './components/Projects/Projects.js';
+import Nav from './components/Nav/Nav.js';
 // import Graphics from './components/Graphics/Graphics.js';
 
 
@@ -15,8 +16,9 @@ function App() {
 
   return (
     <div className="App">
+    <Nav />
       <Router>
-            <div className="nav-container">
+            {/* <div className="nav-container">
                 <div className="nav-left">
                     <div className="nav-item">
                         <Link to="/">Home</Link>
@@ -28,7 +30,7 @@ function App() {
                         <Link to="/projects">Projects</Link>
                     </div>
                 </div>
-                </div>
+            </div> */}
                 <Switch>
                     <Route exact path="/">
                         <Home />

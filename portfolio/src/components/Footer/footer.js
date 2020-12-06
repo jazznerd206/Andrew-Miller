@@ -5,7 +5,7 @@ function Footer() {
     return (
         <div className="footer-wrapper">
             <div className="title">
-                <h1> -- Check me out online -- </h1>
+                <h1>Connect, Follow and More...</h1>
             </div>
             <div className="footer-layer-one">
                 <a target="_blank" href="https://github.com/jazznerd206"  rel="noopener noreferrer">

@@ -9,6 +9,7 @@ import './styles.css';
 function Projects() {
 
     const items = itemsJSON;
+    console.log(items)
   
     return (
     <AnimatePresence>

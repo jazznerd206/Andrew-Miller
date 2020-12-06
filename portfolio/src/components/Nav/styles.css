@@ -1,0 +1,12 @@
+.navbar-expand-lg {
+    background-color: #00001a;
+}
+
+.navbar .navbar-collapse .navbar-nav {
+    background: white;
+    height: auto;
+}
+
+.nav-link {
+    background-color: #00001a;
+}

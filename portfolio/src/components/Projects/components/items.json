@@ -26,5 +26,15 @@
         "techStack": ["NodeJS", "Express", "Express Handlebars", "Firebase", "PassportJS", "GoogleMaps API"],
         "purpose": "StudyBuddy provides a place for students and teachers to organize study sessions. Select meeting time, date and location and submit to study group for approval. GoogleMaps API provides mapped location data for meetup location.",
         "contribution": "Team leader of four developers to project delivery. Personally responsible for UI design."
+    },
+    {
+        "key": 4,
+        "name": "All Booked Up",
+        "url": "https://frozen-wave-88611.herokuapp.com/",
+        "code": "https://github.com/jazznerd206/Google-Books-Search-Engine",
+        "image": "../../../public/images/GoogleBooks.JPG",
+        "techStack": ["NodeJS", "Express", "React", "MongoDB", "Mongoose", "Google Books API"],
+        "purpose": "This project exposes a search function for the Google Books API combined with a database to save a list of favorites.",
+        "contribution": "Full stack development, solo project"
     }
 ]

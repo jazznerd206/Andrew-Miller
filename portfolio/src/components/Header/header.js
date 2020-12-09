@@ -58,11 +58,14 @@ function Header() {
                                 Andrew Miller
                             </motion.h2>
                             <motion.p 
-                                animate={{ x: 100 }} 
-                                transition={{ duration: 1 }}
+                                // animate={{ x: 100 }} 
+                                // transition={{ duration: 1 }}
                             >
                                 I deliver solutions using innovative technology and creative problem solving.
                             </motion.p>
+                            <button>
+                                Learn More
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -104,6 +107,9 @@ function Header() {
                             >
                                 I deliver solutions using innovative technology and creative problem solving.
                             </motion.p>
+                            <button>
+                                Learn More
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -145,6 +151,9 @@ function Header() {
                             >
                                 I deliver solutions using innovative technology and creative problem solving.
                             </motion.p>
+                            <button>
+                                Learn More
+                            </button>
                         </div>
                     </div>
                 </div>

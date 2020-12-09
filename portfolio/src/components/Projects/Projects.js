@@ -17,6 +17,10 @@ function Projects() {
         className="project-wrapper" 
         id="projects"
         >
+          <div className="bio-title">
+            projects
+          </div>
+          
         <div className="project-row">
 
         <AnimateSharedLayout>

@@ -14,7 +14,7 @@ body {
     font-family: 'Josefin Sans';
     display: flex;
     flex-direction: column;
-    background-color: #CFCFCF;
+    /* background-color: #CFCFCF; */
     color: #add8e6;
     height: auto;
 }

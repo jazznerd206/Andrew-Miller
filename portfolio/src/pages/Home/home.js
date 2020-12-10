@@ -16,10 +16,10 @@ function Home() {
             <div className="header">
                 <Header />
             </div>
-            <div className="header">
+            <div className="header" id="about">
                 <About />
             </div>
-            <div className="header">
+            <div className="header" id="projects">
                 <Projects />
             </div>
             

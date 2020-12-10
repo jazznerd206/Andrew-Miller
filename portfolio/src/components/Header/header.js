@@ -63,11 +63,11 @@ function Header() {
                             >
                                 I deliver solutions using innovative technology and creative problem solving.
                             </motion.p>
-                            <button>
-                                Learn More
-                            </button>
                         </div>
                     </div>
+                    <a href="#about">
+                        Learn more
+                    </a>
                 </div>
                 
                 

@@ -1,5 +1,6 @@
 import React from 'react';
-import './styles.css'
+import './styles.css';
+import Resume from '../../Documents/Resume.pdf';
 
 function About() {
     return (
@@ -15,14 +16,16 @@ function About() {
                 </div>
                 <div className="bio-content">
                     <p>I believe in delivering meaningful, impactful technology paired with simple, clean code.</p>
-                    <p>During my professional career, I always searched for ways to enhance existing processes or otherwise streamline production and impact quality. This quickly built a passion for technology, first as a user, now as a developer.</p>
-                    <p>Outside of the foxhole, I seek opportunities to improve myself and others and assist and ally with other to overcome real world challenges. </p>
+                    <p>I have always searched for ways to enhance existing processes or otherwise streamline production and impact quality. This built a passion for technology, first as a user, now as a developer.</p>
+                    <p>I seek opportunities and challenges to improve myself and assist and ally with others to approach real world problems with innovative solutions. </p>
                 </div>
             </div>
             <div className="flex-row">
-                <button>
+                <a
+                    href={Resume} type="application/pdf" without rel="noopener noreferrer" target="_blank"
+                >
                     Resume
-                </button>
+                </a>
             </div>
         </div>
     )

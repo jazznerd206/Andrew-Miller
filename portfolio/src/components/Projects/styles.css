@@ -4,7 +4,7 @@
     margin: 0 auto;
     height: auto;
     width: 100%;
-    clip-path: polygon(10% 0,90% 0,100% 90%,0 100%);
+    /* clip-path: polygon(10% 0,90% 0,100% 100%,0 100%); */
     padding-bottom: 10%;
 }
 ul {
@@ -34,7 +34,7 @@ li {
     width: auto;
     height: auto;
     margin: 10px 10px;
-    border: .5px solid goldenrod;
+    /* border: .5px solid goldenrod; */
     /* border-radius: 25px; */
     display: flex;
     flex-direction: column;
@@ -43,8 +43,10 @@ li {
     color: #add8e6;
 }
 
-.data {
-    padding: 30px 25px;
+.data a {
+    /* padding: 30px 25px; */
+    /* color: blue; */
+    font-size: xx-large;
 }
 
 .title_StudyBuddy {
@@ -83,13 +85,21 @@ li {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    text-align: right;
+    padding-top: 50px;
     /* border: .5px solid goldenrod; */
 }
 
+
 .row-member {
-    padding: 10px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 25px;
     width: 33%;
-    border: .5px solid goldenrod;
+    /* background: white; */
+    /* color: black; */
+    /* border: .5px solid goldenrod; */
 }
 
 .tech-title {
@@ -99,7 +109,8 @@ li {
     padding: 5px;
     border-radius: 25px;
     font-weight: 600;
-    font-size: larger;
+    font-size: x-large;
+    color: black;
 }
 
 .tech-list-item {
@@ -109,6 +120,7 @@ li {
     padding: 5px 0px;
     font-weight: 300;
     font-size: large;
+    color: black;
 }
 
 

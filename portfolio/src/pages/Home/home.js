@@ -19,7 +19,7 @@ function Home() {
             <div className="header" id="about">
                 <About />
             </div>
-            <div className="header" id="projects">
+            <div className="projects" id="projects">
                 <Projects />
             </div>
             

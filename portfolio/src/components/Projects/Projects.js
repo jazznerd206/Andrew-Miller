@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Zoom from 'react-reveal/Zoom';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import Item from './components/Item';
 import itemsJSON from './components/items.json';
@@ -30,7 +30,17 @@ function Projects() {
             animate={{ opacity: 1 }}
           >
             {items.map(item => (
-              <Item key={item.key} dataKey={item.key} name={item.name} code={item.code} url={item.url} image={item.image} stack={item.techStack} purpose={item.purpose} contribution={item.contribution}/>
+              <Zoom left>
+              <Item 
+                key={item.key} 
+                dataKey={item.key} 
+                name={item.name} 
+                code={item.code} 
+                url={item.url} 
+                image={item.image} 
+                stack={item.techStack} 
+                purpose={item.purpose} 
+                contribution={item.contribution}/></Zoom>
             ))}
           </motion.ul>
         </AnimateSharedLayout>

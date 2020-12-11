@@ -107,9 +107,9 @@ function Header() {
                             >
                                 I deliver solutions using innovative technology and creative problem solving.
                             </motion.p>
-                            <button>
+                            <a>
                                 Learn More
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -151,9 +151,9 @@ function Header() {
                             >
                                 I deliver solutions using innovative technology and creative problem solving.
                             </motion.p>
-                            <button>
+                            <a>
                                 Learn More
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>

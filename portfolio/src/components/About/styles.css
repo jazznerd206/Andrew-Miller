@@ -1,4 +1,5 @@
 .bio-container {
+    background: linear-gradient(to bottom, #00001a, #add8e6);
     padding: 0px 25px;
     display: flex;
     flex-direction: column;
@@ -29,10 +30,36 @@
     text-align: left;
     font-size: 18px;
     width: 50%;
-    padding: 0px 25px;
+    /* padding: 0px 25px; */
 }
 
 .bio-content p {
     font-size: 26px;
     padding-bottom: 25px;
 }
+
+@media only screen and (max-width: 600px) {
+    .flex-row {
+        display: flex;
+        flex-direction: column;
+    }
+    .bio-image {
+        width: 100%;
+    }
+    .bio-content {
+        width: 100%;
+    }
+    .bio-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 250px;
+    }
+    .dark-text {
+        color: black;
+    }
+    .header-content a {
+        color: black;
+        padding: 0px 2px;
+        text-decoration: underline goldenrod;
+    }
+  }

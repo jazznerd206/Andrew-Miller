@@ -2,11 +2,12 @@
     background-color: #00001a;
 }
 
-.navbar .navbar-collapse .navbar-nav {
-    background: white;
+.navbar-collapse {
+    background: #00001a;
     height: auto;
+    z-index: 1000;    
 }
 
-.nav-link {
-    background-color: #00001a;
+.nav-link a {
+    color: black;
 }

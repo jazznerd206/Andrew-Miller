@@ -20,7 +20,9 @@
     color: #add8e6;
     height: 100%;
     width: auto;
+    max-width: 1000px;
     vertical-align: middle;
+    font-size: 2em;
 }
 
 .contact-email {
@@ -28,12 +30,49 @@
     width: auto;
 }
 
-.contact-message {
-    text-align: left;
-}
-
 .input-row input {
     color: #7e8a97;
+    max-width: 400px;
+    font-size: x-large;
+}
+.input-row input:focus {
+    color: white;
+    max-width: 400px;
+    font-size: xx-large;
+}
+
+.input-row label {
+    color: #7e8a97;
+    padding-right: 15px;
+    font-size: large;
+    height: 60px;
+}
+
+.message-row {
+    width: auto;
+}
+
+.message-row input {
+    color: #7e8a97;
+    /* max-width: 400px; */
+    font-size: x-large;
+}
+.message-row input:focus {
+    color: white;
+    /* max-width: 400px; */
+    font-size: xx-large;
+}
+
+.message-row label {
+    color: #7e8a97;
+    padding-right: 15px;
+    font-size: xx-large;
+    height: 60px;
+}
+
+.message-title {
+    line-height: 2;
+    font-size: 2em;
 }
 
 .button {

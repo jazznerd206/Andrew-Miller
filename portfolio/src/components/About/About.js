@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import Resume from '../../Documents/Resume.pdf';
+import Resume from '../../Documents/Resume2020ALM.pdf';
 import { Zoom, Fade, Bounce } from 'react-reveal';
 
 function About() {

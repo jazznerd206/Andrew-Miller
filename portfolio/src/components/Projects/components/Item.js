@@ -4,6 +4,7 @@ import Content from './Content.js';
 import '../styles.css';
 
 function Item(props) {
+    
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleOpen = () => setIsOpen(!isOpen);

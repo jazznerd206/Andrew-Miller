@@ -52,6 +52,7 @@
     .bio-container {
         display: flex;
         flex-direction: column;
+        padding-top: 50px;
         padding-bottom: 250px;
     }
     .dark-text {

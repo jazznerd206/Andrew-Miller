@@ -29,8 +29,8 @@
     },
     {
         "key": 4,
-        "name": "All Booked Up",
-        "url": "https://frozen-wave-88611.herokuapp.com/",
+        "name": "NetBoox",
+        "url": "https://netboox.herokuapp.com/",
         "code": "https://github.com/jazznerd206/Google-Books-Search-Engine",
         "image": "../../../public/images/GoogleBooks.JPG",
         "techStack": ["NodeJS", "Express", "React", "MongoDB", "Mongoose", "Google Books API"],

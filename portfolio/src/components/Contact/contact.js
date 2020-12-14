@@ -62,15 +62,6 @@ const Contact = () => {
               <i className="fas fa-comments"></i>
             </span>
             <span>
-              <p>Have a question?</p>
-            </span>
-            <span>
-              <p>Have a critique?</p>
-            </span>
-            <span>
-              <p>Have a burning desire to share your favorite novel?</p>
-            </span>
-            <span>
               <p>Leave your name, email and a short message. I'd love to hear from you!!</p>             
             </span>
 
@@ -88,7 +79,7 @@ const Contact = () => {
                 <input id="email" type="email" onChange={e => setEmail(e.target.value)} />
               </div>
               <div>
-                <button type="submit" disabled={!name && !email}>Continue to message</button>
+                <button className="button" type="submit" disabled={!name && !email}>Continue to message</button>
               </div>
             </form>
         </motion.div>
@@ -105,13 +96,18 @@ const Contact = () => {
           animate={{ opacity: 1 }}
         >
           <form onSubmit={handleFormSubmit} autoComplete="off">
-            <p>Your message:</p>
-            <div className="input-row">
-              <label htmlFor="message">Message</label>
+            <div className="message-title">
+              <div>MESSAGE FROM:</div>
+              <div>{name.toUpperCase()}</div>  
+            </div>
+            
+
+            <div className="message-row">
+              {/* <label htmlFor="message">Message</label> */}
               <input id="message" type="text" onChange={e => setMessage(e.target.value)} />
             </div>
             <div>
-              <button type="submit" disabled={!message}>One more step!!</button>
+              <button className="button" type="submit" disabled={!message}>One more step!!</button>
             </div>
           </form>
         </motion.div>
@@ -129,8 +125,18 @@ const Contact = () => {
           animate={{ opacity: 1 }}
         >
           <div>
-            <p>Thanks!</p>
-            <button type="button" onClick={submitRequest}>
+            <div className="review-box text-left">
+              <h1>Please confirm your information and message.</h1>
+              <div className="sender">
+                <p>TO: <h3>Andrew Miller</h3></p>
+                <p>FROM: <h3>{name}</h3></p>
+                <p>@: <h3>{email.toLowerCase()}</h3></p>
+              </div>
+              <div className="message">
+                <p>Message: <h3>{message}</h3></p>
+              </div>
+            </div>
+            <button className="button" type="button" onClick={submitRequest}>
               Send
             </button>
           </div>

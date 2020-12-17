@@ -38,10 +38,17 @@
     padding-bottom: 25px;
 }
 
+.about-content a {
+    width: auto;
+    display: inline;
+    height: auto;
+}
+
 @media only screen and (max-width: 600px) {
     .flex-row {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
     }
     .bio-image {
         width: 100%;

@@ -109,159 +109,26 @@ li:hover {
 
 
 
-
-
-
-
-
-
-
-.project-wrapper {
-    padding: 50px 50px;
-    background: linear-gradient(#666675, #ccccd1);
-    margin: 0 auto;
-    height: auto;
-    width: 100%;
-    /* clip-path: polygon(10% 0,90% 0,100% 100%,0 100%); */
-    padding-bottom: 10%;
-}
-/* .project-row ul {
-    width: 1000px;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    border-radius: 25px;
-}
-
-.project-row li {
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    cursor: pointer;
-} */
-
-.project-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.project-box {
-    margin: 0 auto;
-    width: auto;
-    height: auto;
-    margin: 10px 10px;
-    /* border: .5px solid goldenrod; */
-    /* border-radius: 25px; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    vertical-align: middle;
-    color: #add8e6;
-}
-
-.data a {
-    /* padding: 30px 25px; */
-    /* color: blue; */
-    font-size: xx-large;
-}
-
-.title_StudyBuddy {
-    height: 300px;
-    background-image: url('../../public/images/SBProjPic.PNG');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.title_GreenGrub {
-    height: 300px;
-    margin: 0 auto;
-    width: 80%;
-    background-image: url('../../public/images/GreenGrub.JPG');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-.title_RareBirdSociety {
-    height: 300px;
-    background-image: url('../../public/images/RBSData.JPG');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.title_NetBoox {
-    height: 300px;
-    background-image: url('../../public/images/NetBoox.JPG');
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
-
-.project-row {
-    width: auto;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: right;
-    padding-top: 50px;
-    /* border: .5px solid goldenrod; */
-}
-
-
-.row-member {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 25px;
-    width: 33%;
-    /* background: white; */
-    /* color: black; */
-    /* border: .5px solid goldenrod; */
-}
-
-.tech-title {
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    border-radius: 25px;
-    font-weight: 600;
-    font-size: x-large;
-    color: black;
-}
-
-.tech-list-item {
-    height: auto;
-    width: auto;
-    margin: 0px 0px;
-    padding: 5px 0px;
-    font-weight: 300;
-    font-size: large;
-    color: black;
-}
-
-
 @media only screen and (max-width: 600px) {
-    li {
-        padding: 0px 0px;
+    .project {
+        margin: 0 5px 25px 5px;
+        padding: 5px 7.5px;
+        display: flex;
+        flex-direction: column-reverse;
+        color: black;
+        border: 1px solid black;
+        box-shadow: 0px 0px 25px rgb(173,216,230);
     }
-    .project-wrapper {
-        padding: 2px 2px;
+    .title {
+        padding-top: 5px;
+        font-size: .75em;
     }
-    .project-box {
-        margin: 0px 0px;
-    }
-    .row-member {
-        padding: 1px 1px;
-    }
-    .project-row {
-        font-size: small;
+    .blank-row {
+        padding: 25px 0px;
+        margin: 5px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        color: black;
     }
   }
-
-
-
-

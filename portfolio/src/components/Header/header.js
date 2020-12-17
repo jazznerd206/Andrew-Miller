@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Fade } from 'react-reveal';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import './style.css';
 
 function Header() {
@@ -8,26 +10,10 @@ function Header() {
 
     const windowSize = () => {
         setWidth(window.innerWidth);
-        console.log(window.innerWidth)
     }
     useEffect(() => {
         windowSize();
     }, [width])
-
-    // const [position, setPosition] = useState({x: 0, y: 0});
-    // useEffect(() => {
-    //     addEventListeners();
-    //     return () => removeEventListeners();
-    // }, []);
-    // const addEventListeners = () => {
-    //     document.addEventListener("mousemove", onMouseMove);
-    // };
-    // const removeEventListeners = () => {
-    //     document.removeEventListener("mousemove", onMouseMove);
-    // }; 
-    // const onMouseMove = (e) => {
-    //     setPosition({x: e.clientX, y: e.clientY});
-    // };
 
     if (width > 1200) {
         return (
@@ -39,20 +25,20 @@ function Header() {
                     <div className="header-message">
                         <div className="message">
                             <motion.p 
-                                animate={{x: -300, fontSize: '60px', rotateZ: 360}} 
+                                animate={{fontSize: '60px'}} 
                                 transition={{ duration: .25 }}
                             >
                                 Hey!!
                             </motion.p>                        
                             <motion.p 
                                 animate={{ x: -100, fontSize: '50px' }} 
-                                transition={{ duration: .5 }}
+                                transition={{ delay: .15, duration: .5 }}
                             >
                                 My name is
                             </motion.p>
                             <motion.h2 
                                 className="name"
-                                animate={{fontSize: '150px', color: '#add8e6'}} 
+                                animate={{fontSize: '150px', color: '#add8e6', opacity: 1}} 
                                 transition={{fontSize: { type: 'spring', bounce: .5 }, color: {type: 'spring', bounce: .5 }, delay: .5, duration: 1}}
                             >
                                 Andrew Miller
@@ -61,13 +47,15 @@ function Header() {
                                 // animate={{ x: 100 }} 
                                 // transition={{ duration: 1 }}
                             >
-                                I deliver solutions using innovative technology and creative problem solving.
+                                <Fade duration={3000} delay={1000}>I deliver solutions using innovative technology and creative problem solving.</Fade>
                             </motion.p>
                         </div>
                     </div>
-                    <a href="#about">
-                        Learn more
-                    </a>
+                    <Fade duration={3000} delay={1500}>
+                        <AnchorLink href="#about">
+                            Learn more
+                        </AnchorLink>
+                    </Fade>
                 </div>
                 
                 
@@ -83,7 +71,7 @@ function Header() {
                     <div className="header-message">
                         <div className="message">
                             <motion.p 
-                                animate={{x: -30, fontSize: '30px', rotateZ: 360}} 
+                                animate={{x: -30, fontSize: '30px'}} 
                                 transition={{ duration: .25 }}
                             >
                                 Hey!!
@@ -96,7 +84,7 @@ function Header() {
                             </motion.p>
                             <motion.h2 
                                 className="name"
-                                animate={{fontSize: '85px', color: '#add8e6'}} 
+                                animate={{fontSize: '85px', color: '#add8e6',opacity: 1}} 
                                 transition={{fontSize: { type: 'spring', bounce: .5 }, color: {type: 'spring', bounce: .5 }, delay: .5, duration: 1}}
                             >
                                 Andrew Miller
@@ -105,13 +93,15 @@ function Header() {
                                 animate={{ x: 0 }} 
                                 transition={{ duration: 1 }}
                             >
-                                I deliver solutions using innovative technology and creative problem solving.
+                                <Fade duration={3000} delay={1000}>I deliver solutions using innovative technology and creative problem solving.</Fade>
                             </motion.p>
-                            <a>
-                                Learn More
-                            </a>
                         </div>
                     </div>
+                    <Fade duration={3000} delay={1500}>
+                        <a href="#about">
+                            Learn more
+                        </a>
+                    </Fade>
                 </div>
                 
                 
@@ -127,20 +117,20 @@ function Header() {
                     <div className="header-message">
                         <div className="message">
                             <motion.p 
-                                animate={{x: -30, fontSize: '30px', rotateZ: 360}} 
+                                animate={{x: -30, fontSize: '30px'}} 
                                 transition={{ duration: .25 }}
                             >
                                 Hey!!
                             </motion.p>                        
                             <motion.p 
                                 animate={{ x: -10, fontSize: '35px' }} 
-                                transition={{ duration: .5 }}
+                                transition={{ delay: .15, duration: .5 }}
                             >
                                 My name is
                             </motion.p>
                             <motion.h2 
                                 className="name"
-                                animate={{fontSize: '85px', color: '#add8e6'}} 
+                                animate={{fontSize: '85px', color: '#add8e6', opacity: 1}} 
                                 transition={{fontSize: { type: 'spring', bounce: .5 }, color: {type: 'spring', bounce: .5 }, delay: .5, duration: 1}}
                             >
                                 Andrew Miller
@@ -149,7 +139,7 @@ function Header() {
                                 animate={{ x: 0 }} 
                                 transition={{ duration: 1 }}
                             >
-                                I deliver solutions using innovative technology and creative problem solving.
+                                <Fade duration={3000} delay={1000}>I deliver solutions using innovative technology and creative problem solving.</Fade>
                             </motion.p>
                             <a>
                                 Learn More

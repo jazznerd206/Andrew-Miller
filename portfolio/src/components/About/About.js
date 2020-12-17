@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Resume from '../../Documents/Resume2020ALM.pdf';
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Zoom, Fade, Bounce } from 'react-reveal';
 
 function About() {
@@ -38,11 +39,11 @@ function About() {
                     >
                         Resume
                     </a>
-                    <a
+                    <AnchorLink
                         href="#projects"
                     >
                         Projects
-                    </a>
+                    </AnchorLink>
                     <a
                         href="/contact"
                     >

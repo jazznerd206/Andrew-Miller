@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/header';
 import About from '../../components/About/About';
-import Projects from '../../components/Projects/Projects'
 import ProjectBoard from '../../components/Projects/ProjectBoard'
 import './style.css';
 import Particles from 'react-particles-js';
@@ -22,7 +21,6 @@ function Home() {
             </div>
             <div className="projects" id="projects">
                 <ProjectBoard />
-                {/* <Projects /> */}
             </div>
             
         </div>

@@ -5,10 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './pages/Home/home.js';
 import Footer from './components/Footer/footer.js';
 import Contact from './components/Contact/contact.js';
-import Projects from './components/Projects/Projects.js';
+import Projects from './components/Projects/ProjectBoard.js';
 import Nav from './components/Nav/Nav.js';
-// import Graphics from './components/Graphics/Graphics.js';
-
 
 function App() {
 

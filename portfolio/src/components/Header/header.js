@@ -98,9 +98,9 @@ function Header() {
                         </div>
                     </div>
                     <Fade duration={3000} delay={1500}>
-                        <a href="#about">
+                        <AnchorLink href="#about">
                             Learn more
-                        </a>
+                        </AnchorLink>
                     </Fade>
                 </div>
                 
@@ -141,11 +141,13 @@ function Header() {
                             >
                                 <Fade duration={3000} delay={1000}>I deliver solutions using innovative technology and creative problem solving.</Fade>
                             </motion.p>
-                            <a>
-                                Learn More
-                            </a>
                         </div>
                     </div>
+                    <Fade duration={3000} delay={1500}>
+                        <AnchorLink href="#about">
+                            Learn more
+                        </AnchorLink>
+                    </Fade>
                 </div>
                 
                 

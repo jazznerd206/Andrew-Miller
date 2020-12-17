@@ -2,14 +2,14 @@ import React from 'react';
 import Zoom from 'react-reveal/Zoom';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import Item from './components/Item';
-import itemsJSON from './components/items.json';
+import itemsJS from './components/items.js';
 import './styles.css';
 
 
 function Projects() {
 
-    const items = itemsJSON;
-    console.log(items)
+    const items = itemsJS;
+    // console.log(items)
   
     return (
     <AnimatePresence>

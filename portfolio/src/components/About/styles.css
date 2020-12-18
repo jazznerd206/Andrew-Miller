@@ -65,9 +65,4 @@
     .dark-text {
         color: black;
     }
-    .header-content a {
-        color: black;
-        padding: 0px 2px;
-        text-decoration: underline goldenrod;
-    }
   }

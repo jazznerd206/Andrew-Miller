@@ -13,17 +13,21 @@ function Flyer(props) {
                 </div>
                 <div className="about"> 
                     {props.purpose.map((line, index) => (
-                    <div>
-                    <p key={index} className="">{line}</p>
-                    </div>
+                    <Fade delay={150 * index}>
+                        <div>
+                            <p key={index} className="">{line}</p>
+                        </div>
+                    </Fade>
                     ))}
                 </div>
                 <div className="tech-stack">
                     <ul>
                     {props.stack.map((item, index) => (
-                        <li key={index}>
-                            {item}
-                        </li>
+                        <Fade delay={75 * index}>
+                            <li key={index}>
+                                {item}
+                            </li>
+                        </Fade>
                     ))}
                     </ul>
                 </div>

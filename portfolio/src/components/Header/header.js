@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Fade } from 'react-reveal';
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import useHeaderSize from '../../hooks/windowSize.js'
 import './style.css';
+import useWindowSize from '../../hooks/windowSize.js';
 
 function Header() {
 
     const [ width, setWidth ] = useState(0)
+
+    const size = useWindowSize();
+    // console.log(size)
 
     const windowSize = () => {
         setWidth(window.innerWidth);
@@ -15,7 +20,7 @@ function Header() {
         windowSize();
     }, [width])
 
-    if (width > 1200) {
+    if (size.width > 1200) {
         return (
             <div className="header-wrapper">
                 <div className="header-content">
@@ -61,7 +66,7 @@ function Header() {
                 
             </div>
     )
-    } else if (width > 600) {
+    } else if (1199 > size.width > 600) {
         return (
             <div className="header-wrapper">
                 <div className="header-content">
@@ -143,7 +148,7 @@ function Header() {
                             </motion.p>
                         </div>
                     </div>
-                    <Fade duration={3000} delay={1500}>
+                    <Fade duration={300} delay={1500}>
                         <AnchorLink href="#about">
                             Learn more
                         </AnchorLink>

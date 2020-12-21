@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from '../../../public/images/RBSData.JPG';
 import { Fade } from 'react-reveal';
 import '../styles.css';
 
 function Flyer(props) {
+
+    const [ width, setWidth ] = useState(0);
+
+    
+
     return (
     <Fade>
         <div className={`project ${props.name}`} key={props.dataKey}>

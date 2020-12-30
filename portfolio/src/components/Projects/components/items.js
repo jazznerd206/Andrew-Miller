@@ -1,25 +1,26 @@
-import RareBirdSociety from '../../../public/images/RBSLarge.JPG';
-import RareBirdSocietyThumb from '../../../public/images/RBSSmall.JPG';
-import NextBoox from '../../../public/images/NetBoox.JPG';
-import NextBooxThumb from '../../../public/images/NetbooxSmall2.JPG';
+// import RareBirdSociety from '../../../public/images/RBSLarge.JPG';
+// import RareBirdSocietyThumb from '../../../public/images/RBSSmall.JPG';
+import NextBoox from '../../../public/images/NetBooxLarge.JPG';
+import NextBooxThumb from '../../../public/images/NetBooxSmall.JPG';
 import Inventory from '../../../public/images/InventoryLarge.JPG';
 import InventoryThumb from '../../../public/images/InventorySmall.JPG';
-// import StudyBuddy from '../../../public/images/SBProjPic.PNG';
+import StudyBuddy from '../../../public/images/StudyBuddyLarge.JPG';
+import StudyBuddyThumb from '../../../public/images/StudyBuddySmall.JPG';
 import GreenGrub from '../../../public/images/GGLarge.JPG';
 import GreenGrubThumb from '../../../public/images/GGSmall.JPG';
 
 export default [
     {
-        "key": 1,
-        "name": "Rare Bird Society",
-        "url": "https://birdiehunter.herokuapp.com",
-        "code": "https://github.com/jazznerd206/Golf_App",
-        "image": RareBirdSociety,
-        "thumb": RareBirdSocietyThumb,
-        "techStack": ["NodeJS", "Express", "MySQL", "Sequelize", "D3JS", "React", "ContextAPI"],
-        "purpose": ["Keep track of golf scores and view data driven analytics about your game", "Visual representation of how mental mistakes affect total score"],
-        "contribution": ["Full stack development", "Express Node server with MySQL based Sequelize ORM", "ReactJS for front end", "Data visualizations built with D3JS"]
-    },
+    //     "key": 1,
+    //     "name": "Rare Bird Society",
+    //     "url": "https://birdiehunter.herokuapp.com",
+    //     "code": "https://github.com/jazznerd206/Golf_App",
+    //     "image": RareBirdSociety,
+    //     "thumb": RareBirdSocietyThumb,
+    //     "techStack": ["NodeJS", "Express", "MySQL", "Sequelize", "D3JS", "React", "ContextAPI"],
+    //     "purpose": ["Keep track of golf scores and view data driven analytics about your game", "Visual representation of how mental mistakes affect total score"],
+    //     "contribution": ["Full stack development", "Express Node server with MySQL based Sequelize ORM", "ReactJS for front end", "Data visualizations built with D3JS"]
+    // },
     {
         "key": 2,
         "name": "Green Grub",
@@ -31,16 +32,17 @@ export default [
         "purpose": ["A recipe curation app, using SpoonacularAPI, to provide recipes based on user diet filters. Also curates articles based on common diet types from GoogleNews API."],
         "contribution": ["Team leader of four developers to project delivery.", "Personally responsible for database design and authentication package using React Redux and PassportJS."]
     },
-    // {
-    //     "key": 3,
-    //     "name": "Study Buddy",
-    //     "url": "https://jlcoden.github.io/Study-Buddy/",
-    //     "code": "https://github.com/jlcoden/Study-Buddy",
-    //     "image": StudyBuddy,
-    //     "techStack": ["NodeJS", "Express", "Express Handlebars", "Firebase", "PassportJS", "GoogleMaps API"],
-    //     "purpose": ["StudyBuddy provides a place for students and teachers to organize study sessions.", "Select meeting time, date and location and submit to study group for approval.", "GoogleMaps API provides mapped location data for meetup location."],
-    //     "contribution": ["Team leader of four developers to project delivery.", "Personally responsible for UI design."]
-    // },
+    {
+        "key": 3,
+        "name": "Study Buddy",
+        "url": "https://jlcoden.github.io/Study-Buddy/",
+        "code": "https://github.com/jlcoden/Study-Buddy",
+        "image": StudyBuddy,
+        "thumb": StudyBuddyThumb,
+        "techStack": ["NodeJS", "Express", "Express Handlebars", "Firebase", "PassportJS", "GoogleMaps API"],
+        "purpose": ["StudyBuddy provides a place for students and teachers to organize study sessions.", "Select meeting time, date and location and submit to study group for approval.", "GoogleMaps API provides mapped location data for meetup location."],
+        "contribution": ["Team leader of four developers to project delivery.", "Personally responsible for UI design."]
+    },
     {
         "key": 4,
         "name": "NetBoox",

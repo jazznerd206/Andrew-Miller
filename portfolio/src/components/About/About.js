@@ -1,6 +1,6 @@
 import React from 'react';
 import './styles.css';
-import Resume from '../../Documents/Resume2020ALM.pdf';
+import Resume from '../../Documents/ResumeCurrent.pdf';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Zoom, Fade, Bounce } from 'react-reveal';
 

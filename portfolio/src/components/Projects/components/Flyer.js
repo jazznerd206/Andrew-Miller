@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import Image from '../../../public/images/RBSData.JPG';
+import React from 'react';
 import { Fade } from 'react-reveal';
 import '../styles.css';
 
 function Flyer(props) {
 
-    const [ width, setWidth ] = useState(0);
+    // const [ width, setWidth ] = useState(0);
 
     
 
@@ -18,6 +17,13 @@ function Flyer(props) {
                 </div>
                 <div className="about"> 
                     {props.purpose.map((line, index) => (
+                    <Fade delay={150 * index}>
+                        <div>
+                            <p key={index} className="">{line}</p>
+                        </div>
+                    </Fade>
+                    ))}
+                    {props.contribution.map((line, index) => (
                     <Fade delay={150 * index}>
                         <div>
                             <p key={index} className="">{line}</p>

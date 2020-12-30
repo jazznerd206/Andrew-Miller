@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './pages/Home/home.js';
 import Footer from './components/Footer/footer.js';
@@ -9,9 +9,6 @@ import Projects from './components/Projects/ProjectBoard.js';
 import Nav from './components/Nav/Nav.js';
 
 function App() {
-
-
-
   return (
     <div className="App">
     <Nav />
@@ -29,8 +26,6 @@ function App() {
                 </Switch>
         </Router>
       <Footer />
-
-      
     </div>
   );
 }

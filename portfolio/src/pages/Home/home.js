@@ -3,16 +3,11 @@ import Header from '../../components/Header/header';
 import About from '../../components/About/About';
 import ProjectBoard from '../../components/Projects/ProjectBoard'
 import './style.css';
-import Particles from 'react-particles-js';
-import particlesConfig from '../../config/configParticles.js';
 
 
 function Home() {
     return (
         <div>
-            {/* <div style={{ position: 'absolute', pointerEvents: 'none', overflow: 'none'}}>
-                <Particles height="auto" width="100%" params={particlesConfig} style={{pointerEvents: 'none'}}/>
-            </div> */}
             <div className="header">
                 <Header />
             </div>

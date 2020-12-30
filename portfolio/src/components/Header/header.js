@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Fade } from 'react-reveal';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import useHeaderSize from '../../hooks/windowSize.js'
+// import useHeaderSize from '../../hooks/windowSize.js'
 import './style.css';
 import useWindowSize from '../../hooks/windowSize.js';
 
@@ -66,7 +66,7 @@ function Header() {
                 
             </div>
     )
-    } else if (1199 > size.width > 600) {
+    } else if (size.width > 600) {
         return (
             <div className="header-wrapper">
                 <div className="header-content">

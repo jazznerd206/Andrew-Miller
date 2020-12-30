@@ -29,8 +29,8 @@ export default [
         "image": GreenGrub,
         "thumb": GreenGrubThumb,
         "techStack": ["NodeJS", "Express", "MongoDB", "Mongoose", "React", "PassportJS", "GoogleNews API", "Spoonacular API"],
-        "purpose": ["A recipe curation app, using SpoonacularAPI, to provide recipes based on user diet filters. Also curates articles based on common diet types from GoogleNews API."],
-        "contribution": ["Team leader of four developers to project delivery.", "Personally responsible for database design and authentication package using React Redux and PassportJS."]
+        "purpose": ["A recipe finder using SpoonacularAPI, providing recipes based on user diet filters.", "Curates articles filtered by common diet types from Google News API."],
+        "contribution": ["Implemented full authentication and authorization flow with Redux, bcrypt, PassportJS and JWT", "Database schema built using Mongoose and MongoDB, hosted via Heroku and MongoDB Atlas"]
     },
     {
         "key": 3,
@@ -40,8 +40,8 @@ export default [
         "image": StudyBuddy,
         "thumb": StudyBuddyThumb,
         "techStack": ["NodeJS", "Express", "Express Handlebars", "Firebase", "PassportJS", "GoogleMaps API"],
-        "purpose": ["StudyBuddy provides a place for students and teachers to organize study sessions.", "Select meeting time, date and location and submit to study group for approval.", "GoogleMaps API provides mapped location data for meetup location."],
-        "contribution": ["Team leader of four developers to project delivery.", "Personally responsible for UI design."]
+        "purpose": ["Led full stack development of scheduling application for students and teachers to arrange study sessions by date, location and availability.", "GoogleMaps API provides mapped location data for meetup location."],
+        "contribution": ["Styled with Materialize UI and custom CSS to refine client-side interaction and user experience"]
     },
     {
         "key": 4,
@@ -52,7 +52,7 @@ export default [
         "thumb": NextBooxThumb,
         "techStack": ["NodeJS", "Express", "React", "MongoDB", "Mongoose", "Google Books API"],
         "purpose": ["This project exposes a search function for the Google Books API combined with a database to save a list of favorites."],
-        "contribution": ["Full stack development, solo project"]
+        "contribution": ["ReactJS based web application exposing Google Books API, following RESTful API principles and design.", "Utilized component based architecture to develop features while maintaining a single design aesthetic."]
     },
     {
         "key": 5,
@@ -62,7 +62,7 @@ export default [
         "image": Inventory,
         "thumb": InventoryThumb,
         "techStack": ["NodeJS", "Express", "Express HandleBars", "MongoDB", "Mongoose", "Passport Auth"],
-        "purpose": ["Inventory system for tracking production materials inventory valued at over $1M at a glass blowing studio.", "Built to reduce labor hours spent counting materials by hand each year and increase year over year accuracy of numbers", "Overall reduction of 320 labor hours yearly."],
-        "contribution": ["Full stack", "Express Node server with MongoDB based Mongoose ORM", "Express Handlebars for front end"]
+        "purpose": ["Inventory system for tracking production materials inventory valued at over $1M at a glass blowing studio.", "Built to reduce labor hours spent counting materials by hand each year and increase year over year accuracy of numbers"],
+        "contribution": ["Passport JS Local Strategy authentication to allow users access to CRUD protocol.", "Generated a scalable database by designing RESTful APIs service with NodeJS and Mongoose."]
     }
 ]

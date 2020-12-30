@@ -23,9 +23,12 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    color: #add8e6;
     padding-bottom: 25px;
     text-transform: uppercase;
+}
+
+.title h1 {
+    color: #add8e6;
 }
 
 .footer-layer-one {

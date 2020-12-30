@@ -26,6 +26,12 @@ function Footer() {
                         <span>Instagram</span>
                     </div>
                 </a>
+                <a target="_blank" href="https://twitter.com/AndrewM54836877" rel="noopener noreferrer">
+                    <div className="icon-wrapper footer-icon">
+                        <i className="fab fa-twitter fa-3x"></i>
+                        <span>Twitter</span>
+                    </div>
+                </a>
             </div>            
         </div>
     )

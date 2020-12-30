@@ -22,13 +22,13 @@ function About() {
                 </div> */}
                 <div className="bio-content">
                     <Fade bottom>
-                        <p>I believe in delivering meaningful, impactful technology paired with simple, clean code.</p>
+                        <p>I am a full stack web developer with a passion for modern and emerging web technologies. I believe in delivering meaningful, impactful technology paired with simple, clean code.</p>
                     </Fade>
                     <Fade bottom>
                         <p>I have always searched for ways to enhance existing processes or otherwise streamline production and impact quality. This built a passion for technology, first as a user, now as a developer.</p>
                     </Fade>
                     <Fade bottom>
-                        <p className="dark-text">I seek opportunities and challenges to improve myself and assist and ally with others to approach real world problems with innovative solutions. </p>
+                        <p className="dark-text">I am currently seeking opportunities and challenges to improve myself and assist and ally with others to approach real world problems with innovative solutions.</p>
                     </Fade>
                 </div>
             </div>

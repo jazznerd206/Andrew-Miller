@@ -9,8 +9,18 @@
     padding-bottom: 250px;
 }
 
+.header {
+    font-family: 'Josefin Sans';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #add8e6;
+    color: #add8e6;
+    height: auto;
+}
+
 .header-content {
-    /* margin: 0px 25px; */
+    margin: 0px 25px;
     height: auto;
     width: auto;
     top: 15px;
@@ -20,12 +30,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .header-title {
     text-align: center;
-    /* padding: 50px 0px; */
 }
 
 .header-message p {
@@ -72,7 +81,7 @@
 
 .header-content a {
     width: auto;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     padding: 10px 25px;
     border: none;
     background: none;
@@ -88,32 +97,12 @@
 .header-content a:hover {
     background: goldenrod;
     box-shadow: 0px 0px 20px #add8e6;
-    /* color: #00001a; */
-}
-
-.about-content a {
-    width: auto;
-    /* margin: 20px auto; */
-    padding: 10px 25px;
-    border: none;
-    background: none;
-    color: #00001a;
-    animation-name: learnMore;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-    border-left: 1px solid goldenrod;
-    border-right: 1px solid goldenrod;
-    font-size: x-large;
-}
-
-.about-content a:hover {
-    background: goldenrod;
-    box-shadow: 0px 0px 20px #add8e6;
-    color: #00001a;
 }
 
 
-@media only screen and (max-width: 600px) {
+
+
+@media only screen and (max-width: 768px) {
     .header-wrapper {
       padding-bottom: 25px;
       text-align: center;

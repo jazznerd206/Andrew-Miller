@@ -66,7 +66,7 @@ function Header() {
                 
             </div>
     )
-    } else if (size.width > 600) {
+    } else if (size.width >= 599) {
         return (
             <div className="header-wrapper">
                 <div className="header-content">

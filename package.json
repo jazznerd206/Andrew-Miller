@@ -40,6 +40,7 @@
     "nodemon": "^2.0.4",
     "path": "^0.12.7",
     "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-awesome-reveal": "^3.5.2",
     "sendgrid": "^5.2.3"
   }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import Image from '../../public/images/HEADSHOT.jpeg'
 import Resume from '../../Documents/ResumeCurrent.pdf';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Fade, Bounce } from 'react-reveal';
@@ -17,14 +18,16 @@ function About() {
                 
             </div>
             <div className="flex-row">
-                {/* <div className="bio-image">
-
-                </div> */}
+                <Fade left>
+                    <div className="bio-image">
+                        <img src={Image}></img>
+                    </div>
+                </Fade>
                 <div className="bio-content">
-                    <Fade bottom>
+                    <Fade right>
                         <p>I am a full stack web developer with a passion for modern and emerging web technologies. I believe in delivering meaningful, impactful technology paired with simple, clean code.</p>
                     </Fade>
-                    <Fade bottom>
+                    <Fade right>
                         <p>I have always searched for ways to enhance existing processes or otherwise streamline production and impact quality. This built a passion for technology, first as a user, now as a developer.</p>
                     </Fade>
                     <Fade bottom>
@@ -32,25 +35,36 @@ function About() {
                     </Fade>
                 </div>
             </div>
-            <Bounce left>
-                <div className="flex-row about-content">
-                    <a
-                        href={Resume} type="application/pdf" rel="noopener noreferrer" target="_blank"
-                    >
-                        Resume
-                    </a>
+            
+            <div className="about-content flex-row">
+                <Bounce right>
+                    <div className="">
+                        <a
+                            href={Resume} type="application/pdf" rel="noopener noreferrer" target="_blank"
+                        >
+                            Resume
+                        </a>
+                    </div>
+                </Bounce>
+                <Bounce bottom>
+
                     <AnchorLink
                         href="#projects"
                     >
                         Projects
                     </AnchorLink>
-                    <a
-                        href="/contact"
-                    >
+                </Bounce>
+                <Bounce left>
+                    <div className="">
+                        <a
+                            href="/contact"
+                        >
                         Contact me!
-                    </a>
-                </div>
-            </Bounce>
+                        </a>
+                    </div>
+                </Bounce>
+            </div>
+            
         </div>
     )
 }

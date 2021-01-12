@@ -9,22 +9,3 @@
 body {
     color: #add8e6;
 }
-
-.header {
-    font-family: 'Josefin Sans';
-    display: flex;
-    flex-direction: column;
-    background-color: #add8e6;
-    color: #add8e6;
-    height: auto;
-}
-.main {
-    height: auto;
-    width: 100%;
-}
-
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }

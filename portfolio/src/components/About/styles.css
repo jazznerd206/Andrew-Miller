@@ -1,36 +1,45 @@
 .bio-container {
     background: linear-gradient(to bottom, #00001a, #add8e6);
-    padding: 0px 25px;
+    text-align: center;
+    padding: 25px 25px 50px 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     min-height: 100vh;
     width: 100%;
     clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
     padding-bottom: 10%;
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 .bio-title {
     font-size: 60px;
     text-decoration: underline;
     padding-bottom: 25px;
+    text-align: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* margin-bottom: 25px; */
 }
 
 .bio-image {
-    width: 50%;
+    min-width: 40%;
+    margin: 25px 25px;
+}
+
+.bio-image img {
+    max-width: 400px;
+    height: 350px;
+    border-radius: 100%;
 }
 
 .bio-content {
     text-align: left;
     font-size: 18px;
-    width: 50%;
-    /* padding: 0px 25px; */
 }
 
 .bio-content p {
@@ -38,15 +47,42 @@
     padding-bottom: 25px;
 }
 
+.about-content {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .about-content a {
     width: auto;
-    display: inline;
-    height: auto;
+    margin: 20px 20px;
+    padding: 10px 25px;
+    border: none;
+    background: none;
+    color: #00001a;
+    animation-name: learnMore;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    border-left: 1px solid goldenrod;
+    border-right: 1px solid goldenrod;
+    font-size: x-large;
+}
+
+.about-content a:hover {
+    background: goldenrod;
+    box-shadow: 0px 0px 20px #add8e6;
+    color: #00001a;
+}
+
+.dark-text {
+    color: black;
 }
 
 @media only screen and (max-width: 600px) {
     .flex-row {
         display: flex;
+        justify-content: center;
         flex-direction: column;
         flex-wrap: wrap;
     }
@@ -62,7 +98,8 @@
         padding-top: 50px;
         padding-bottom: 250px;
     }
-    .dark-text {
-        color: black;
+    .about-content {
+        justify-content: left;
+        height: 200px;
     }
   }

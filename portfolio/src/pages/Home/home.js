@@ -11,7 +11,7 @@ function Home() {
             <div className="header">
                 <Header />
             </div>
-            <div className="header" id="about">
+            <div className="about" id="about">
                 <About />
             </div>
             <div className="projects" id="projects">

@@ -1,62 +1,132 @@
 .header-wrapper {
     text-align: center;
-    line-height: 5em;
-    /* min-height: auto; */
-    width: 100%;
-    height: auto;
-    background: radial-gradient(#080808, #00001a);
-    color: #add8e6;
-    padding-bottom: 250px;
-}
-
-.header {
-    font-family: 'Josefin Sans';
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #add8e6;
+    padding: 25px 25px;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
     color: #add8e6;
-    height: auto;
+    /* padding-bottom: 250px; */
 }
 
-.header-content {
-    margin: 0px 25px;
-    height: auto;
-    width: auto;
-    top: 15px;
-    text-align: center;
-    background: transparent;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    overflow: hidden;
+
+.stars {
+    height: 100vh;
+    background: black url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 1;
+}
+
+.twinkling {
+	width:10000px;
+	height: 100%;
+	background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+	background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    
+    -moz-animation:move-background 70s linear infinite;
+    -ms-animation:move-background 70s linear infinite;
+    -o-animation:move-background 70s linear infinite;
+    -webkit-animation:move-background 70s linear infinite;
+    animation:move-background 70s linear infinite;
 }
 
 .header-title {
+    /* margin-top: 50px; */
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    /* text-align: center; */
+    z-index: 50;
+}
+
+.outer-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 380px;
+    width: 380px;
+    background: red;
+}
+
+.element-box {
+    padding: 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+    width: 350px;
+    background: linear-gradient(45deg, rgba(128,128,128,.25), rgba(128,128,128,.75));
+    border-top: .5px ridge whitesmoke;
+    border-right: .5px ridge whitesmoke;
+}
+
+.element-box .top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     text-align: center;
+    height: 40px;
+    width: 40px;
+    text-align: left;
+    padding: 5px 5px;
+    background: linear-gradient(45deg, rgba(128,128,128,.25), rgba(128,128,128,.75));
+    border-radius: 100%;
+    font-size: 1em;
+}
+.element-box .middle {
+    text-align: center;
+    font-size: 9em;
+    font-variant: small-caps;
+    font-family: 'Times New Roman', Times, serif;
+}
+.element-box .lower {
+    font-family: monospace;
+    text-align: center;
+    font-size: 1.1em;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
 }
 
-.header-message p {
-    margin: 0px 0px;
-    padding: 0px 0px;
-    width: auto;
+.header-title h1 {
+    font-size: 5em;
+    z-index: 50;
+    font-variant: small-caps;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid rgba(128,128,128,.25); /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
 }
 
-.header-message {
-    /* padding: 10px 10px; */
-    font-family: 'Raleway';
-    font-size: xx-large;
-    font-weight: 100;
-}
 
-.header-message .name {
-    opacity: 0;
-    font-family: 'Julius Sans One';
-    font-size: 70px;
-    font-weight: 500;
-    color: orangered;
-}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ } 
 
 @keyframes learnMore {
     0% {
@@ -75,13 +145,21 @@
     }
 }
 
-.message {
-    height: auto;
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+  
+  /* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0,0,0,0); }
 }
 
-.header-content a {
+.learn-more a {
     width: auto;
-    /* margin: 20px auto; */
+    margin: 200px auto;
     padding: 10px 25px;
     border: none;
     background: none;
@@ -94,7 +172,7 @@
     font-size: x-large;
 }
 
-.header-content a:hover {
+.learn-more a:hover {
     background: goldenrod;
     box-shadow: 0px 0px 20px #add8e6;
 }
@@ -107,12 +185,46 @@
       padding-bottom: 25px;
       text-align: center;
     }
-    .header-title h1 {
-        font-size: 1.5em;
-    }
     .header-content a {
         color: #add8e6;
     }
+    .about {
+        margin: 0;
+        padding: 0;
+    }
   }
 
-
+  @keyframes move-background {
+    from {
+          -webkit-transform: translate3d(0px, 0px, 0px);
+      }
+      to { 
+          -webkit-transform: translate3d(1000px, 0px, 0px);
+      }
+  }
+  @-webkit-keyframes move-background {
+    from {
+          -webkit-transform: translate3d(0px, 0px, 0px);
+      }
+      to { 
+          -webkit-transform: translate3d(1000px, 0px, 0px);
+      }
+  }
+  
+  @-moz-keyframes move-background {    
+      from {
+          -webkit-transform: translate3d(0px, 0px, 0px);
+      }
+      to { 
+          -webkit-transform: translate3d(1000px, 0px, 0px);
+      }
+  }
+  
+      @-webkit-keyframes move-background {
+      from {
+          -webkit-transform: translate3d(0px, 0px, 0px);
+      }
+      to { 
+          -webkit-transform: translate3d(1000px, 0px, 0px);
+      }
+  }

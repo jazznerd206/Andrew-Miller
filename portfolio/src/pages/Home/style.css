@@ -8,4 +8,12 @@
 
 body {
     color: #add8e6;
+    overflow-x: hidden;
 }
+
+@media only screen and (max-width: 768px) {
+    .about {
+        margin: 0;
+        padding: 0;
+    }
+  }

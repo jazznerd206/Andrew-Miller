@@ -1,10 +1,9 @@
 .navbar-expand-lg {
-    background-color: #00001a;
+    background-color: black;
 }
 
 .navbar-collapse {
-    background: #00001a;
-    height: auto;
+    background-color: black;
     z-index: 1000;    
 }
 

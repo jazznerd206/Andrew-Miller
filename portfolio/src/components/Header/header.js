@@ -27,16 +27,9 @@ function Header() {
                 </div>
             </div>
             <div className="header-title">
-                <div className="element-box">
-                    <div className="top">
-                        33
-                    </div>
-                    <div className="middle">
-                        Am
-                    </div>
-                    <div className="lower">
-                        Andrew Miller
-                    </div>
+                <h1>Andrew Miller</h1>
+                <div className="statement">
+                    
                 </div>
                 <Fade left delay={2500} duration={500}>
                     <div className="learn-more">

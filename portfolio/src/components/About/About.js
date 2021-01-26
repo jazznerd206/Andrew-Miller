@@ -28,8 +28,12 @@ function About() {
                         <p>I am a full stack web developer with a passion for modern and emerging web technologies. I believe in delivering meaningful, impactful technology paired with simple, clean code.</p>
                     </Fade>
                     <Fade right>
-                        <p>I have always searched for ways to enhance existing processes or otherwise streamline production and impact quality. This built a passion for technology, first as a user, now as a developer.</p>
+                        <p>When I'm not behind the keyboard, I can most often be found anywhere I can play golf or taking care of my foster dogs. Working with the Seattle Animal Shelter has been one of the most positive and rewarding experiences of my life. So far I have been able to rehailitate and rehome 14 dogs, with our current resident being a pregnant chihuahua.</p>
                     </Fade>
+                </div>
+            </div>
+            <div className="flex-row text-fancify">
+                <div>
                     <Fade bottom>
                         <p className="dark-text">I am currently seeking opportunities and challenges to improve myself and assist and ally with others to approach real world problems with innovative solutions.</p>
                     </Fade>

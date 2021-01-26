@@ -9,6 +9,7 @@
     min-height: 100vh;
     color: #add8e6;
     /* padding-bottom: 250px; */
+    overflow: hidden;
 }
 
 
@@ -22,10 +23,11 @@
     right: 0;
     display: block;
     z-index: 1;
+    overflow: hidden;
 }
 
 .twinkling {
-	width: 100vw;
+	width: 10000px;
 	height: 100%;
 	background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
 	background-size: 1000px 1000px;

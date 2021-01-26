@@ -9,9 +9,10 @@
 }
 
 .project {
-    margin: 50px 50px;
+    margin: 50px auto;
     padding: 10px 15px;
     width: auto;
+    max-width: 1200px;
     height: auto;
     background: white;
     display: flex;

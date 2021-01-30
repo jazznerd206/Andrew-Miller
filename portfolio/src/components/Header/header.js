@@ -27,11 +27,20 @@ function Header() {
                 </div>
             </div>
             <div className="header-title">
-                <h1>Andrew Miller</h1>
-                <div className="statement">
-                    
+                <div className="row">    
+                    <Fade left>
+                        <h1>{'Andrew '}</h1>
+                    </Fade>
+                    <Fade right>
+                        <h1>Miller</h1>
+                    </Fade>
                 </div>
-                <Fade left delay={2500} duration={500}>
+                <Fade delay={750} duration={500}>
+                    <div className="statement">
+                        CREATIVITY ⨄ PASSION ⨄ TECHNOLOGY
+                    </div>
+                </Fade>
+                <Fade left delay={1500} duration={500}>
                     <div className="learn-more">
                         <AnchorLink href="#about">Learn More</AnchorLink>
                     </div>

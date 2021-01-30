@@ -17,28 +17,28 @@ function Flyer(props) {
                 </div>
                 <div className="about"> 
                     {props.purpose.map((line, index) => (
-                    <Fade delay={150 * index}>
-                        <div>
-                            <p key={index} className="">{line}</p>
-                        </div>
-                    </Fade>
+                    <div key={`purpose_${index}`}>
+                        <Fade delay={150 * index}>
+                            <p  className="">{line}</p>
+                        </Fade>
+                    </div>
                     ))}
                     {props.contribution.map((line, index) => (
-                    <Fade delay={150 * index}>
-                        <div>
-                            <p key={index} className="">{line}</p>
-                        </div>
-                    </Fade>
+                    <div key={`contribution_${index}`}>
+                        <Fade delay={150 * index}>
+                            <p className="">{line}</p>
+                        </Fade>
+                    </div>
                     ))}
                 </div>
                 <div className="tech-stack">
                     <ul>
                     {props.stack.map((item, index) => (
+                    <li key={`stack_${index}`}>
                         <Fade delay={75 * index}>
-                            <li key={index}>
-                                {item}
-                            </li>
+                            {item}
                         </Fade>
+                    </li>
                     ))}
                     </ul>
                 </div>

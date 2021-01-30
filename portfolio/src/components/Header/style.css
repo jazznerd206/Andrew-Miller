@@ -9,7 +9,6 @@
     width: 100%;
     min-height: 100vh;
     color: #add8e6;
-    /* padding-bottom: 250px; */
     overflow: hidden;
 }
 
@@ -50,7 +49,7 @@
     height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     z-index: 50;
@@ -60,19 +59,26 @@
     font-size: 5em;
     z-index: 50;
     font-variant: small-caps;
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .15em solid rgba(128,128,128,.25); /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: 
-      typing 3.5s steps(40, end),
-      blink-caret .75s step-end infinite;
+    overflow: hidden; 
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    word-wrap: normal;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .text-fancify {
     font-size: 2em;
     padding-top: 50px;
+}
+
+.statement {
+    font-size: 2em;
 }
 
 
@@ -97,19 +103,6 @@
         top: 0;
         box-shadow: 0px 0px 20px goldenrod;
     }
-}
-
-/* The typing effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-  
-  /* The typewriter cursor effect */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: rgb(255,255,255,0) }
-    100% { border-color: rgb(0,0,0,0) }
 }
 
 .learn-more a {
@@ -152,42 +145,41 @@
     }
     .header h1 {
         animation: none;
-        overflow: scroll;
         font-size: 3.5em;
     }
   }
 
-  @keyframes move-background {
+@keyframes move-background {
     from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
-  }
-  @-webkit-keyframes move-background {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
+@-webkit-keyframes move-background {
     from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
-  }
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
   
-  @-moz-keyframes move-background {    
-      from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
-  }
+@-moz-keyframes move-background {    
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}
   
-      @-webkit-keyframes move-background {
-      from {
-          -webkit-transform: translate3d(0px, 0px, 0px);
-      }
-      to { 
-          -webkit-transform: translate3d(1000px, 0px, 0px);
-      }
-  }
+@-webkit-keyframes move-background {
+    from {
+        -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+        -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+}

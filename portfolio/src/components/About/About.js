@@ -25,11 +25,11 @@ function About() {
                 </Fade>
                 <div className="bio-content">
                     <Fade right>
-                        <p>I am a full stack web developer with a passion for modern and emerging web technologies. I believe in delivering meaningful, impactful technology paired with simple, clean code.</p>
+                        <p>I am a full stack web developer with a passion for modern and emerging web technologies. I believe in delivering meaningful, impactful technology driven by simple, clean code.</p>
                     </Fade>
-                    {/* <Fade right>
-                        <p>When I'm not behind the keyboard, I can most often be found anywhere I can play golf or taking care of my foster dogs. Working with the Seattle Animal Shelter has been one of the most positive and rewarding experiences of my life. So far I have been able to rehailitate and rehome 14 dogs, with our current resident being a pregnant chihuahua.</p>
-                    </Fade> */}
+                    <Fade right>
+                        <p>When I'm not behind the keyboard, I can most often be found anywhere I can play golf, taking care of my foster dogs, or letting my creative side loose with a guitar and a trumpet.</p>
+                    </Fade>
                 </div>
             </div>
             <div className="flex-row text-fancify">

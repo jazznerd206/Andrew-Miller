@@ -18,17 +18,18 @@ a {
 .title {
     /* padding-top: 25px; */
     margin: 0 auto;
-    width: 80%;
+    /* width: 80%; */
     height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     padding-bottom: 25px;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 .title h1 {
     color: #add8e6;
+    letter-spacing: normal;
 }
 
 .footer-layer-one {

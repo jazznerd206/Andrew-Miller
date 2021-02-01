@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/header';
+import NewHeader from '../../components/NewHeader/NewHeader';
 import About from '../../components/About/About';
 import ProjectBoard from '../../components/Projects/ProjectBoard'
 import './style.css';

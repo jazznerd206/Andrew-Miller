@@ -6,9 +6,11 @@
 @import url('https://fonts.googleapis.com/css?family=Julius%20Sans%20One&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open%20Sans&display=swap');
 
-body {
+html, body {
     color: #add8e6;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 @media only screen and (max-width: 768px) {

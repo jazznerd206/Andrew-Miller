@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 import Image from '../../public/images/HEADSHOT.jpeg'
-import Resume from '../../Documents/ResumeCurrent.pdf';
+import Resume from '../../Documents/ALM_Resume.pdf';
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { Fade, Bounce } from 'react-reveal';
 

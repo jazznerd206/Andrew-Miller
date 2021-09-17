@@ -4,7 +4,28 @@ import { Close } from '@styled-icons/evil/Close'
 import { I } from '../../styled/components.style';
 
 
-function Flexiboi() {
+function Flexiboi({setActive}) {
+
+    const elements = [
+        {
+            id: 0,
+            name: 'Projects',
+            key: 'projects',
+            content: 'component'
+        },
+        {
+            id: 1,
+            name: 'Contact',
+            key: 'contact',
+            content: 'component'
+        },
+        {
+            id: 2,
+            name: 'Get to know me!',
+            key: 'personal',
+            content: 'component'
+        },
+    ]
 
     const [ open, setOpen ] = useState(false);
 
@@ -19,13 +40,17 @@ function Flexiboi() {
             }
         }
         for (let i = 0; i < panels.length; ++i) {
+            console.log(`panels`, panels);
             if (panels[i].id === `${data}`) {
                 panels[i].style.maxHeight = '100%'
+                panels[i].style.display = 'flex'
             } else {
                 panels[i].style.maxHeight = '0%';
+                panels[i].style.display = 'none'
             }
         }
         setOpen(true);
+        setActive(true);
     }
 
     const shrink = () => {
@@ -36,57 +61,48 @@ function Flexiboi() {
         }
         for (let i = 0; i < panels.length; ++i) {
             panels[i].style.maxHeight = '0%';
+            panels[i].style.display = 'none';
         }
+        setOpen(false);
+        setActive(false);
     }
     
     
 
     return (
         <Container>
-            <Grabby 
-                className="shower" 
-                id="id-this"
-                onClick={open === false ? () => {setOpen(true); grow('this')} : () => {setOpen(false); shrink()}}
-            >
-                {open === false ?
-                    <GrabbyText>
-                        this
-                    </GrabbyText>
-                    :
-                    'X'
-                }
-            </Grabby>
-            <Grabby className="shower" id="id-that" onClick={() => {setOpen(true); grow('that')}}>
-                <GrabbyText>that</GrabbyText>
-            </Grabby>
-            <Grabby className="shower" id="id-theOther" onClick={() => {setOpen(true); grow('theOther')}}>
-                <GrabbyText>the other</GrabbyText>
-            </Grabby>
-            <Growy
-                id="this"
-                className="grower"
-            >
-                <GrowyText>
-                    this
-                </GrowyText>
-            </Growy>
-            <Growy 
-                id="that"
-                className="grower"
-            >
-                <GrowyText>
-                    that
-                </GrowyText>
-            </Growy>
-            <Growy 
-                id="theOther"
-                className="grower"    
-            >
-                <GrowyText>
-                    theOther
-                </GrowyText>
-            </Growy>
-            {/* {open === true ? <>this is true</> : <>not true</>} */}
+            {elements.map(each => {
+                return(
+                    <Grabby 
+                        className="shower" 
+                        id={`id-${each.id}`}
+                        key={`key-${each.key}`}
+                        onClick={open === false ? () => {setOpen(true); grow(each.id)} : () => {setOpen(false); shrink()}}
+                    >
+                        {open === false ?
+                            <GrabbyText>
+                                {each.name}
+                            </GrabbyText>
+                            :
+                            'X'
+                        }
+                    </Grabby>
+
+                )
+            })}
+            {elements.map(each => {
+                return (
+                    <Growy
+                        id={each.id}
+                        key={each.key}
+                        className="grower"
+                        >
+                            <GrowyText>
+                                {each.name}
+                            </GrowyText>
+                    </Growy>
+                )
+            })}
         </Container>
     )
 }

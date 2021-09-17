@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    background: red;
+    position: absolute;
+    bottom: 0;
+    left: 0;
     height: 100%;
     width: 100%;
     display: flex;
@@ -12,7 +14,6 @@ export const Container = styled.div`
 `
 
 export const Grabby = styled.div`
-    background: blue;
     width: 100%;
     height: auto;
     display: flex;
@@ -27,6 +28,8 @@ export const Grabby = styled.div`
 
 export const GrabbyText = styled.span`
     background: black;
+    text-transform: uppercase;
+    font-size: 2em;
 `
 
 export const GrowyText = styled.span`
@@ -35,12 +38,15 @@ export const GrowyText = styled.span`
 
 export const Growy = styled.div`
     width: 100%;
-    height: 100%;
+    height: 0%;
     max-height: 0%;
-    display: flex;
+    display: none;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex: 1 1 auto;
     &.active {
         max-height: 100%;
     }
+    transition: all .25s ease-in-out;
 `

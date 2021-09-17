@@ -4,8 +4,8 @@
   "description": "A portfolio page",
   "main": "server/server.js",
   "engines": {
-    "node": "12.12.0",
-    "npm": "6.11.3"
+    "node": "16.8.0",
+    "npm": "7.21.3"
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -29,18 +29,14 @@
   },
   "homepage": "https://github.com/jazznerd206/Andrew-Miller#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "bootstrap": "^4.5.2",
+    "@styled-icons/evil": "^10.34.0",
     "concurrently": "^5.3.0",
     "express": "^4.17.1",
-    "framer-motion": "^2.9.4",
     "googleapis": "^65.0.0",
     "if-env": "^1.0.4",
     "nodemailer": "^6.4.11",
     "nodemon": "^2.0.4",
     "path": "^0.12.7",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-awesome-reveal": "^3.5.2",
     "sendgrid": "^5.2.3"
   }
 }

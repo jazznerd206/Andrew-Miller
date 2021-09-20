@@ -10,6 +10,7 @@ export const WelcomeContainer = styled.div`
     @media (max-width: 768px) {
         padding: 0 auto;
         margin: 0 auto;
+        /* max-height: 100vh; */
     }
 `
 

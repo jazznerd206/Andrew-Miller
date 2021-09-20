@@ -21,8 +21,6 @@ export const Form = styled.div`
   flex: 1 1 auto;
   justify-content: space-evenly;
   align-items: center;
-  /* border: .5px solid;
-  box-shadow: inset 0 0 10px rgba(255,255,255); */
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -44,6 +42,10 @@ export const Box = styled.div`
 `
 
 export const FormTitle = styled.h1`
+  font-size: 2em;
+`
+
+export const FormSubTitle = styled.h3`
 `
 
 export const FormLabel = styled.label`

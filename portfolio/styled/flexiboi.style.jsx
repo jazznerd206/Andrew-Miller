@@ -16,7 +16,7 @@ export const Container = styled.div`
 
 export const GrabbyContainer = styled.div`
     width: 100%;
-    height: fit-content;
+    height: auto;
     display: flex;
     flex-direction: row;
     flex: 0 1 auto;

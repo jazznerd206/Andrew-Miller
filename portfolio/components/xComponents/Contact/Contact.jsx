@@ -73,7 +73,7 @@ function Contact() {
                             onFocus={() => setFocus('message')} 
                             value={message}
                             rows="10"
-                            cols="50"
+                            cols="25"
                             placeholder="Message"
                             aria-placeholder="Message"
                             onChange={e => setMessage(e.target.value)}

@@ -23,6 +23,9 @@ export const Form = styled.div`
   align-items: center;
   /* border: .5px solid;
   box-shadow: inset 0 0 10px rgba(255,255,255); */
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 export const Row = styled.div`
@@ -96,5 +99,9 @@ export const Message = styled.textarea`
       &::placeholder {
         color: transparent;
       }
+    }
+  @media (max-width: 768px) {
+    max-width: 90vh;
+    margin: 0 auto;
     }
 `

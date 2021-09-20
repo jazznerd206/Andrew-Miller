@@ -4,8 +4,8 @@ import Welcome from './components/Welcome/Welcome'
 import { Page } from './styled/components.style'
 
 function App() {
-    const [ active, setActive ] = useState(false);
 
+    const [ active, setActive ] = useState(false);
 
     return (
         <Page>

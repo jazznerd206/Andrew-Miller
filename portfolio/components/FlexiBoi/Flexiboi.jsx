@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Grabby, GrabbyText, Growy, GrowyText } from '../../styled/flexiboi.style'
-import { Close } from '@styled-icons/evil/Close'
-import { I } from '../../styled/components.style';
+import Contact from '../xComponents/Contact/Contact';
 
 
 function Flexiboi({setActive}) {
@@ -17,7 +16,7 @@ function Flexiboi({setActive}) {
             id: 1,
             name: 'Contact',
             key: 'contact',
-            content: 'component'
+            content: Contact
         },
         {
             id: 2,
@@ -40,7 +39,6 @@ function Flexiboi({setActive}) {
             }
         }
         for (let i = 0; i < panels.length; ++i) {
-            console.log(`panels`, panels);
             if (panels[i].id === `${data}`) {
                 panels[i].style.maxHeight = '100%'
                 panels[i].style.display = 'flex'
@@ -84,7 +82,7 @@ function Flexiboi({setActive}) {
                                 {each.name}
                             </GrabbyText>
                             :
-                            'X'
+                            <></>
                         }
                     </Grabby>
 
@@ -97,9 +95,15 @@ function Flexiboi({setActive}) {
                         key={each.key}
                         className="grower"
                         >
+                            {typeof each.content === 'string' ? 
                             <GrowyText>
-                                {each.name}
+                                {each.content}
                             </GrowyText>
+                            :
+                            <>
+                                {each.content()}
+                            </>
+                }
                     </Growy>
                 )
             })}

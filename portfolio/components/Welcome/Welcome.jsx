@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { WelcomeContainer } from '../../styled/welcome.style';
+import { WelcomeContainer, WTitle, TitleMain, TitleSub, TitleContent } from '../../styled/welcome.style';
 
 function Welcome({active}) {
-    console.log(`active`, active)
+
     if (active === true) {
         return null
     }
     else return (
         <WelcomeContainer>
-            <p>welcome to my house</p>
+            <WTitle>
+                <TitleMain>
+                    Andrew Miller
+                </TitleMain>
+                <TitleSub>
+                    {`{ SOFTWARE ENGINEER } < FULL STACK DEVELOPER > [ CRITICAL THINKER ]`}
+                </TitleSub>
+                
+            </WTitle>
         </WelcomeContainer>
     )
 }

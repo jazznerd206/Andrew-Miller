@@ -9,7 +9,7 @@ ReactDOM.render(
     <Router>
         <Theme theme={theme}>
             <GlobalStyle />
-                <App />
+            <App />
         </Theme>
     </Router>,
     document.getElementById('root')

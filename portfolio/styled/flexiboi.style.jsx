@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    position: absolute;
     bottom: 0;
     left: 0;
     height: 100%;
@@ -8,7 +9,7 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     transition: all .25s ease-in-out;
 

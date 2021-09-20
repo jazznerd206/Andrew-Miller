@@ -12,7 +12,7 @@ export const WelcomeContainer = styled.div`
         margin: 0 auto;
         /* max-height: 100vh; */
     }
-`
+    `
 
 export const WTitle = styled.div`
     display: flex;
@@ -21,7 +21,10 @@ export const WTitle = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
+    height: 100%;
+    @media (max-width: 768px) {
+        justify-content: flex-end;
+    }
 `
 
 export const TitleMain = styled.h1`

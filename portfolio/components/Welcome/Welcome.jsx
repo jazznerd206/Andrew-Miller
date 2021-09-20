@@ -12,18 +12,18 @@ function Welcome({active}) {
                 <TitleMain>
                     Andrew Miller
                 </TitleMain>
-            </WTitle>
-            <WContent>
                 <TitleSub>
                     {`{ SOFTWARE ENGINEER }`}
                 </TitleSub>
+            </WTitle>
+            {/* <WContent>
                 <TitleSub>
                     {`< FULL STACK DEVELOPER >`}
                 </TitleSub>
                 <TitleSub>
                     {`[ CRITICAL THINKER ]`}
                 </TitleSub>
-            </WContent>    
+            </WContent>     */}
         </WelcomeContainer>
     )
 }

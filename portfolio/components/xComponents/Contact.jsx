@@ -88,8 +88,8 @@ function Contact() {
                             >
                             </Input>
                         </Row>
-                    </Box>
-                    <Box>
+                    {/* </Box>
+                    <Box> */}
                         <Row>
                             <FormLabel ref={messageRef}>Message</FormLabel>
                             <Message

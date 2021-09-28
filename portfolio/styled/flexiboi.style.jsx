@@ -22,7 +22,7 @@ export const GrabbyContainer = styled.div`
     flex-direction: row;
     flex: 0 1 auto;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     @media (max-width: 768px) {
         flex-direction: column;
     }
@@ -31,6 +31,7 @@ export const GrabbyContainer = styled.div`
 export const Grabby = styled.div`
     width: 100%;
     height: auto;
+    text-align: center;
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -44,7 +45,7 @@ export const Grabby = styled.div`
 
 export const GrabbyText = styled.span`
     background: black;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     font-size: 2em;
     padding-bottom: .25em;
     border-bottom: 1px solid white;

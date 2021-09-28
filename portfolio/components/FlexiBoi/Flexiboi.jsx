@@ -2,6 +2,7 @@ import React, { useState, useEffect, createRef, useRef } from 'react';
 import { Page } from '../../styled/components.style';
 import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, CloseClicker } from '../../styled/flexiboi.style'
 import Contact from '../xComponents/Contact';
+import Projects from '../xComponents/Projects';
 
 
 function Flexiboi({setActive}) {
@@ -11,13 +12,13 @@ function Flexiboi({setActive}) {
             id: 0,
             name: 'Projects',
             key: 'projects',
-            content: 'component'
+            content: Projects,
         },
         {
             id: 1,
             name: 'Contact',
             key: 'contact',
-            content: Contact
+            content: Contact,
         },
         {
             id: 2,
@@ -43,13 +44,13 @@ function Flexiboi({setActive}) {
         for (let i = 0; i < panels.length; ++i) {
             if (panels[i].id === `${data}`) {
                 panels[i].style.display = 'flex';
-                panels[i].style.visibility = 'visible'
+                panels[i].style.visibility = 'visible';
                 panels[i].style.flex = '1 1 auto';
                 panels[i].style.height = '100%'
                 panels[i].style.maxHeight = '100%'
             } else {
-                panels[i].style.display = 'none';
                 panels[i].style.visibility = 'hidden';
+                panels[i].style.display = 'none';
                 panels[i].style.height = '0%';
                 panels[i].style.maxHeight = '0%';
             }
@@ -91,7 +92,9 @@ function Flexiboi({setActive}) {
                                 {each.name}
                             </GrabbyText>
                             :
-                            <GrabbyText>{each.name}</GrabbyText>
+                            <GrabbyText onClick={() => shrink()}>
+                                x
+                            </GrabbyText>
                         }
                     </Grabby>
                 )
@@ -106,22 +109,12 @@ function Flexiboi({setActive}) {
                         >
                             {typeof each.content === 'string' ? 
                             <Page>
-                                <CloseClicker
-                                    onClick={() => shrink()}
-                                >
-                                    X
-                                </CloseClicker>
                                 <GrowyText>
                                     {each.content}
                                 </GrowyText>
                             </Page>
                             :
                             <Page>
-                                <CloseClicker
-                                    onClick={() => shrink()}
-                                >
-                                    X
-                                </CloseClicker>
                                 {each.content()}
                             </Page>
                 }

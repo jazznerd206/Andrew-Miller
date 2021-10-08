@@ -112,7 +112,7 @@ export const ArrowBox = styled.span`
     }
 `
 
-export const ProjectList = styled.ul`
+export const ProjectList = styled.div`
     width: 100%;
     max-width: 1000px;
     height: auto;
@@ -122,20 +122,68 @@ export const ProjectList = styled.ul`
     display: flex;
     flex: 1;
     flex-direction: column;
-    border: 1px solid;
 `
 
-export const ProjectItem = styled.li`
+export const Topic = styled.div`
+    margin: .25em;
+    padding: .25em;
+    display: none;
+    max-height: 0%;
+    height: fit-content;
+    width: fit-content;
+    border: .5px solid;
+    border-radius: 10px;
+    transition: all .25s ease-in-out;;
+`
+
+export const RepoFacts = styled.div`
+    display: none;
+    flex: 1;
+    flex-flow: row wrap;
+    align-content: flex-end;
+    max-height: 0%;
+    transition: all .25s ease-in-out;
+`
+
+export const Description = styled.p`
+    display: none;
+    margin: 0;
+    padding: 0;
+    font-size: xx-small;
+`
+
+export const ProjectItem = styled.div`
     margin: .25em;
     padding: 0;
     width: 100%;
     height: auto;
-    border-bottom: 1px solid;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
     display: flex;
     flex: 1;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: all .25s ease-in-out;
+    transform: scale(1);
+    &:hover {
+        transform: scale(1.1);
+        /* border: 1px solid rgb(0,0,0,.25); */
+        border-radius: 10px;
+        box-shadow: 0 0 5px rgb(0,0,0,.25);
+        padding: 1em;
+    }
+    &:hover ${RepoFacts} {
+        display: flex;
+    }
+    &:hover ${Topic} {
+        display: flex;
+    }
+    &:hover ${Description} {
+        display: flex;
+        font-size: large;
+    }
 `
 
 export const ItemBox = styled.div`
@@ -154,14 +202,21 @@ export const ItemCol = styled.div`
     align-items: flex-start;
 `
 
-export const Topic = styled.div`
-    margin: .25em;
-    padding: .25em;
-    height: fit-content;
-    width: fit-content;
-    border: .5px solid;
-    border-radius: 10px;
-`
+// export const Topic = styled.div`
+//     margin: .25em;
+//     padding: .25em;
+//     display: none;
+//     height: fit-content;
+//     width: fit-content;
+//     border: .5px solid;
+//     border-radius: 10px;
+// `
+// export const RepoFacts = styled.div`
+//     display: none;
+//     flex: 1;
+//     flex-flow: row wrap;
+//     align-content: flex-end;
+// `
 
 export const Title = styled.div`
     display: flex;
@@ -172,18 +227,11 @@ export const RepoName = styled.h1`
 
 `
 
-export const RepoFacts = styled.div`
-    display: flex;
-    flex: 1;
-    flex-flow: row wrap;
-    align-content: flex-end;
-`
 export const Fact = styled.div`
     margin: 0 1em;
     padding: 0;
 `
-export const Description = styled.p`
-`
+
 
 export const Dates = styled.span`
     height: 100%;

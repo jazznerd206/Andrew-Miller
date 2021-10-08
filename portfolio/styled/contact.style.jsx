@@ -53,7 +53,6 @@ export const FormLabel = styled.label`
   flex: 1 1 auto;
   width: 100%;
   margin: .25em auto;
-  color: black;
   transition: all .25s ease-in-out;
 `
 
@@ -66,8 +65,6 @@ export const Submit = styled.button`
 export const Input = styled.input.attrs(props => ({
     type: "text",
   }))`
-    background: black;
-    color: white;
     border: .5px solid white;
     position: relative;
     margin: 1em 2em;
@@ -91,8 +88,7 @@ export const Input = styled.input.attrs(props => ({
 
 export const Message = styled.textarea`
   padding: 1em;
-  background: black;
-  color: white;
+
   border: .5px solid white;
   &:focus {
       outline: none;

@@ -39,15 +39,15 @@ function Contact() {
     const setFocus = name => {
         switch(name) {
             case 'name':
-                nameRef.current.style.color = 'white';
+                // nameRef.current.style.color = 'white';
                 nameRef.current.style.fontSize = '1.75em';
                 break;
             case 'email':
-                emailRef.current.style.color = 'white';
+                // emailRef.current.style.color = 'white';
                 emailRef.current.style.fontSize = '1.75em';
                 break;
             case 'message':
-                messageRef.current.style.color = 'white';
+                // messageRef.current.style.color = 'white';
                 messageRef.current.style.fontSize = '1.75em';
                 break;
             default:

@@ -115,8 +115,8 @@ export const ArrowBox = styled.span`
 export const ProjectList = styled.ul`
     width: 100%;
     max-width: 1000px;
-    height: 100%;
-    margin: 1em;
+    height: auto;
+    margin: 3em;
     padding: 1em;
     list-style-type: none;
     display: flex;
@@ -136,4 +136,65 @@ export const ProjectItem = styled.li`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+`
+
+export const ItemBox = styled.div`
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+`
+
+export const ItemCol = styled.div`
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+`
+
+export const Topic = styled.div`
+    margin: .25em;
+    padding: .25em;
+    height: fit-content;
+    width: fit-content;
+    border: .5px solid;
+    border-radius: 10px;
+`
+
+export const Title = styled.div`
+    display: flex;
+    flex-direction: row;
+`
+
+export const RepoName = styled.h1`
+
+`
+
+export const RepoFacts = styled.div`
+    display: flex;
+    flex: 1;
+    flex-flow: row wrap;
+    align-content: flex-end;
+`
+export const Fact = styled.div`
+    margin: 0 1em;
+    padding: 0;
+`
+export const Description = styled.p`
+`
+
+export const Dates = styled.span`
+    height: 100%;
+    font-size: xx-small;
+    display: flex;
+    flex-flow: column;
+`
+
+export const Languages = styled.span`
+    display: flex;
+    flex-flow: row;
+    flex: 1;
+
 `

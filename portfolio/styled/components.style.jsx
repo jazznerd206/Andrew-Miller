@@ -9,8 +9,6 @@ export const Page = styled.div`
     justify-content: center;
     align-items: center;
     flex: 1 1 auto;
-    background: black;
-    color: white;
     z-index: 0;
 `
 

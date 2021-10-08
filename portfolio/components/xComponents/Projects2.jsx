@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { projlist } from './projlist.jsx';
-import { ProjectContainer, ProjectList, ProjectItem } from '../../styled/projects.style';
+import PieChart from './charts/PieChart';
+import { ProjectContainer, ProjectList, ProjectItem, ItemBox, ItemCol, Topic, Title, Description, Dates, Languages, RepoName, RepoFacts, Fact } from '../../styled/projects.style';
 
 function Projects2() {
 
@@ -10,9 +10,6 @@ function Projects2() {
         'Standard_10',
         'tabylon',
         'Google-Books-Search-Engine',
-        'td_sounds',
-    ]
-    const passionsList = [
         'DataStructures',
         'KandR',
         'appogiatura',
@@ -21,36 +18,89 @@ function Projects2() {
     ]
 
     const [ projects, setProjects ] = useState([]);
-    const [ passions, setPassions ] = useState([]);
 
     useEffect(() => {
+        const getLangs = endpoint => {
+            let langs = [];
+            let total = 0;
+            fetch(endpoint)
+                .then(response => response.json())
+                .then(data => {
+                    for (const [key, value] of Object.entries(data)) {
+                        const newItem = {
+                            key: key,
+                            data: value,
+                        }
+                        langs.push(newItem);
+                        total += value;
+                    }
+                    langs.forEach((key, value) => {
+                        value = (value / total * 100).toFixed(1)
+                    })
+                })
+            return langs;
+        }
         const f = () => {
             projectsList.forEach(item => {
                 fetch(`https://api.github.com/repos/jazznerd206/${item}`)
                     .then(response => response.json())
-                    .then(data => setProjects(projects => [...projects, data]))
-            })
-            passionsList.forEach(item => {
-                fetch(`https://api.github.com/repos/jazznerd206/${item}`)
-                    .then(response => response.json())
-                    .then(data => setPassions(passions => [...passions, data]))
+                    .then(data => {
+                        const newItem = {
+                            name: data.name,
+                            description: data.description,
+                            created_at: data.created_at,
+                            updated_at: data.updated_at,
+                            stars: data.stargazers_count,
+                            watchers: data.watchers_count,
+                            topics: data.topics,
+                            languages: getLangs(data.languages_url),
+                        }
+                        setProjects(projects => [...projects, newItem])
+                    })
             })
         }
         f();
     }, [])
 
-    useEffect(() => {
-        console.log('projects :>> ', projects, passions);
-    }, [projects, passions])
-
     return (
         <ProjectContainer>
             <ProjectList>
-                {projlist.map(item => {
+                {projects.map(item => {
                     return (
-                        <ProjectItem>
-                            item
-                        </ProjectItem>
+                        <div key={item.id}>
+                            <ProjectItem>
+                                <ItemBox>
+                                    <Title>
+                                        <RepoName>
+                                            {item.name}
+                                        </RepoName>
+                                    </Title>
+                                    <Description>{item.description}</Description>
+                                    <ItemCol>
+                                        <Dates>
+                                            <p>Created: {item.created_at.substring(0,10)}</p>
+                                            <p>Last Update: {item.updated_at.substring(0,10)}</p>
+                                        </Dates>
+                                    </ItemCol>
+                                </ItemBox>
+                                <ItemBox>
+                                    <RepoFacts>
+                                        <Fact>{'🔎'}{item.watchers}</Fact>
+                                        <Fact>{'⭐️'} {item.stars}</Fact>
+                                    </RepoFacts>
+                                    <PieChart height={250} width={350} data={item.languages} />
+                                    <ItemCol>
+                                        {item.topics.map(topic => {
+                                            return (
+                                                <Topic key={item.name + topic}>
+                                                    {topic}
+                                                </Topic>
+                                            )
+                                        })}
+                                    </ItemCol>
+                                </ItemBox>
+                            </ProjectItem>
+                        </div>
                     )
                 })}
             </ProjectList>

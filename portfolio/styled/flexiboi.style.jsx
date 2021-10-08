@@ -44,8 +44,6 @@ export const Grabby = styled.div`
 `
 
 export const GrabbyText = styled.span`
-    background: black;
-    /* text-transform: uppercase; */
     font-size: 2em;
     padding-bottom: .25em;
     border-bottom: 1px solid white;

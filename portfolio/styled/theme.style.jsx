@@ -9,9 +9,9 @@ export default Theme;
 
 export const theme = {
     one: {
-        bg: 'black',
+        bg: 'white',
         bgi: '',
-        color: 'white',
+        color: 'black',
         colorAccent: 'grey',
         colorDeco: 'silver',
         fsTitle: '3em',

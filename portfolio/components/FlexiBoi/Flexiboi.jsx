@@ -2,6 +2,7 @@ import React, { useState, useEffect, createRef, useRef } from 'react';
 import { Page } from '../../styled/components.style';
 import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, CloseClicker } from '../../styled/flexiboi.style'
 import Contact from '../xComponents/Contact';
+import Projects2 from '../xComponents/Projects2';
 import Projects from '../xComponents/Projects';
 
 
@@ -12,7 +13,7 @@ function Flexiboi({setActive}) {
             id: 0,
             name: 'Projects',
             key: 'projects',
-            content: Projects,
+            content: Projects2,
         },
         {
             id: 1,

@@ -111,3 +111,29 @@ export const ArrowBox = styled.span`
         display: none;
     }
 `
+
+export const ProjectList = styled.ul`
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    margin: 1em;
+    padding: 1em;
+    list-style-type: none;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border: 1px solid;
+`
+
+export const ProjectItem = styled.li`
+    margin: .25em;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid;
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+`

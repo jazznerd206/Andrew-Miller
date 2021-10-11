@@ -5,82 +5,24 @@ export const ProjectContainer = styled.div`
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-    /* flex: 1 1 auto; */
+    flex: 1;
     justify-content: space-evenly;
     align-items: center;
     overflow: scroll;
 `
 
 export const CardTitle = styled.div`
+    text-align: center;
 `
 
 export const CardLink = styled.a`
-    /* text-decoration: none; */
     color: inherit;
     cursor: pointer;
     pointer-events: all;
+    padding-bottom: 5px;
+    font-weight: bolder;
 `
 
-export const CardContent = styled.div`
-    color: black;
-    display: none;
-    flex: 1 1 auto;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-`
-
-export const CardFront = styled.div`
-    color: black;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-`
-
-export const Card = styled.div`
-    margin: 100px auto;
-    background: rgb(100,100,100);
-    min-width: 250px;
-    height: 150px;
-    border-radius: 10px;
-    position: relative;
-    transition: all .25s ease-in-out;
-    &.active {
-        height: 350px;
-        margin: 0 auto;
-        & ${CardFront} {
-            display: none;
-        }
-        & ${CardContent} {
-            display: flex;
-        }
-    }
-    @media (max-width: 768px) {
-        height: 350px;
-        margin: 1em auto;
-        & ${CardFront} {
-            display: none;
-        }
-        & ${CardContent} {
-            display: flex;
-        }
-    }
-`
-
-export const InnerCard = styled.div`
-    background: rgb(200,200,200);
-    border-radius: 8px;
-    position: absolute;
-    top: .25em;
-    bottom: .25em;
-    left: .25em;
-    right: .25em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-`
 
 export const Summary = styled.span`
     text-align: center;
@@ -95,7 +37,7 @@ export const StackList = styled.ul`
 `
 
 export const StackItem = styled.li`
-    margin: .25em;
+    margin: 0 auto;
     padding: 0;
 `
 
@@ -113,15 +55,23 @@ export const ArrowBox = styled.span`
 `
 
 export const ProjectList = styled.div`
-    width: 100%;
     max-width: 1000px;
     height: auto;
-    margin: 3em;
-    padding: 1em;
-    list-style-type: none;
+    margin: 1em auto;
+    padding: 1em auto;
     display: flex;
     flex: 1;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1000px) {
+        max-width: 95vw;
+        margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+        margin: 0;
+        padding: 0;
+    }
 `
 
 export const Topic = styled.div`
@@ -133,16 +83,23 @@ export const Topic = styled.div`
     width: fit-content;
     border: .5px solid;
     border-radius: 10px;
-    transition: all .25s ease-in-out;;
+    transition: all .25s ease-in-out;
+    @media (max-width: 768px) {
+        display: flex;
+    }
 `
 
 export const RepoFacts = styled.div`
     display: none;
     flex: 1;
     flex-flow: row wrap;
-    align-content: flex-end;
+    align-items: flex-end;
     max-height: 0%;
     transition: all .25s ease-in-out;
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+    }
 `
 
 export const Description = styled.p`
@@ -150,14 +107,38 @@ export const Description = styled.p`
     margin: 0;
     padding: 0;
     font-size: xx-small;
+    @media (max-width: 768px) {
+        display: flex;
+        font-size: large;
+        justify-content: center;
+        text-align: center;
+    }
+`
+
+export const Dates = styled.div`
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: xx-small;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    @media (max-width: 768px) {
+        flex-direction: row;
+        width: 85vw;
+        justify-content: space-evenly;
+    }
+    transition: all .25s ease-in-out;
 `
 
 export const ProjectItem = styled.div`
-    margin: .25em;
-    padding: 0;
-    width: 100%;
+    margin: .25em 0;
+    padding: 1em;
+    width: 1000px;
     height: auto;
-    border: none;
+    border: 1px solid;
     border-radius: 0px;
     box-shadow: none;
     display: flex;
@@ -167,22 +148,31 @@ export const ProjectItem = styled.div`
     align-items: center;
     transition: all .25s ease-in-out;
     transform: scale(1);
-    &:hover {
-        transform: scale(1.1);
-        /* border: 1px solid rgb(0,0,0,.25); */
-        border-radius: 10px;
-        box-shadow: 0 0 5px rgb(0,0,0,.25);
-        padding: 1em;
+    @media (min-width: 768px) {
+        &:hover {
+            transform: scale(1.05);
+            border-radius: 10px;
+            box-shadow: 0 0 5px rgb(0,0,0,.25);
+            padding: 1em;
+        }
+        &:hover ${RepoFacts} {
+            display: flex;
+        }
+        &:hover ${Topic} {
+            display: flex;
+        }
+        &:hover ${Description} {
+            display: flex;
+            font-size: large;
+        }
     }
-    &:hover ${RepoFacts} {
-        display: flex;
+    @media (max-width: 1000px) {
+        max-width: 100vw;
     }
-    &:hover ${Topic} {
-        display: flex;
-    }
-    &:hover ${Description} {
-        display: flex;
-        font-size: large;
+    @media (max-width: 768px) {
+        margin: 0;
+        padding: 0;
+        flex-direction: column;
     }
 `
 
@@ -192,31 +182,22 @@ export const ItemBox = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
+    @media (max-width: 768px) {
+        align-items: center;
+    }
 `
 
 export const ItemCol = styled.div`
+    width: 100%;
+    margin: 0 auto;
     display: flex;
     flex: 1;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    @media (max-width: 768px) {
+        flex-flow: row wrap;
+        max-width: 85vw;
+    }
 `
-
-// export const Topic = styled.div`
-//     margin: .25em;
-//     padding: .25em;
-//     display: none;
-//     height: fit-content;
-//     width: fit-content;
-//     border: .5px solid;
-//     border-radius: 10px;
-// `
-// export const RepoFacts = styled.div`
-//     display: none;
-//     flex: 1;
-//     flex-flow: row wrap;
-//     align-content: flex-end;
-// `
 
 export const Title = styled.div`
     display: flex;
@@ -233,16 +214,19 @@ export const Fact = styled.div`
 `
 
 
-export const Dates = styled.span`
-    height: 100%;
-    font-size: xx-small;
-    display: flex;
-    flex-flow: column;
-`
-
-export const Languages = styled.span`
-    display: flex;
-    flex-flow: row;
-    flex: 1;
-
-`
+// export const Dates = styled.div`
+//     margin: 0;
+//     padding: 0;
+//     height: 100%;
+//     width: 100%;
+//     font-size: xx-small;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//     @media (max-width: 768px) {
+//         flex-direction: row;
+//         width: 85vw;
+//         justify-content: space-evenly;
+//     }
+// `

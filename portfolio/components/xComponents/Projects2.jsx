@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PieChart from './charts/PieChart';
-import { ProjectContainer, ProjectList, ProjectItem, ItemBox, ItemCol, Topic, Title, Description, Dates, Languages, RepoName, RepoFacts, Fact } from '../../styled/projects.style';
+import { ProjectContainer, ProjectList, ProjectItem, ItemBox, ItemCol, Topic, Title, Description, Dates, RepoName, RepoFacts, Fact, CardLink } from '../../styled/projects.style';
 
 function Projects2() {
 
@@ -54,6 +54,7 @@ function Projects2() {
                             watchers: data.watchers_count,
                             topics: data.topics,
                             languages: getLangs(data.languages_url),
+                            codeLink: data.html_url,
                         }
                         setProjects(projects => [...projects, newItem])
                     })
@@ -67,7 +68,7 @@ function Projects2() {
             <ProjectList>
                 {projects.map(item => {
                     return (
-                        <div key={item.id}>
+                        <div key={`project-${item.name}`}>
                             <ProjectItem>
                                 <ItemBox>
                                     <Title>
@@ -75,6 +76,7 @@ function Projects2() {
                                             {item.name}
                                         </RepoName>
                                     </Title>
+                                    <CardLink href={item.codeLink} target="_blank" rel="noreferrer noopener"><p>Code repo</p></CardLink>
                                     <Description>{item.description}</Description>
                                     <ItemCol>
                                         <Dates>

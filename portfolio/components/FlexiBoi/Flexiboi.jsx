@@ -3,7 +3,6 @@ import { Page } from '../../styled/components.style';
 import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, CloseClicker } from '../../styled/flexiboi.style'
 import Contact from '../xComponents/Contact';
 import Projects2 from '../xComponents/Projects2';
-import Projects from '../xComponents/Projects';
 
 
 function Flexiboi({setActive}) {
@@ -80,48 +79,48 @@ function Flexiboi({setActive}) {
     return (
         <Container>
             <GrabbyContainer ref={grabbyContainer}>
-            {elements.map(each => {
-                return(
-                    <Grabby 
-                        className="shower" 
-                        id={`id-${each.id}`}
-                        key={`key-${each.key}`}
-                        onClick={open === false ? () => {setOpen(true); grow(each.id)} : () => {setOpen(false); shrink()}}
-                    >
-                        {open === false ?
-                            <GrabbyText>
-                                {each.name}
-                            </GrabbyText>
-                            :
-                            <GrabbyText onClick={() => shrink()}>
-                                x
-                            </GrabbyText>
-                        }
-                    </Grabby>
-                )
-            })}
-            </GrabbyContainer>
-            {elements.map(each => {
-                return (
-                    <Growy
-                        id={each.id}
-                        key={each.key}
-                        className="grower"
+                {elements.map(each => {
+                    return(
+                        <Grabby 
+                            className="shower" 
+                            id={`id-${each.id}`}
+                            key={`grabby-${each.key}`}
+                            onClick={open === false ? () => {setOpen(true); grow(each.id)} : () => {setOpen(false); shrink()}}
                         >
-                            {typeof each.content === 'string' ? 
-                            <Page>
-                                <GrowyText>
-                                    {each.content}
-                                </GrowyText>
-                            </Page>
-                            :
-                            <Page>
-                                {each.content()}
-                            </Page>
-                }
+                            {open === false ?
+                                <GrabbyText>
+                                    {each.name}
+                                </GrabbyText>
+                                :
+                                <GrabbyText onClick={() => shrink()}>
+                                    x
+                                </GrabbyText>
+                            }
+                        </Grabby>
+                    )
+                })}
+            </GrabbyContainer>
+                {elements.map(each => {
+                    return (
+                        <Growy
+                            id={each.id}
+                            key={`growy-${each.key}`}
+                            className="grower"
+                            >
+                                {typeof each.content === 'string' ? 
+                                <Page>
+                                    <GrowyText>
+                                        {each.content}
+                                    </GrowyText>
+                                </Page>
+                                :
+                                <Page>
+                                    {each.content()}
+                                </Page>
+                            }
                     </Growy>
-                )
-            })}
+                    )
+                })}
         </Container>
     )
 }

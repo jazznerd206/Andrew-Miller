@@ -16,11 +16,12 @@ export const Container = styled.div`
 `
 
 export const GrabbyContainer = styled.div`
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
-    flex: 0 1 auto;
     justify-content: center;
     align-items: center;
     @media (max-width: 768px) {
@@ -41,12 +42,13 @@ export const Grabby = styled.div`
     cursor: pointer;
     pointer-events: all;
     transition: all .25s ease-in-out;
+    box-shadow: ${props => props.open === true ? '0 4px 5px -5px gray;' : 'none'};
 `
 
 export const GrabbyText = styled.span`
     font-size: 2em;
     padding-bottom: .25em;
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
     border-radius: 5px;
 `
 

@@ -9,6 +9,7 @@ export const WelcomeContainer = styled.div`
     align-items: center;
     @media (max-width: 768px) {
         padding: 0 auto;
+        padding-bottom: 25vh;
         margin: 0 auto;
     }
     `

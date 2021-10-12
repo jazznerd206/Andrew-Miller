@@ -173,6 +173,9 @@ export const ProjectItem = styled.div`
         margin: 0;
         padding: 0;
         flex-direction: column;
+        border: none;
+        padding-bottom: 10px;
+        border-bottom: 1px solid;
     }
 `
 

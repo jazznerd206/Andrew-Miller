@@ -3,6 +3,7 @@ import { Page } from '../../styled/components.style';
 import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, CloseClicker } from '../../styled/flexiboi.style'
 import Contact from '../xComponents/Contact';
 import Projects2 from '../xComponents/Projects2';
+import Bio from '../xComponents/Bio';
 
 
 function Flexiboi({setActive}) {
@@ -24,7 +25,7 @@ function Flexiboi({setActive}) {
             id: 2,
             name: 'Get to know me!',
             key: 'personal',
-            content: 'component'
+            content: Bio,
         },
     ]
 
@@ -78,10 +79,11 @@ function Flexiboi({setActive}) {
 
     return (
         <Container>
-            <GrabbyContainer ref={grabbyContainer}>
+            <GrabbyContainer ref={grabbyContainer} open={open}>
                 {elements.map(each => {
                     return(
                         <Grabby 
+                            open={open}
                             className="shower" 
                             id={`id-${each.id}`}
                             key={`grabby-${each.key}`}

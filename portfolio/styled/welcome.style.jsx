@@ -3,18 +3,18 @@ import styled from "styled-components";
 export const WelcomeContainer = styled.div`
     height: 100%;
     width: 100%;
-    margin: auto auto;
-    padding: 5em auto;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 768px) {
         padding: 0 auto;
         margin: 0 auto;
-        /* max-height: 100vh; */
     }
     `
 
 export const WTitle = styled.div`
+    position: relative;
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
@@ -28,14 +28,33 @@ export const WTitle = styled.div`
 `
 
 export const TitleMain = styled.h1`
+    /* position: relative; */
     text-transform: uppercase;
     font-size: 2em;
     margin: 0 auto;
 `
 
-export const TitleSub = styled.h2`
+export const Title = styled.h3`
+    padding: 0;
+    margin: 0;
     font-variant: small-caps;
     font-weight: lighter;
+`
+
+export const TitleSub = styled.div`
+    width: max-content;
+    height: min-content;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, 100%, 0);
+    @media (max-width: 768px) {
+        bottom: -50%;
+        left: 50%;
+        transform: translate3d(-50%, 500%, 0);
+    }
+    transition: all .25s ease-in-out;
 `
 
 export const TitleContent = styled.p``

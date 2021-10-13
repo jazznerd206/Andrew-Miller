@@ -38,6 +38,8 @@ function Flexiboi({setActive}) {
         for (let i = 0; i < handles.length; ++i) {
             if (handles[i].id === `id-${data}`) {
                 handles[i].style.display = 'flex';
+                handles[i].style.margin = 0;
+                handles[i].style.padding = 0;
             } else {
                 handles[i].style.display = 'none';
             }

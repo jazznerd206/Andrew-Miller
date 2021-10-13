@@ -30,6 +30,8 @@ export const GrabbyContainer = styled.div`
 `
 
 export const Grabby = styled.div`
+    margin: 0;
+    padding: 0;
     width: 100%;
     height: auto;
     text-align: center;

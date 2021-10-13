@@ -16,29 +16,30 @@ export const LeftArrow = styled(ArrowLeft)``
 
 export const RightArrow = styled(ArrowRight)``
 
-export const NavSubTitle = styled.div``
+export const NavSubTitle = styled.h3``
 
 export const Navigation = styled.div`
     opacity: ${props => props.vis === true ? 1 : 0};
     pointer-events: ${props => props.vis === true ? 'all' : 'none'};
-    width: 10vh;
+    width: 12.5vh;
+    margin: 0 auto;
+    text-align: center;
     height: 100%;
     flex-flow: column;
     flex: 1 1 auto;
     justify-content: center;
     align-items: center;
     z-index: 99;
-    background: blue;
 `
 
-export const Content = styled.div`
+export const Content = styled.ul`
     height: 100%;
     width: 100%;
     position: relative;
 `
 
-export const Slide = styled.div`
-    background: red;
+export const Slide = styled.li`
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;

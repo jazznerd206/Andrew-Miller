@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { BioContainer, LeftArrow, RightArrow, Navigation, Content, NavSubTitle, Slide } from '../../styled/bio.style';
 import SlideOne from './slides/SlideOne';
 import SlideTwo from './slides/SlideTwo';

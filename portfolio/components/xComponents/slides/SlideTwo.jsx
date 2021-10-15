@@ -14,7 +14,7 @@ function SlideTwo() {
                 </TextHolder>
                 <TextHolder width={'75%'} fs={20} visible={'not-mobile'}>
                     <Text>
-                        This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy. This will be the bio copy.
+                        Aside from coding, my greatest passions in life are golf, music and my dogs. My wife and I foster dogs through the Seattle Animal Shelter, and we have successfully rehomed 20+ and counting!!
                     </Text>
                 </TextHolder>
                 <TextHolder width={'100%'}>

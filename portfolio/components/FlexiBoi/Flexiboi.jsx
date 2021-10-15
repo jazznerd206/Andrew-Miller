@@ -23,7 +23,7 @@ function Flexiboi({setActive}) {
         },
         {
             id: 2,
-            name: 'Get to know me!',
+            name: 'About Me',
             key: 'personal',
             content: Bio,
         },

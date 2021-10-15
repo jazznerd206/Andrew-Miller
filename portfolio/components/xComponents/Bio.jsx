@@ -2,8 +2,6 @@ import React, { useState, useEffect, useRef } from 'react'
 import { BioContainer, LeftArrow, RightArrow, Navigation, Content, NavSubTitle, Slide } from '../../styled/bio.style';
 import SlideOne from './slides/SlideOne';
 import SlideTwo from './slides/SlideTwo';
-import SlideThree from './slides/SlideThree';
-import SlideFour from './slides/SlideFour';
 
 
 function Bio() {
@@ -19,16 +17,6 @@ function Bio() {
             name: 'find me',
             content: SlideOne()
         },
-        // {
-        //     id: 2,
-        //     name: 'dogs',
-        //     content: SlideThree()
-        // },
-        // {
-        //     id: 3,
-        //     name: 'golf',
-        //     content: SlideFour()
-        // },
     ]
 
     const [ active, setActive ] = useState(slides[0]);

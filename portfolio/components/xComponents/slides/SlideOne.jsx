@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import record from '../../../images/record.jpeg';
-import { Slide, Column, Twitter, Github, Instagram, IconHolder, IconTag } from '../../../styled/bio.style';
+import { Slide, Column, Twitter, Github, Instagram, IconHolder, IconTag, Resume } from '../../../styled/bio.style';
+import Res from '../../../documents/ALM_Resume.pdf'
 
 
 function SlideOne() {
     return (
         <>
             <Column>
-                <h1>Resume</h1>                    
+                <Resume document={Res}>Resume</Resume>                    
                 <Twitter />
             </Column>
             <Column>

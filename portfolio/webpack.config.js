@@ -28,7 +28,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(jpe?g|woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
         use: [
           {
             loader: 'file-loader',
@@ -39,6 +39,10 @@ module.exports = {
           }
         ]
       },
+      {
+        test: /\.(pdf|gif|png|jpe?g|svg)$/,
+        use: 'file-loader?name=[path][name].[ext]',
+      }
     ],
   },
   resolve: {

@@ -78,6 +78,7 @@ export const Title = styled.h1`
 export const TextHolder = styled.span`
     display: flex;
     flex-direction: row;
+    text-align: center;
     justify-content: space-evenly;
     align-items: center;
     width: ${props => props.width};
@@ -111,6 +112,22 @@ export const Github = styled(ScGithub)`
     transition: all .25s ease-in-out;
 `
 
+export const Resume = styled.a.attrs(props => ({
+    href: props.document,
+    target: '_blank',
+    rel: 'noopener noreferrer'
+}))`
+    text-decoration: none;
+    border-bottom: 0px solid;
+    font-variant: small-caps;
+    color: black;
+    font-size: 48px;
+    &:hover {
+        border-bottom: .5px solid;
+    }
+    transition: all .25s ease-in-out;
+`
+
 export const Instagram = styled(ScInstagram)`
     opacity: .5;
     &:hover {
@@ -126,7 +143,6 @@ export const Twitter = styled(ScTwitter)`
     }
     transition: all .25s ease-in-out;
 `
-
 
 export const IconHolder = styled.div`
 background: black;

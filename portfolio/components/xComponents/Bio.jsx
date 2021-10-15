@@ -11,24 +11,24 @@ function Bio() {
     const slides = [
         {
             id: 0,
-            name: 'record',
-            content: SlideOne()
-        },
-        {
-            id: 1,
-            name: 'bio',
+            name: 'about me',
             content: SlideTwo()
         },
         {
-            id: 2,
-            name: 'dogs',
-            content: SlideThree()
+            id: 1,
+            name: 'find me',
+            content: SlideOne()
         },
-        {
-            id: 3,
-            name: 'golf',
-            content: SlideFour()
-        },
+        // {
+        //     id: 2,
+        //     name: 'dogs',
+        //     content: SlideThree()
+        // },
+        // {
+        //     id: 3,
+        //     name: 'golf',
+        //     content: SlideFour()
+        // },
     ]
 
     const [ active, setActive ] = useState(slides[0]);

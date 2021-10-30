@@ -69,20 +69,20 @@ function Projects2() {
             <ProjectList>
                 {projects.map(item => {
                     return (
-                        <div key={`project-${item.name}`}>
+                        <div key={`project-${item?.name}`}>
                             <ProjectItem>
                                 <ItemBox>
                                     <Title>
                                         <RepoName>
-                                            {item.name}
+                                            {item?.name}
                                         </RepoName>
                                     </Title>
                                     <CardLink href={item.codeLink} target="_blank" rel="noreferrer noopener"><p>Code repo</p></CardLink>
                                     <Description>{item.description}</Description>
                                     <ItemCol>
                                         <Dates>
-                                            <p>Created: {item.created_at.substring(0,10)}</p>
-                                            <p>Last Update: {item.updated_at.substring(0,10)}</p>
+                                            <p>Created: {item.created_at?.substring(0,10)}</p>
+                                            <p>Last Update: {item.updated_at?.substring(0,10)}</p>
                                         </Dates>
                                     </ItemCol>
                                 </ItemBox>

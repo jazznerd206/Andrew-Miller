@@ -79,12 +79,12 @@ function Projects2() {
                                     </Title>
                                     <CardLink href={item.codeLink} target="_blank" rel="noreferrer noopener"><p>Code repo</p></CardLink>
                                     <Description>{item.description}</Description>
-                                    <ItemCol>
+                                    {/* <ItemCol>
                                         <Dates>
                                             <p>Created: {item.created_at?.substring(0,10)}</p>
                                             <p>Last Update: {item.updated_at?.substring(0,10)}</p>
                                         </Dates>
-                                    </ItemCol>
+                                    </ItemCol> */}
                                 </ItemBox>
                                 <ItemBox>
                                     <RepoFacts>

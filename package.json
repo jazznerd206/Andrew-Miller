@@ -13,10 +13,9 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd portfolio && npm run start",
     "seed": "node scripts/seedDB.js",
-    "install": "cd portfolio && npm install",
     "build": "cd portfolio && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",

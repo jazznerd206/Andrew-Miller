@@ -11,15 +11,15 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, '../portfolio/build')));
+app.use(express.static(path.join(__dirname, '../portfolio/dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, "../portfolio/build/index.html"));
+  res.sendFile(path.join(__dirname, "../portfolio/dist/index.html"));
 });
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../portfolio/build"));
+  app.use(express.static("../portfolio/dist"));
 }
 
 const transporter = nodemailer.createTransport({

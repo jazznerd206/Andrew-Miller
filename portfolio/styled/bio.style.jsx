@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { ArrowLeft, ArrowRight, ScGithub, ScTwitter, ScInstagram } from '@styled-icons/evil'
+import { Link } from 'react-router-dom'
+import { ArrowLeft, ArrowRight, ScGithub, ScTwitter, ScInstagram, Envelope as E } from '@styled-icons/evil'
 
 
 export const BioContainer = styled.div`
@@ -10,6 +11,13 @@ export const BioContainer = styled.div`
     flex: 1;
     justify-content: space-between;
     align-items: center;
+`
+
+export const OffPageLink = styled.a`
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: ${props => props.color ? props.color : 'black'};
 `
 
 export const LeftArrow = styled(ArrowLeft)``
@@ -29,6 +37,7 @@ export const Navigation = styled.div`
     margin: 0 auto;
     text-align: center;
     height: 100%;
+    display: flex;
     flex-flow: column;
     flex: 1 1 auto;
     justify-content: center;
@@ -43,6 +52,8 @@ export const Navigation = styled.div`
 `
 
 export const Content = styled.ul`
+    margin: 0;
+    padding: 0;
     height: 100%;
     width: 100%;
     position: relative;
@@ -52,6 +63,8 @@ export const Content = styled.ul`
 `
 
 export const Slide = styled.li`
+    margin: 0;
+    padding: 0;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -60,29 +73,49 @@ export const Slide = styled.li`
     flex: 1;
     justify-content: space-around;
     align-items: center;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `
 
 export const Column = styled.div`
+    margin: 0;
+    padding: 0;
     height: 100%;
-    width: fit-content;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     flex: 1;
+    @media (max-width: 768px) {
+        flex-direction: row wrap;
+    }
+`
+
+export const Record = styled.img`
+    width: 500px;
+    @media (max-width: 768px) {
+        width: 70vw;
+    }
 `
 
 export const Title = styled.h1`
+    font-style: italic;
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 `
 
 export const TextHolder = styled.span`
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: space-evenly;
     align-items: center;
     width: ${props => props.width};
-    font-size: ${props => props.fs + 'px'};
     @media (max-width: 768px) {
         width: 100%;
     }
@@ -91,13 +124,37 @@ export const TextHolder = styled.span`
 export const I = styled.i`
 `
 
-export const Text = styled.p``
+export const Text = styled.p`
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex: 1;
+    font-size: 24px;
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+`
 
 export const IconTag = styled.div`
     display: none;
 `
 
 export const Github = styled(ScGithub)`
+    position: relative;
+    opacity: .5;
+    &:hover {
+        opacity: 1;
+    }
+    &:hover ${IconTag} {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    transition: all .25s ease-in-out;
+`
+
+export const Email = styled(E)`
     position: relative;
     opacity: .5;
     &:hover {
@@ -126,6 +183,9 @@ export const Resume = styled.a.attrs(props => ({
         border-bottom: .5px solid;
     }
     transition: all .25s ease-in-out;
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
 `
 
 export const Instagram = styled(ScInstagram)`
@@ -145,5 +205,12 @@ export const Twitter = styled(ScTwitter)`
 `
 
 export const IconHolder = styled.div`
-background: black;
+    display: flex;
+    flex-flow: column;
+    flex: 1 1 auto;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 768px) {
+        flex-flow: row;
+    }
 `

@@ -5,14 +5,15 @@ import { ProjectContainer, ProjectList, ProjectItem, ItemBox, ItemCol, Topic, Ti
 function Projects2() {
 
     const projectsList = [
+        'ReacT9',
         'React_Graph',
-        'CH-inventory',
-        'Standard_10',
         'tabylon',
+        'Standard_10',
+        'appogiatura',
+        'CH-inventory',
         'Google-Books-Search-Engine',
         'DataStructures',
         'KandR',
-        'appogiatura',
         'Connect_Four',
         'RAF_Party',
     ]

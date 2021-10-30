@@ -6,6 +6,7 @@ module.exports = {
   entry: './index.jsx',
   devtool: 'inline-source-map',
   mode: 'development',
+  entry: ["@babel/polyfill", "./index.jsx"],
   devServer: {
     host: '0.0.0.0',
     port: 3000,

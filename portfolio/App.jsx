@@ -8,7 +8,7 @@ function App() {
     const [ active, setActive ] = useState(false);
 
     return (
-        <Page>
+        <Page data-testid="App">
             <Welcome active={active} />
             <Flexiboi setActive={setActive} />
         </Page>

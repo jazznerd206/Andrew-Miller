@@ -8,6 +8,7 @@
     "build": "webpack --config webpack.config.js",
     "start": "webpack serve --hot"
   },
+  "proxy": "http://localhost:8080",
   "keywords": [],
   "author": "",
   "license": "ISC",

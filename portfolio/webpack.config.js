@@ -15,6 +15,9 @@ module.exports = {
       '/access': {
         target: 'http://localhost:8080',
       },
+      '/token': {
+        target: 'http://localhost:8080',
+      }
     },
   },
   module: {

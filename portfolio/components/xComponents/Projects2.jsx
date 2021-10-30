@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import PieChart from './charts/PieChart';
 import { ProjectContainer, ProjectList, ProjectItem, ItemBox, ItemCol, Topic, Title, Description, Dates, RepoName, RepoFacts, Fact, CardLink } from '../../styled/projects.style';
 
@@ -21,10 +22,19 @@ function Projects2() {
     const [ projects, setProjects ] = useState([]);
 
     useEffect(() => {
-        const getLangs = endpoint => {
+        let getToken = async () => {
+            let d = await axios.get('/token');
+            return d.data.key;
+        }
+        const getLangs = (endpoint, _TOKEN) => {
             let langs = [];
             let total = 0;
-            fetch(endpoint)
+            fetch(endpoint, {
+                headers: {
+                  'Content-Type': 'application/json',
+                  "Authorization" : `token ${_TOKEN}`
+                },
+              })
                 .then(response => response.json())
                 .then(data => {
                     for (const [key, value] of Object.entries(data)) {
@@ -41,19 +51,16 @@ function Projects2() {
                 })
             return langs;
         }
-        const f = () => {
+        const f = async () => {
+            let token = await getToken();
             projectsList.forEach(item => {
                 fetch(`https://api.github.com/repos/jazznerd206/${item}`, {
-                    method: 'GET',
-                    mode: 'cors',
-                    cache: 'no-cache',
-                    credentials: 'same-origin',
                     headers: {
-                      'Content-Type': 'application/json'
+                      'Content-Type': 'application/json',
+                      "Authorization" : `token ${token}`
                     },
-                    redirect: 'follow',
-                    referrerPolicy: 'no-referrer',
-                  })
+                  }
+                  )
                     .then(response => response.json())
                     .then(data => {
                         const newItem = {
@@ -64,7 +71,7 @@ function Projects2() {
                             stars: data.stargazers_count,
                             watchers: data.watchers_count,
                             topics: data.topics,
-                            languages: getLangs(data.languages_url),
+                            languages: getLangs(data.languages_url, token),
                             codeLink: data.html_url,
                         }
                         setProjects(projects => [...projects, newItem])
@@ -103,7 +110,7 @@ function Projects2() {
                                     </RepoFacts>
                                     <PieChart height={250} width={350} data={item.languages} />
                                     <ItemCol>
-                                        {item.topics.map(topic => {
+                                        {Array.isArray(item.topics) && item.topics.map(topic => {
                                             return (
                                                 <Topic key={item.name + topic}>
                                                     {topic}

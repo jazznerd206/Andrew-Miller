@@ -13,6 +13,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, '../portfolio/dist')));
 
+app.get('/token', (req, res) => {
+  res.json( { key: process.env.REACT_APP_GH_TOKEN } );
+})
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, "../portfolio/dist/index.html"));
 });
@@ -51,28 +55,22 @@ app.post('/access', (req, res, next) => {
   const email = req.body.email;
   const message = req.body.message;
   const content = `name: ${name}  |  email: ${email} \n message: ${message} `;
-  console.log(`this is a new comment ${name, email, message}`)
 
   const mail = {
     from: email, 
     to: '206alm@gmail.com', 
-    // message: subject,
+    message: message,
     text: content
   }
-  console.log(`mail json ${mail}`);
-
   transporter.sendMail(mail, (err, data) => {
     if (err) {
       res.json({
         status: 'fail'
       })
-      console.log('mail fail');
-      console.log(err);
     } else {
       res.json({
        status: 'success'
       })
-      console.log('mail win')
     }
   })
 })

@@ -79,6 +79,6 @@ app.post('/access', (req, res, next) => {
 
 transporter.close();
 
-app.listen(PORT, () => {
-    console.log(`${PORT}`);
-  });
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
+})

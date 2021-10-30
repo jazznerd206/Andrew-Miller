@@ -43,7 +43,17 @@ function Projects2() {
         }
         const f = () => {
             projectsList.forEach(item => {
-                fetch(`https://api.github.com/repos/jazznerd206/${item}`)
+                fetch(`https://api.github.com/repos/jazznerd206/${item}`, {
+                    method: 'GET',
+                    mode: 'cors',
+                    cache: 'no-cache',
+                    credentials: 'same-origin',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    },
+                    redirect: 'follow',
+                    referrerPolicy: 'no-referrer',
+                  })
                     .then(response => response.json())
                     .then(data => {
                         const newItem = {

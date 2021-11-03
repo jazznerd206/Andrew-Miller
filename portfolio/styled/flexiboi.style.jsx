@@ -46,6 +46,7 @@ export const Grabby = styled.div`
     pointer-events: all;
     transition: all .25s ease-in-out;
     box-shadow: ${props => props.open === true ? '0 4px 5px -5px gray;' : 'none'};
+    z-index: 9999;
 `
 
 export const GrabbyText = styled.span`

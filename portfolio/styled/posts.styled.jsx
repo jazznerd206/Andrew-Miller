@@ -13,16 +13,45 @@ export const Posts = styled.div`
     flex-flow: column;
 `
 
+export const PostContainer = styled.div`
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+`
+
+export const PostNav = styled.div`
+    width: 10vw;
+    border-right: .5px solid;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    align-items: center;
+    @media (max-width: 768px) {
+        width: 20vw;
+    }
+`
+
+export const PostAnchor = styled.a`
+    text-decoration: none;
+    color: black;
+    @media (max-width: 768px) {
+        font-size: smaller;
+    }
+`
+
 export const PostList = styled.ul`
-    margin: 0 auto;
+    margin: 0;
     padding: 0;
     width: 100%;
     max-width: 1000px;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
+    flex: 1;
     flex-flow: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    overflow-y: scroll;
 `
 
 export const Post = styled.li`
@@ -30,7 +59,7 @@ export const Post = styled.li`
     padding: 0;
     width: 100%;
     max-width: 756px;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-flow: column;
     justify-content: center;

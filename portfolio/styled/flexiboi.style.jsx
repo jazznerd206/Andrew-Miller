@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { flash } from './keyframe.styled';
 
 export const Container = styled.div`
     position: absolute;
@@ -40,7 +41,7 @@ export const Grabby = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1em auto;
+    margin: .25em auto;
     cursor: pointer;
     pointer-events: all;
     transition: all .25s ease-in-out;
@@ -48,9 +49,9 @@ export const Grabby = styled.div`
 `
 
 export const GrabbyText = styled.span`
+    margin: 0;
+    padding: 0;
     font-size: 2em;
-    padding-bottom: .25em;
-    /* border-bottom: 1px solid white; */
     border-radius: 5px;
 `
 
@@ -68,9 +69,6 @@ export const Growy = styled.div`
     justify-content: center;
     align-items: center;
     flex: 0 1 auto;
-    /* &.active {
-        max-height: 100%;
-    } */
     transition: all .25s ease-in-out;
 `
 

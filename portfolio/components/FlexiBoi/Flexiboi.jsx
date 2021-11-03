@@ -4,11 +4,18 @@ import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, Close
 import Contact from '../xComponents/Contact';
 import Projects2 from '../xComponents/Projects2';
 import Bio from '../xComponents/Bio';
+import Posts from '../xComponents/Posts';
 
 
 function Flexiboi({setActive}) {
 
     const elements = [
+        {
+            id: 2,
+            name: 'About Me',
+            key: 'personal',
+            content: Bio,
+        },
         {
             id: 0,
             name: 'Projects',
@@ -16,16 +23,16 @@ function Flexiboi({setActive}) {
             content: Projects2,
         },
         {
+            id: 3,
+            name: 'Posts',
+            key: 'blog',
+            content: Posts,
+        },
+        {
             id: 1,
             name: 'Contact',
             key: 'contact',
             content: Contact,
-        },
-        {
-            id: 2,
-            name: 'About Me',
-            key: 'personal',
-            content: Bio,
         },
     ]
 

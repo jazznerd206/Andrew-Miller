@@ -22,12 +22,12 @@ function Flexiboi({setActive}) {
             key: 'projects',
             content: Projects2,
         },
-        {
-            id: 3,
-            name: 'Posts',
-            key: 'blog',
-            content: Posts,
-        },
+        // {
+        //     id: 3,
+        //     name: 'Posts',
+        //     key: 'blog',
+        //     content: Posts,
+        // },
         {
             id: 1,
             name: 'Contact',

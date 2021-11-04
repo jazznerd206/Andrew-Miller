@@ -3,7 +3,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './index.jsx',
+  entry: {
+    'bundle': './index.jsx',
+    'bundle.min': '/index.jsx'
+  },
   devtool: 'inline-source-map',
   mode: 'development',
   entry: ["@babel/polyfill", "./index.jsx"],
@@ -53,8 +56,8 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
   output: {
-    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: "[name].js"
   },
   plugins: [
     new HtmlWebpackPlugin({ template: path.join(__dirname, 'public', 'index.html' )}),

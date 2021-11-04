@@ -11,7 +11,11 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(path.join(__dirname, '../portfolio/dist')));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../portfolio/prodbuild')));
+} else { 
+  app.use(express.static(path.join(__dirname, '../portfolio/dist')));
+}
 
 app.get('/token', (req, res) => {
   res.json( { key: process.env.REACT_APP_GH_TOKEN } );
@@ -19,17 +23,14 @@ app.get('/token', (req, res) => {
 
 app.get('*', (req, res) => {
   if (process.env.NODE_ENV === 'production') {
-    console.log('production build')
+    console.log(("========================="));
+    console.log('production build');
+    console.log(("========================="));
     res.sendFile(path.join(__dirname, "../portfolio/prodbuild/index.html"));  
   } else {
     res.sendFile(path.join(__dirname, "../portfolio/dist/index.html"));
   }
 });
-
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("../portfolio/dist"));
-}
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -41,15 +42,14 @@ const transporter = nodemailer.createTransport({
     pass: process.env.GMAIL_PASSWORD,
   },
   debug: false,
-  logger: true
+  logger: false
 });
 
 // verifying the connection configuration
 transporter.verify(function(error, success) {
   if (error) {
     console.log(error);
-  } else {
-    console.log("Server is ready to take our messages!");
+    throw err;
   }
 });
 

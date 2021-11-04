@@ -42,7 +42,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.GMAIL_PASSWORD,
   },
   debug: false,
-  logger: false
+  logger: true
 });
 
 // verifying the connection configuration

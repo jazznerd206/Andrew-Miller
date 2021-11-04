@@ -49,7 +49,7 @@ const transporter = nodemailer.createTransport({
 transporter.verify(function(error, success) {
   if (error) {
     console.log(error);
-    throw err;
+    throw error;
   }
 });
 

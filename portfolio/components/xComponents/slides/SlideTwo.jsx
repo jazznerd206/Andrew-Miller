@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import { Column, Text, TextHolder, Title, I } from '../../../styled/bio.style';
-// JS, Java, C, Python, React, SQL, Mongo, Postgres, Jest, Mocha, Cypress, AWS
+import { Column, Text, TextHolder, Title, I } from '../../../styled/bio.style.jsx';
+
 
 function SlideTwo() {
     return (

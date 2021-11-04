@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { BioContainer, LeftArrow, RightArrow, Navigation, Content, NavSubTitle, Slide } from '../../styled/bio.style';
-import SlideOne from './slides/SlideOne';
-import SlideTwo from './slides/SlideTwo';
+import { BioContainer, LeftArrow, RightArrow, Navigation, Content, NavSubTitle, Slide } from '../../styled/bio.style.jsx';
+import SlideOne from './slides/SlideOne.jsx';
+import SlideTwo from './slides/SlideTwo.jsx';
 
 
 function Bio() {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flash } from './keyframe.styled';
+import { flash } from './keyframe.styled.jsx';
 
 export const Container = styled.div`
     position: absolute;

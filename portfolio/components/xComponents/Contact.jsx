@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createRef } from 'react';
 import axios from 'axios';
-import { Page } from '../../styled/components.style';
-import { FormContainer, Form, Row, FormTitle, FormLabel, Submit, Input, Message, Box, FormSubTitle } from '../../styled/contact.style';
+import { Page } from '../../styled/components.style.jsx';
+import { FormContainer, Form, Row, FormTitle, FormLabel, Submit, Input, Message, Box, FormSubTitle } from '../../styled/contact.style.jsx';
 
 function Contact() {
 

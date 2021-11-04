@@ -10,10 +10,13 @@
   "scripts": {
     "start": "node server/server.js NODE_ENV=production",
     "start:prod": "node server/server.js NODE_ENV=production",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "start:server": "nodemon server/server.js NODE_ENV=development",
+    "start:dev": "webpack serve --hot --config=./webpack.config.js",
     "client": "cd portfolio && npm run start",
     "seed": "node scripts/seedDB.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "node_modules/.bin/webpack",
+    "serve": "nodemon bin/server.js NODE_ENV=development"
   },
   "repository": {
     "type": "git",
@@ -31,8 +34,27 @@
     "googleapis": "^65.0.0",
     "if-env": "^1.0.4",
     "nodemailer": "^6.4.11",
-    "nodemon": "^2.0.4",
     "path": "^0.12.7",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "reaviz": "^11.1.2",
     "sendgrid": "^5.2.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/plugin-transform-runtime": "^7.16.0",
+    "@babel/preset-env": "^7.16.0",
+    "@babel/preset-react": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "json-loader": "^0.5.7",
+    "nodemon": "^2.0.14",
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0",
+    "webpack-node-externals": "^3.0.0"
   }
 }

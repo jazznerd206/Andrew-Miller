@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useMousePosition } from '../../hooks/mousePosition';
-import { elementPosition } from '../../hooks/elementPosition';
-import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent } from '../../styled/welcome.style';
+import { useMousePosition } from '../../hooks/mousePosition.jsx';
+import { elementPosition } from '../../hooks/elementPosition.jsx';
+import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent } from '../../styled/welcome.style.jsx';
 
 function Welcome({active}) {
 

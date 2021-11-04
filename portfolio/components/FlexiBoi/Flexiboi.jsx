@@ -1,10 +1,10 @@
 import React, { useState, useEffect, createRef, useRef } from 'react';
-import { Page } from '../../styled/components.style';
-import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, CloseClicker } from '../../styled/flexiboi.style'
-import Contact from '../xComponents/Contact';
-import Projects2 from '../xComponents/Projects2';
-import Bio from '../xComponents/Bio';
-import Posts from '../xComponents/Posts';
+import { Page } from '../../styled/components.style.jsx';
+import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, CloseClicker } from '../../styled/flexiboi.style.jsx';
+import Contact from '../xComponents/Contact.jsx';
+import Projects2 from '../xComponents/Projects2.jsx';
+import Bio from '../xComponents/Bio.jsx';
+import Posts from '../xComponents/Posts.jsx';
 
 
 function Flexiboi({setActive}) {

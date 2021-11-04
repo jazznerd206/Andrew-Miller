@@ -2,8 +2,12 @@ const express = require('express');
 const app = express();
 const router = express.Router();
 const path = require('path');
+const fs = require('fs');
 const PORT = process.env.PORT || 8080;
 let nodemailer = require('nodemailer');
+const React = require('react');
+const ReactDOMServer = require('react-dom/server');
+// const App = require('../portfolio/App.jsx');
 
 //.env config
 require('dotenv').config();
@@ -28,9 +32,26 @@ app.get('*', (req, res) => {
     console.log(("========================="));
     res.sendFile(path.join(__dirname, "../portfolio/prodbuild/index.html"));  
   } else {
-    res.sendFile(path.join(__dirname, "../portfolio/dist/index.html"));
+    res.sendFile(path.join(__dirname, "../portfolio/public/index.html"));
   }
 });
+
+// app.get('*', (req, res) => {
+//   const app = ReactDOMServer.renderToString(App);
+
+//   const indexFile = path.resolve(__dirname, 'index.html');
+
+//   fs.readFile(indexFile, 'utf8', (err, data) => {
+//     if (err) {
+//       console.error('Something went wrong:', err);
+//       return res.status(500).send('Oops, better luck next time!');
+//     }
+
+//     return res.send(
+//       data.replace('<div id="root"></div>', `<div id="root">${app}</div>`)
+//     );
+//   });
+// });
 
 const transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',

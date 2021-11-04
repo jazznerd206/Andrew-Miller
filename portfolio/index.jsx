@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import Theme, { theme } from './styled/theme.style'
-import { GlobalStyle } from "./styled/global.style";
-import App from "./App";
+import Theme, { theme } from './styled/theme.style.jsx';
+import { GlobalStyle } from "./styled/global.style.jsx";
+import App from "./App.jsx";
 
-ReactDOM.render(
+ReactDOM.hydrate(
     <Router>
         <Theme theme={theme}>
             <GlobalStyle />

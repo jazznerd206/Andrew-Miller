@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { postList } from './postlist';
-import { PostAnchor, Header, HeaderTitle, Attribution, HeaderCopy, HeaderQuote, Post, PostNav, PostBottom, PostImage, PostDate, PostTop, PostTopLeft, PostTopRight, PostList, Posts as Container, PostTitle, PostLink, PostContent, Quote, CopyTop, CopyBottom, HeaderLinkList, HeaderLinkItem, HeaderLinkAnchor, HeaderLinks, Down, PostContainer } from '../../styled/posts.styled';
+import { postList } from './postlist.jsx';
+import { PostAnchor, Header, HeaderTitle, Attribution, HeaderCopy, HeaderQuote, Post, PostNav, PostBottom, PostImage, PostDate, PostTop, PostTopLeft, PostTopRight, PostList, Posts as Container, PostTitle, PostLink, PostContent, Quote, CopyTop, CopyBottom, HeaderLinkList, HeaderLinkItem, HeaderLinkAnchor, HeaderLinks, Down, PostContainer } from '../../styled/posts.styled.jsx';
 import { ArrowUp } from '@styled-icons/evil';
 
 function Posts() {

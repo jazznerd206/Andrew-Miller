@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import record from '../../../images/record.jpeg';
-import { Slide, Column, Twitter, Github, Instagram, IconHolder, IconTag, Resume, Record, Email, OffPageLink } from '../../../styled/bio.style';
+import { Slide, Column, Twitter, Github, Instagram, IconHolder, IconTag, Resume, Record, Email, OffPageLink } from '../../../styled/bio.style.jsx';
 import Res from '../../../documents/ALM_Resume.pdf'
 
 

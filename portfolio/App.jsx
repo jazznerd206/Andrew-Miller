@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import Flexiboi from './components/FlexiBoi/Flexiboi';
-import Welcome from './components/Welcome/Welcome';
-import { Page } from './styled/components.style';
+import React, { useState } from 'react';
+import Flexiboi from './components/FlexiBoi/Flexiboi.jsx';
+import Welcome from './components/Welcome/Welcome.jsx';
+import { Page } from './styled/components.style.jsx';
 
 function App() {
 

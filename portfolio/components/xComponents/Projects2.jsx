@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import PieChart from './charts/PieChart';
-import { ProjectContainer, ProjectList, ProjectItem, ItemBox, ItemCol, Topic, Title, Description, Dates, RepoName, RepoFacts, Fact, CardLink } from '../../styled/projects.style';
+import PieChart from './charts/PieChart.js';
+import { ProjectContainer, ProjectList, ProjectItem, ItemBox, ItemCol, Topic, Title, Description, Dates, RepoName, RepoFacts, Fact, CardLink } from '../../styled/projects.style.jsx';
 
 function Projects2() {
 

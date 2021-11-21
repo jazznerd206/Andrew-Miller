@@ -3,16 +3,26 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: {
     'bundle': './index.jsx',
     'bundle.min': '/index.jsx'
   },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].js",
+    assetModuleFilename: '[name][ext]',
+    clean: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({ template: path.join(__dirname, 'public', 'index.html' )}),
+    new MiniCssExtractPlugin()
+  ],
   devtool: 'inline-source-map',
-  mode: 'development',
-  entry: ["@babel/polyfill", "./index.jsx"],
   devServer: {
     host: '0.0.0.0',
     port: 3000,
+    open: true,
     hot: true,
     proxy: {
       '/access': {
@@ -48,19 +58,11 @@ module.exports = {
       },
       {
         test: /\.(pdf|gif|png|jpe?g|svg)$/,
-        use: 'file-loader?name=[path][name].[ext]',
+        type: 'asset/resource',
       }
     ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: "[name].js"
-  },
-  plugins: [
-    new HtmlWebpackPlugin({ template: path.join(__dirname, 'public', 'index.html' )}),
-    new MiniCssExtractPlugin()
-  ]
 };

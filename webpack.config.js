@@ -5,6 +5,8 @@ var nodeModules = {};
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+
+// load cjs node modules
 fs.readdirSync(path.resolve(__dirname, 'node_modules'))
     .filter(x => ['.bin'].indexOf(x) === -1)
     .forEach(mod => { nodeModules[mod] = `commonjs ${mod}`; });
@@ -17,7 +19,8 @@ module.exports = {
     output: {
         path: path.join(__dirname, '/bin'),
         publicPath: '/bin',
-        filename: 'server.js'
+        filename: 'server.js',
+        clean: true
     },
     plugins: [
         new CleanWebpackPlugin(),

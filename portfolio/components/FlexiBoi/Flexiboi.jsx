@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createRef, useRef } from 'react';
+import React, { lazy, Suspense, useState, useEffect, createRef, useRef } from 'react';
 import { Page } from '../../styled/components.style.jsx';
 import { Container, Grabby, GrabbyContainer, GrabbyText, Growy, GrowyText, CloseClicker } from '../../styled/flexiboi.style.jsx';
 import Contact from '../xComponents/Contact.jsx';

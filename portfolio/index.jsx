@@ -5,7 +5,7 @@ import Theme, { theme } from './styled/theme.style.jsx';
 import { GlobalStyle } from "./styled/global.style.jsx";
 import App from "./App.jsx";
 
-ReactDOM.hydrate(
+ReactDOM.render(
     <Router>
         <Theme theme={theme}>
             <GlobalStyle />

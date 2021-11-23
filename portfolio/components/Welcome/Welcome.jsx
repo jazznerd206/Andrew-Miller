@@ -2,13 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useMousePosition } from '../../hooks/mousePosition';
 import { elementPosition } from '../../hooks/elementPosition';
 import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent } from '../../styled/welcome.style';
+import Snake from '../../games/Snake';
 
 function Welcome({active}) {
 
     const mover = useRef(null);
     const position = useMousePosition();
-    const messages = ['{ WEB DEVELOPER }', '{ CRITICAL THINKER }', '{ TESTER }', '{ ARTIST }', '{ SOFTWARE ENGINEER }']
-    const [ message, setMessage ] = useState(messages[0])
+    const messages = ['{ WEB DEVELOPER }', '{ CRITICAL THINKER }', '{ TESTER }', '{ ARTIST }', '{ SOFTWARE ENGINEER }'];
+    const [ message, setMessage ] = useState(messages[0]);
+    const [ gameActive, setGameActive ] = useState(false)
 
     const gaugeCloseness = (mouse, center, current) => {
         let width =  window.innerWidth;
@@ -39,7 +41,6 @@ function Welcome({active}) {
         }
     }
    
-
     useEffect(() => {
         if (mover.current) {
             const elPos = elementPosition(mover.current);
@@ -47,8 +48,23 @@ function Welcome({active}) {
         }
     }, [position, mover.current])
 
+    const activateGame = (event) => {
+        if (event.keyCode === 32) {
+            console.log('space');
+            setGameActive(true);
+        } else if (event.keyCode === 81) {
+            setGameActive(false);
+        } else {
+            console.log('event.keyCode :>> ', event.keyCode);
+            console.log('neither space nor escape');
+            return;
+        }
+    }
+
     useEffect(() => {
         setMessage(messages[0]);
+        document.addEventListener('keyup', activateGame)
+        // return () => document.removeEventListener('keydown', activateGame)
     }, [])
 
     if (active === true) {
@@ -56,14 +72,22 @@ function Welcome({active}) {
     }
     else return (
         <WelcomeContainer>
-            <WTitle>
-                <TitleMain>
-                    Andrew Miller
-                </TitleMain>
-                <TitleSub ref={mover}>
-                    <Title>{message}</Title>
-                </TitleSub>
-            </WTitle>
+            {!gameActive &&
+                <WTitle>
+                    <TitleMain>
+                        Andrew Miller
+                    </TitleMain>
+                    {/* <TitleSub ref={mover}>
+                        <Title>{message}</Title>
+                    </TitleSub> */}
+                    <TitleSub>
+                        <Title>press space bar to play a game</Title>
+                    </TitleSub>
+                </WTitle>
+            }
+            {gameActive &&
+                <Snake />
+            }
         </WelcomeContainer>
     )
 }

@@ -7,6 +7,7 @@ export const WelcomeContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 9999;
     @media (max-width: 768px) {
         padding: 0 auto;
         padding-bottom: 25vh;

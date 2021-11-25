@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useMousePosition } from '../../hooks/mousePosition';
 import { elementPosition } from '../../hooks/elementPosition';
 import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent } from '../../styled/welcome.style';
-import Snake from '../../games/Snake';
+import Snake from '../../games/Snake.jsx';
+import SpaceInvaders from '../../games/SpaceInvaders.jsx';
 
 function Welcome({active}) {
 
@@ -50,21 +51,18 @@ function Welcome({active}) {
 
     const activateGame = (event) => {
         if (event.keyCode === 32) {
-            console.log('space');
             setGameActive(true);
         } else if (event.keyCode === 81) {
             setGameActive(false);
         } else {
-            console.log('event.keyCode :>> ', event.keyCode);
-            console.log('neither space nor escape');
             return;
         }
     }
 
     useEffect(() => {
         setMessage(messages[0]);
-        document.addEventListener('keyup', activateGame)
-        // return () => document.removeEventListener('keydown', activateGame)
+        document.addEventListener('keydown', activateGame)
+        return () => document.removeEventListener('keydown', activateGame)
     }, [])
 
     if (active === true) {
@@ -86,7 +84,7 @@ function Welcome({active}) {
                 </WTitle>
             }
             {gameActive &&
-                <Snake />
+                <SpaceInvaders />
             }
         </WelcomeContainer>
     )

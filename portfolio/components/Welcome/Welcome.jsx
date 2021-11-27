@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useMousePosition } from '../../hooks/mousePosition';
 import { elementPosition } from '../../hooks/elementPosition';
-import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent } from '../../styled/welcome.style';
+import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent, RightArrow } from '../../styled/welcome.style';
 import Snake from '../../games/Snake.jsx';
-import SpaceInvaders from '../../games/SpaceInvaders.jsx';
+// import SpaceInvaders from '../../games/SpaceInvaders.jsx';
 
 function Welcome({active}) {
 
@@ -12,6 +12,8 @@ function Welcome({active}) {
     const messages = ['{ WEB DEVELOPER }', '{ CRITICAL THINKER }', '{ TESTER }', '{ ARTIST }', '{ SOFTWARE ENGINEER }'];
     const [ message, setMessage ] = useState(messages[0]);
     const [ gameActive, setGameActive ] = useState(false)
+    const [ title, setTitle ] = useState('');
+    const [ mobile, setMobile ] = useState(false);
 
     const gaugeCloseness = (mouse, center, current) => {
         let width =  window.innerWidth;
@@ -50,19 +52,44 @@ function Welcome({active}) {
     }, [position, mover.current])
 
     const activateGame = (event) => {
-        if (event.keyCode === 32) {
-            setGameActive(true);
+        if (event.keyCode === 49) {
+            if (mobile === true) {
+                setGameActive(false);
+                return;
+            }
+            else {
+                setGameActive(true);
+                setTitle('snake');
+            }
+        // } 
+        // else if (event.keyCode === 50) {
+        //     setGameActive(true);
+        //     setTitle('space invaders');
         } else if (event.keyCode === 81) {
+            setTitle('')
             setGameActive(false);
         } else {
+            // console.log(event.keyCode);
             return;
+        }
+    }
+
+    const resize = () => {
+        if (window.innerWidth > 768) {
+            setMobile(false);
+        } else {
+            setMobile(true);
         }
     }
 
     useEffect(() => {
         setMessage(messages[0]);
-        document.addEventListener('keydown', activateGame)
-        return () => document.removeEventListener('keydown', activateGame)
+        window.addEventListener('keydown', activateGame)
+        window.addEventListener('resize', resize);
+        return () => {
+            window.removeEventListener('keydown', activateGame)
+            window.removeEventListener('resize', resize)
+        }
     }, [])
 
     if (active === true) {
@@ -75,17 +102,13 @@ function Welcome({active}) {
                     <TitleMain>
                         Andrew Miller
                     </TitleMain>
-                    {/* <TitleSub ref={mover}>
+                    <TitleSub ref={mover}>
                         <Title>{message}</Title>
-                    </TitleSub> */}
-                    <TitleSub>
-                        <Title>press space bar to play a game</Title>
                     </TitleSub>
                 </WTitle>
             }
-            {gameActive &&
-                <SpaceInvaders />
-            }
+            {gameActive && title === 'snake' && (<Snake />)}
+            {/* {gameActive && title === 'space invaders' && (<SpaceInvaders />)} */}
         </WelcomeContainer>
     )
 }

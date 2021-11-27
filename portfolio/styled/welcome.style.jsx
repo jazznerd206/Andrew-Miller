@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import { ChevronRight } from '@styled-icons/evil';
+
+export const RightArrow = styled(ChevronRight)``
 
 export const WelcomeContainer = styled.div`
     height: 100%;

@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "node server/server.js NODE_ENV=production",
-    "start:prod": "node server/server.js NODE_ENV=production",
+    "start:prod": "node server/server.js NODE_ENV=development",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd portfolio && npm run start",
     "seed": "node scripts/seedDB.js",

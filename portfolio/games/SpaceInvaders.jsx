@@ -51,18 +51,16 @@ function BuildCanvas() {
     const playerRef = useRef();
     const playerDirection = useRef();
     const fireRef = useRef();
+    let animRef = useRef();
     const [ playerPosition, setPlayerPosition ] = useState([])
     const [ bolts, setBolts ] = useState([])
     const [ enemies, setEnemies ] = useState([])
+    let barracks = [];
 
     // ON PAGE LOAD, build game and add keystroke listeners
     useEffect(() => {
-        let newPlayer = new Player("Andrew", 40, 20, canvasRef.current.width / 2 - 20, canvasRef.current.height - 20);
-        playerRef.current = newPlayer.init();
-        setPlayerPosition(playerRef.current.position);
         let ranks = 5;
         let perRank = 10;
-        let barracks = [];
         for (let i = 0; i < ranks; ++i) {
             for (let j = 0; j < perRank; ++j) {
                 let eWidth = 10;
@@ -73,14 +71,16 @@ function BuildCanvas() {
                 barracks.push(newEnemy)
             }
         }
-        setEnemies(barracks);
+        let newPlayer = new Player("Andrew", 40, 20, canvasRef.current.width / 2 - 20, canvasRef.current.height - 20);
+        playerRef.current = newPlayer.init();
+        setPlayerPosition(playerRef.current.position);
         window.addEventListener('keydown', directional);
         window.addEventListener('keyup', antiDirectional);
-        let gLoop = requestAnimationFrame(gameLoop);
+        animRef.current = requestAnimationFrame(gameLoop);
         return () => {
             window.removeEventListener('keydown', directional);
             window.addEventListener('keyup', antiDirectional);
-            cancelAnimationFrame(gLoop);
+            cancelAnimationFrame(animRef.current);
         }
     }, [])
 
@@ -98,37 +98,51 @@ function BuildCanvas() {
                 context.fillRect(bolt.position[0], bolt.position[1], bolt.width, bolt.height)
             })
         }
-        enemies.forEach(enemies => {
-            context.fillRect(enemies.position[0], enemies.position[1], enemies.width, enemies.height)
+        context.fillStyle = "grey";
+        enemies.forEach(enemy => {
+            context.fillRect(enemy.position[0], enemy.position[1], enemy.width, enemy.height)
         })
     }, [playerRef, playerPosition, bolts, enemies])
 
     // RENDER LOOP
     const gameLoop = () => {
-        let boltsCopy = bolts;
-        if (fireRef.current === true) {
-            let newBolt = playerRef.current.fireLaser()
-            boltsCopy.push(newBolt);
-        }
-        else { 
-            boltsCopy.forEach(bolt => {
-                let newPosition = [bolt.position[0] + bolt.direction[0], bolt.position[1] + bolt.direction[1]]
-                bolt.position = newPosition;
-            })
-        }
-        setBolts([...boltsCopy])
-        enemies.forEach(enemy => {
-            console.log('enemy => ', enemy)
-        })
-        if (playerRef.current) {
-            let oldPosition = playerRef.current.position;
-            if (playerDirection.current) {
-                setPlayerPosition(playerRef.current.updatePosition(oldPosition, playerDirection.current));
+        if (animRef.current) {
+            let boltsCopy = bolts;
+            if (fireRef.current === true) {
+                let newBolt = playerRef.current.fireLaser()
+                    boltsCopy.push(newBolt);
+                }
+                boltsCopy.forEach(bolt => {
+                    let newPosition = [bolt.position[0] + bolt.direction[0], bolt.position[1] + bolt.direction[1]]
+                    bolt.position = newPosition;
+                })
+                let barracksCopy = barracks;
+                if (barracksCopy.length) {
+                    barracksCopy.forEach((enemy, index) => {
+                        let collisionCheck = enemy.checkForCollision(boltsCopy)
+                        if (collisionCheck === false) {
+                            enemy.shiftX(enemy.speed)
+                            if (enemy.position[0] >= canvasRef.current.width - enemy.width && enemy.speed > 0 
+                            || enemy.position[0] <= 0 && enemy.speed < 0) {
+                                enemy.shiftY(enemy.height)
+                            }
+                        } else  {
+                            barracksCopy.splice(index, 1);
+                        }
+                    })
+                }
+                barracks = barracksCopy;
+                if (playerRef.current) {
+                    let oldPosition = playerRef.current.position;
+                    if (playerDirection.current) {
+                        setPlayerPosition(playerRef.current.updatePosition(oldPosition, playerDirection.current));
+                    }
+                }
+                setBolts([...boltsCopy]);
+                setEnemies([...barracksCopy]);
+                requestAnimationFrame(gameLoop);
             }
-        }
-        requestAnimationFrame(gameLoop);
     }
-
     return (
         <canvas
             ref={canvasRef}

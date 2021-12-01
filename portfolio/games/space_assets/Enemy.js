@@ -3,7 +3,7 @@ export class Enemy {
         this.position = [ x, y ],
         this.width = width,
         this.height = height,
-        this.speed = 1,
+        this.speed = .5,
         this.vecMap = this.collisionMap();
     }
     init() {
@@ -27,22 +27,17 @@ export class Enemy {
             // use map
             vecArray[i] = Math.floor(y)
         }
-        // left column -- old
         // for (let i = y; i < y + _H; ++i) {
         //     vecArray.push([ Math.floor(x), Math.floor(i) ])
         // }
-        // right column -- old
         // for (let i = y; i < y + _H; ++i) {
         //     vecArray.push([ Math.floor(x + _W), Math.floor(i) ])
         // }
         return vecArray;
     }
     checkForCollision(boltArray) {
-        // console.log(`this.vecMap`, this.vecMap)
         let hit = false;
         for (let i = 0; i < boltArray.length; ++i) {
-            // console.log(`this.vecMap[boltArray[i][0]]`, boltArray[i].position)
-            // console.log(`boltArray[i][1]`, boltArray[i][1])
             let vecMap = this.collisionMap();
             if (vecMap[boltArray[i].position[0]] === boltArray[i].position[1]) {
                 hit = true;

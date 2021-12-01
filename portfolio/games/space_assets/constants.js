@@ -5,7 +5,33 @@ const _DIRECTIONS = {
     39: [1, 0]
 };
 
+const _ENEMIES = {}
+
+_ENEMIES.soldier = {
+    height: 10,
+    width: 10,
+    fire: false,
+    type: 'none',
+    health: 1
+}
+
+_ENEMIES.commander = {
+    height: 15,
+    width: 20,
+    fire: true,
+    type: 'single',
+    health: 2
+}
+
+_ENEMIES.boss = {
+    height: 25,
+    width: 50,
+    fire: true,
+    type: 'multi',
+    health: 5
+}
+
 const _ROW_COUNT = 40;
 const _COL_COUNT = 20;
 
-export { _DIRECTIONS }
+export { _DIRECTIONS, _ENEMIES }

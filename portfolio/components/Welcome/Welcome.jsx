@@ -3,7 +3,7 @@ import { useMousePosition } from '../../hooks/mousePosition';
 import { elementPosition } from '../../hooks/elementPosition';
 import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent, RightArrow } from '../../styled/welcome.style';
 import Snake from '../../games/Snake.jsx';
-// import SpaceInvaders from '../../games/SpaceInvaders.jsx';
+import SpaceInvaders from '../../games/SpaceInvaders.jsx';
 
 function Welcome({active}) {
 
@@ -107,7 +107,7 @@ function Welcome({active}) {
                     </TitleSub>
                 </WTitle>
             }
-            {gameActive && title === 'snake' && (<Snake />)}
+            {gameActive && title === 'snake' && (<SpaceInvaders />)}
             {/* {gameActive && title === 'space invaders' && (<SpaceInvaders />)} */}
         </WelcomeContainer>
     )

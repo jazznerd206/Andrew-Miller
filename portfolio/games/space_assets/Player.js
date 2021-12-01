@@ -21,7 +21,7 @@ export class Player {
         let lX = (this.position[0]) + (this.width / 2 - lWidth / 2);
         let lLength = 10;
         let lY = this.position[1] - lLength;
-        let bolt = new Laser(lX, lY, lWidth, lLength, 'red')
+        let bolt = new Laser(lX, lY, lWidth, lLength, 'blue')
         return bolt;
     }
 }

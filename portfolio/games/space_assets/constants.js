@@ -31,7 +31,12 @@ _ENEMIES.boss = {
     health: 5
 }
 
+const _WIDTH = 500;
+const _HEIGHT = 360;
+const _ENEMY_BOX_START = 25;
+const _ENEMY_BOX_END = 475;
+
 const _ROW_COUNT = 40;
 const _COL_COUNT = 20;
 
-export { _DIRECTIONS, _ENEMIES }
+export { _DIRECTIONS, _ENEMIES, _WIDTH, _HEIGHT, _ENEMY_BOX_END, _ENEMY_BOX_START }

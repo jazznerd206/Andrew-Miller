@@ -1,9 +1,13 @@
+import { Laser } from ".";
+
 export class Enemy {
-    constructor(x, y, width, height) {
+    constructor(x, y, width, height, fire, type) {
         this.position = [ x, y ],
         this.width = width,
         this.height = height,
         this.speed = .5,
+        this.fire = fire;
+        this.type = type,
         this.vecMap = this.collisionMap();
     }
     init() {
@@ -44,5 +48,20 @@ export class Enemy {
             }
         }
         return hit;
+    }
+    fireLaser() {
+        if (!this.fire) return false;
+        else {
+            if (Math.random() < .005) {
+                let lWidth = this.width * .1;
+                let lX = (this.position[0]) + (this.width / 2 - lWidth / 2);
+                let lLength = 10;
+                let lY = this.position[1] - lLength;
+                let bolt = new Laser(lX, lY, lWidth, lLength, 'red')
+                return bolt;
+            } else {
+                return false;
+            }
+        };
     }
 }

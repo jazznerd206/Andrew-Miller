@@ -61,10 +61,10 @@ function Welcome({active}) {
                 setGameActive(true);
                 setTitle('snake');
             }
-        // } 
-        // else if (event.keyCode === 50) {
-        //     setGameActive(true);
-        //     setTitle('space invaders');
+        } 
+        else if (event.keyCode === 50) {
+            setGameActive(true);
+            setTitle('space invaders');
         } else if (event.keyCode === 81) {
             setTitle('')
             setGameActive(false);
@@ -107,8 +107,8 @@ function Welcome({active}) {
                     </TitleSub>
                 </WTitle>
             }
-            {gameActive && title === 'snake' && (<SpaceInvaders />)}
-            {/* {gameActive && title === 'space invaders' && (<SpaceInvaders />)} */}
+            {gameActive && title === 'snake' && (<Snake />)}
+            {gameActive && title === 'space invaders' && (<SpaceInvaders />)}
         </WelcomeContainer>
     )
 }

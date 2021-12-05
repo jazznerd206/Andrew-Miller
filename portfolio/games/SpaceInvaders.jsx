@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Player, Enemy } from './space_assets/index.js';
+import { Player, Enemy, Shield, Laser, Starfield } from './space_assets/index.js';
 import { _DIRECTIONS, _ENEMIES, _WIDTH, _HEIGHT, _ENEMY_BOX_END, _ENEMY_BOX_START} from './space_assets/constants.js';
-
+import { Message, GameCanvas, MessageBox, Scoreboard, SpaceInvaders as Container } from '../styled/space.styled.jsx'
 
 function BuildCanvas() {
 
@@ -13,12 +13,17 @@ function BuildCanvas() {
     const playerDirection = useRef();
     const fireRef = useRef();
     const shiftCount = useRef();
+    const score = useRef();
+    const [ messages, setMessages ] = useState('')
     let animRef = useRef();
     const [ playerPosition, setPlayerPosition ] = useState([])
     const [ bolts, setBolts ] = useState([]);
     const [ eBolts, setEBolts ] = useState([]);
-    const [ enemies, setEnemies ] = useState([])
+    const [ enemies, setEnemies ] = useState([]);
+    const [ barriers, setBarriers ] = useState([]);
+    const [ stars, setStars ] = useState([]);
     let barracks = [];
+    let shields = [];
 
     /**
      * KEYSTROKES
@@ -68,11 +73,18 @@ function BuildCanvas() {
         }
     }
     /**
+     * MESSAGE FACTORY
+     */
+    const createMessage = message => {
+        setMessages(message);
+    }
+    /**
      * 
      * STATE CONTROL FUNCTIONS
      * 
      * 1. buildBarracks() => builds initial state of barracks
      * 2. addRank(enemyType, count) => adds rank of enemy of specified type to barracks
+     * 3. buildShields() => builds initial player barriers
      * 
     */
     const buildBarracks = (target, ranks) => {
@@ -102,6 +114,7 @@ function BuildCanvas() {
             }
             target.push(newRank);
         }
+        setMessages(messages => [...messages, 'Enemies detected.']);
     }
     const addRank = (enemyType, count) => {
         console.log('enemyType, count :>> ', enemyType, count);
@@ -112,18 +125,34 @@ function BuildCanvas() {
         }
         barracks.push(newRank);
     }
+    const buildShields = (target, count) => {
+        let column = canvasRef.current.width / count;
+        for (let i = 0; i < count; ++i) {
+            let sx = ((i + 1) * column) - ((column / 2));
+            let sy = 300;
+            let newShield = new Shield(sx, sy)
+            target.push(newShield);
+        }
+        createMessage('Shields built.')
+    }
     /**
      * GAME INSTANTIATOR
      * create player, assign to ref
      * create enemy barracks
      * add event listeners
-     * init requestAnimationFrameL loop
+     * init requestAnimationFrame loop
     */
     useEffect(() => {
+        let newField = new Starfield(50, 360, 500)
+        setStars(newField.field);
+        shiftCount.current = 0;
+        score.current = 0;
         let newPlayer = new Player("Andrew", 40, 20, canvasRef.current.width / 2 - 20, canvasRef.current.height - 20);
         playerRef.current = newPlayer.init();
         setPlayerPosition(playerRef.current.position);
         buildBarracks(barracks, 5);
+        buildShields(shields, 4)
+        createMessage('Game has begun. Best of luck...')
         window.addEventListener('keydown', directional);
         window.addEventListener('keyup', antiDirectional);
         animRef.current = requestAnimationFrame(gameLoop);
@@ -140,93 +169,139 @@ function BuildCanvas() {
     useEffect(() => {
         const context = canvasRef.current.getContext("2d");
         context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        context.fillStyle = "black";
+        // render stars
+        context.fillStyle = "white";
+        stars.forEach(star => {
+            context.fillRect(star.x, star.y, star.width, star.height);
+        })
+        context.fillStyle = "lawngreen";
         // render player
         if (playerRef.current) {
             context.fillRect(playerPosition[0], playerPosition[1], playerRef.current.width, playerRef.current.height)
         }
-        context.fillStyle = "red";
+        // render shields
+        if (barriers.length) {
+            barriers.forEach((shield, index) => {
+                context.fillStyle = index % 2 === 0 ? 'steelblue' : 'lightblue'
+                context.fillRect(shield.position[0], shield.position[1], shield.width, shield.height);
+            })
+        }
         // render player bolts
         if (bolts) {
-            bolts.map(bolt => {
+            bolts.forEach((bolt, index) => {
+                context.fillStyle = bolt.color;
                 context.fillRect(bolt.position[0], bolt.position[1], bolt.width, bolt.height)
             })
         }
         // render enemy bolts
+        context.fillStyle = 'red';
         if (eBolts) {
-            eBolts.map(bolt => {
+            eBolts.forEach(bolt => {
+                context.fillStyle = bolt.color;
                 context.fillRect(bolt.position[0], bolt.position[1], bolt.width, bolt.height)
             })
         }
-        context.fillStyle = "grey";
         // render enemies
         if (enemies.length) {
-            enemies.forEach(rank => {
+            enemies.forEach((rank, index) => {
+                context.fillStyle = index % 2 === 0 ? "orangered" : "red";
                 rank.forEach(enemy => {
                     context.fillRect(enemy.position[0], enemy.position[1], enemy.width, enemy.height)
                 })
             })
         }
-    }, [playerRef, playerPosition, bolts, enemies])
+    }, [playerRef, playerPosition, bolts, enemies, barriers, eBolts])
 
     /**
      * GAME LOGIC
     */
     const gameLoop = () => {
         if (animRef.current) {
-            // check bolts fired by player for collisions
+            // player fire laser and update bolt positions
             let boltsCopy = bolts;
             if (fireRef.current === true) {
                 let newBolt = playerRef.current.fireLaser()
                 boltsCopy.push(newBolt);
             }
             fireRef.current = false;
-            boltsCopy.forEach(bolt => {
-                let newPosition = [bolt.position[0] + bolt.direction[0], bolt.position[1] + bolt.direction[1]]
-                bolt.position = newPosition;
-            })
+            for (let i = 0; i < boltsCopy.length; ++i) {
+                let newPosition = [boltsCopy[i].position[0] + boltsCopy[i].direction[0], boltsCopy[i].position[1] + boltsCopy[i].direction[1]]
+                boltsCopy[i].position = newPosition;
+            }
             // check bolts fired by enemies for collisions
             let eBoltsCopy = eBolts;
             if (eBoltsCopy.length) {
-                console.log(`eBolts`, eBolts)
                 for (let i = 0; i < eBolts.length; ++i) {
                     if (eBolts[i].position[1] > canvasRef.current.height) {
-                        eBoltsCopy.slice(i, 1);
+                        eBoltsCopy.splice(i, 1);
                     } else {
-                        let newPosition = [eBolts[i].position[0] + eBolts[i].direction[0], eBolts[i].position[1] + 3]
-                        eBolts[i].position = newPosition;
+                        let collisionCheck = playerRef.current.checkForCollision(eBoltsCopy[i].getCollisionMap());
+                        if (collisionCheck === false) {
+                            let newPosition = [eBolts[i].position[0] + eBolts[i].direction[0], eBolts[i].position[1] + -eBolts[i].direction[1]]
+                            eBolts[i].position = newPosition;
+                        } else {
+                            createMessage('Player hit by enemy.... ☠️☠️☠️')
+                            eBoltsCopy.splice(i, 1);
+                        }
                     }
                 }
             }
             // update enemy positions
             let barracksCopy = barracks;
             if (barracksCopy.length) {
-                barracksCopy.forEach(rank => {
-                    rank.forEach(enemy => {
+                barracksCopy.forEach((rank, index) => {
+                    if (rank.length === 0) barracksCopy.splice(index, 1);
+                    rank.forEach((enemy, index) => {
                         // fire ze enemy lasers
                         let laser = enemy.fireLaser();
                         if (laser === false) {;}
                         else eBolts.push(laser);
                         // check for collisions
                         let collisionCheck = enemy.checkForCollision(boltsCopy);
-                        console.log('coll :>> ', collisionCheck);
-                        if (collisionCheck === false) {
+                        if (collisionCheck.hit === false) {
                             // update X
                             enemy.shiftX(enemy.speed);
+                        } else {
+                            score.current += 100;
+                            rank.splice(index, 1);
+                            createMessage('Enemy destroyed!! 🔥🔥🔥')
                         }
                     })
                     // update Y
                     let first = rank[0];
                     let last  = rank[rank.length - 1];
-                    if (last.position[0] >= _ENEMY_BOX_END - last.width && last.speed > 0 
-                    || first.position[0] <= _ENEMY_BOX_START && first.speed < 0) {
-                        rank.forEach(enemy => {
-                            enemy.shiftY(enemy.height)
-                        })
+                    if (first || last) {
+                        if (last.position[0] >= _ENEMY_BOX_END - last.width && last.speed > 0 
+                        || first.position[0] <= _ENEMY_BOX_START && first.speed < 0) {
+                            ++shiftCount.current;
+                            rank.forEach(enemy => {
+                                enemy.shiftY(enemy.height)
+                            })
+                        }
                     }
                 })
             }
             barracks = barracksCopy;
+            // check for shield collisions with player and enemy bolts
+            let shieldCopy = shields;
+            let playerBoltsToShields = boltsCopy;
+            let enemyBoltsToShields = eBoltsCopy;
+            if (shieldCopy.length) {
+                shieldCopy.forEach(shield => {
+                    let playerCollisions = shield.checkForPlayerCollision(playerBoltsToShields);
+                    if (playerCollisions.hit === true) {
+                        playerBoltsToShields.splice(playerCollisions.index, 1, new Laser(0, 0, 0, 0));
+                    }
+                    let enemyCollisions = shield.checkForEnemyCollision(eBoltsCopy);
+                    if (enemyCollisions.hit === true) {
+                        createMessage('Shields hit by enemy. 🛡🛡🛡')
+                        enemyBoltsToShields.splice(playerCollisions.index, 1, new Laser(0, 0, 0, 0));
+                    }
+                })
+            }
+            boltsCopy = playerBoltsToShields;
+            eBoltsCopy = enemyBoltsToShields;
+            shields = shieldCopy;
             // update player position
             if (playerRef.current) {
                 let oldPosition = playerRef.current.position;
@@ -235,6 +310,7 @@ function BuildCanvas() {
                 }
             }
             // reset game state
+            setBarriers([...shieldCopy])
             setBolts([...boltsCopy]);
             setEnemies([...barracksCopy]);
             setEBolts([...eBoltsCopy]);
@@ -246,13 +322,24 @@ function BuildCanvas() {
      * HTML
     */
     return (
-        <canvas
-            ref={canvasRef}
-            id="space_invaders" 
-            width={_WIDTH}
-            height={_HEIGHT}
-            style={{border: '1px solid black'}}
-        />
+        <Container>
+            <Scoreboard className="scoreBoard">
+                <div>Health: {playerRef.current && playerRef.current.health}</div>
+                <div>Score: {score.current && score.current}</div>
+            </Scoreboard>
+            <GameCanvas
+                ref={canvasRef}
+                id="space_invaders" 
+                width={_WIDTH}
+                height={_HEIGHT}
+                style={{border: '1px solid black'}}
+            />
+            <MessageBox className="messageBox">
+                <Message key={messages.substring(0,5)} className="message">
+                    {`${new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1")} => ${messages}`}
+                </Message>
+            </MessageBox>
+        </Container>
     )
 }
 

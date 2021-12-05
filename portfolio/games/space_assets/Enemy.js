@@ -29,7 +29,7 @@ export class Enemy {
         // bottom row
         for (let i = x; i < x + _W; ++i) {
             // use map
-            vecArray[i] = Math.floor(y)
+            vecArray[Math.floor(i)] = Math.floor(y)
         }
         // for (let i = y; i < y + _H; ++i) {
         //     vecArray.push([ Math.floor(x), Math.floor(i) ])
@@ -41,13 +41,18 @@ export class Enemy {
     }
     checkForCollision(boltArray) {
         let hit = false;
-        for (let i = 0; i < boltArray.length; ++i) {
+        let boltCopy = boltArray;
+        for (let i = 0; i < boltCopy.length; ++i) {
             let vecMap = this.collisionMap();
-            if (vecMap[boltArray[i].position[0]] === boltArray[i].position[1]) {
+            if (vecMap[boltCopy[i].position[0]] === boltCopy[i].position[1]) {
+                boltCopy.splice(i, 1);
                 hit = true;
             }
         }
-        return hit;
+        return {
+            hit: hit,
+            bolts: boltCopy
+        };
     }
     fireLaser() {
         if (!this.fire) return false;

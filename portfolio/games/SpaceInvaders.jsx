@@ -1,21 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Player, Enemy, Shield, Laser, Starfield } from './space_assets/index.js';
 import { _DIRECTIONS, _ENEMIES, _WIDTH, _HEIGHT, _ENEMY_BOX_END, _ENEMY_BOX_START} from './space_assets/constants.js';
-import { Message, GameCanvas, MessageBox, Scoreboard, SpaceInvaders as Container } from '../styled/space.styled.jsx'
+import { EndGameCanvas, Message, GameCanvas, MessageBox, Scoreboard, SpaceInvaders as Container } from '../styled/space.styled.jsx'
 
 function BuildCanvas() {
 
     /**
      * STATE INITIALIZERS
     */
+    let animRef = useRef();
     const canvasRef = useRef();
     const playerRef = useRef();
-    const playerDirection = useRef();
     const fireRef = useRef();
-    const shiftCount = useRef();
+    const playerDirection = useRef();
     const score = useRef();
+    const shiftCount = useRef();
     const [ messages, setMessages ] = useState('')
-    let animRef = useRef();
+    const [ gameOver, setGameOver ] = useState(false);
     const [ playerPosition, setPlayerPosition ] = useState([])
     const [ bolts, setBolts ] = useState([]);
     const [ eBolts, setEBolts ] = useState([]);
@@ -167,55 +168,62 @@ function BuildCanvas() {
      * RENDER CURRENT GAME STATE TO CANVAS
     */
     useEffect(() => {
-        const context = canvasRef.current.getContext("2d");
-        context.clearRect(0, 0, window.innerWidth, window.innerHeight);
-        // render stars
-        context.fillStyle = "white";
-        stars.forEach(star => {
-            context.fillRect(star.x, star.y, star.width, star.height);
-        })
-        context.fillStyle = "lawngreen";
-        // render player
-        if (playerRef.current) {
-            context.fillRect(playerPosition[0], playerPosition[1], playerRef.current.width, playerRef.current.height)
-        }
-        // render shields
-        if (barriers.length) {
-            barriers.forEach((shield, index) => {
-                context.fillStyle = index % 2 === 0 ? 'steelblue' : 'lightblue'
-                context.fillRect(shield.position[0], shield.position[1], shield.width, shield.height);
+        if (gameOver === true) {
+            return;
+        } else {
+            const context = canvasRef.current.getContext("2d");
+            context.clearRect(0, 0, window.innerWidth, window.innerHeight);
+            // render stars
+            context.fillStyle = "white";
+            stars.forEach(star => {
+                context.fillRect(star.x, star.y, star.width, star.height);
             })
-        }
-        // render player bolts
-        if (bolts) {
-            bolts.forEach((bolt, index) => {
-                context.fillStyle = bolt.color;
-                context.fillRect(bolt.position[0], bolt.position[1], bolt.width, bolt.height)
-            })
-        }
-        // render enemy bolts
-        context.fillStyle = 'red';
-        if (eBolts) {
-            eBolts.forEach(bolt => {
-                context.fillStyle = bolt.color;
-                context.fillRect(bolt.position[0], bolt.position[1], bolt.width, bolt.height)
-            })
-        }
-        // render enemies
-        if (enemies.length) {
-            enemies.forEach((rank, index) => {
-                context.fillStyle = index % 2 === 0 ? "orangered" : "red";
-                rank.forEach(enemy => {
-                    context.fillRect(enemy.position[0], enemy.position[1], enemy.width, enemy.height)
+            context.fillStyle = "lawngreen";
+            // render player
+            if (playerRef.current) {
+                context.fillRect(playerPosition[0], playerPosition[1], playerRef.current.width, playerRef.current.height)
+            }
+            // render shields
+            if (barriers.length) {
+                barriers.forEach((shield, index) => {
+                    context.fillStyle = index % 2 === 0 ? 'steelblue' : 'lightblue'
+                    context.fillRect(shield.position[0], shield.position[1], shield.width, shield.height);
                 })
-            })
+            }
+            // render player bolts
+            if (bolts) {
+                bolts.forEach((bolt, index) => {
+                    context.fillStyle = bolt.color;
+                    context.fillRect(bolt.position[0], bolt.position[1], bolt.width, bolt.height)
+                })
+            }
+            // render enemy bolts
+            context.fillStyle = 'red';
+            if (eBolts) {
+                eBolts.forEach(bolt => {
+                    context.fillStyle = bolt.color;
+                    context.fillRect(bolt.position[0], bolt.position[1], bolt.width, bolt.height)
+                })
+            }
+            // render enemies
+            if (enemies.length) {
+                enemies.forEach((rank, index) => {
+                    context.fillStyle = index % 2 === 0 ? "orangered" : "red";
+                    rank.forEach(enemy => {
+                        context.fillRect(enemy.position[0], enemy.position[1], enemy.width, enemy.height)
+                    })
+                })
+            }
         }
-    }, [playerRef, playerPosition, bolts, enemies, barriers, eBolts])
+    }, [playerRef, playerPosition, bolts, enemies, barriers, eBolts, gameOver])
 
     /**
      * GAME LOGIC
     */
     const gameLoop = () => {
+        if (shiftCount.current % 5 === 0) {
+            console.log('shiftcount => ', shiftCount.current)
+        }
         if (animRef.current) {
             // player fire laser and update bolt positions
             let boltsCopy = bolts;
@@ -277,9 +285,15 @@ function BuildCanvas() {
                             rank.forEach(enemy => {
                                 enemy.shiftY(enemy.height)
                             })
+                        } else if (first.position[1] > _HEIGHT - 20 || last.position[1] > _HEIGHT - 20) {
+                            createMessage("Enemy breach. You lose.")
+                            setGameOver(true);
                         }
                     }
                 })
+            } else {
+                setMessages('All enemies destroyed. Congratulations 👻👻👻')
+                setGameOver(true);
             }
             barracks = barracksCopy;
             // check for shield collisions with player and enemy bolts
@@ -307,6 +321,9 @@ function BuildCanvas() {
                 let oldPosition = playerRef.current.position;
                 if (playerDirection.current) {
                     setPlayerPosition(playerRef.current.updatePosition(oldPosition, playerDirection.current));
+                } else if (playerRef.current.health === 0) {
+                    createMessage("You ded.")
+                    setGameOver(true);
                 }
             }
             // reset game state
@@ -322,6 +339,7 @@ function BuildCanvas() {
      * HTML
     */
     return (
+        gameOver === false ?
         <Container>
             <Scoreboard className="scoreBoard">
                 <div>Health: {playerRef.current && playerRef.current.health}</div>
@@ -329,6 +347,24 @@ function BuildCanvas() {
             </Scoreboard>
             <GameCanvas
                 ref={canvasRef}
+                id="space_invaders" 
+                width={_WIDTH}
+                height={_HEIGHT}
+                style={{border: '1px solid black'}}
+            />
+            <MessageBox className="messageBox">
+                <Message key={messages.substring(0,5)} className="message">
+                    {`${new Date().toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1")} => ${messages}`}
+                </Message>
+            </MessageBox>
+        </Container>
+        :
+        <Container>
+            <Scoreboard className="scoreBoard">
+                <div>Health: {playerRef.current && playerRef.current.health}</div>
+                <div>Score: {score.current && score.current}</div>
+            </Scoreboard>
+            <EndGameCanvas 
                 id="space_invaders" 
                 width={_WIDTH}
                 height={_HEIGHT}
@@ -353,7 +389,6 @@ function SpaceInvaders() {
         />
     )
 }
-
 /**
  * EXPORT
 */

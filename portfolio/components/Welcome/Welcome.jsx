@@ -4,6 +4,8 @@ import { elementPosition } from '../../hooks/elementPosition';
 import { WelcomeContainer, WTitle, TitleMain, TitleSub, Title, TitleContent, WContent, RightArrow } from '../../styled/welcome.style';
 import Snake from '../../games/Snake.jsx';
 import SpaceInvaders from '../../games/SpaceInvaders.jsx';
+import NameAnim from './NameAnim';
+import TicTacToe from '../../games/TicTacToe';
 
 function Welcome({active}) {
 
@@ -69,7 +71,6 @@ function Welcome({active}) {
             setTitle('')
             setGameActive(false);
         } else {
-            // console.log(event.keyCode);
             return;
         }
     }
@@ -100,6 +101,7 @@ function Welcome({active}) {
             {!gameActive &&
                 <WTitle>
                     <TitleMain>
+                        {/* <NameAnim text={'Andrew Miller'} /> */}
                         Andrew Miller
                     </TitleMain>
                     <TitleSub ref={mover}>
@@ -107,7 +109,7 @@ function Welcome({active}) {
                     </TitleSub>
                 </WTitle>
             }
-            {gameActive && title === 'snake' && (<Snake />)}
+            {gameActive && title === 'snake' && (<TicTacToe />)}
             {gameActive && title === 'space invaders' && (<SpaceInvaders />)}
         </WelcomeContainer>
     )

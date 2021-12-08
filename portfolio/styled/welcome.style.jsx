@@ -19,6 +19,8 @@ export const WelcomeContainer = styled.div`
     `
 
 export const WTitle = styled.div`
+    margin: 0 auto;
+    padding: 0;
     position: relative;
     display: flex;
     flex: 1 1 auto;

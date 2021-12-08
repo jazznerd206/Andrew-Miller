@@ -14,6 +14,11 @@ export const GameCanvas = styled.canvas`
     background-color: rgba(0,0,0,.75);
 `
 
+export const EndGameCanvas = styled.canvas`
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.75);
+`
+
 export const Scoreboard = styled.div`
     height: 1.5em;
     width: 100%;

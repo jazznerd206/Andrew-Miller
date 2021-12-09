@@ -1,34 +1,53 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { GameContainer, TicTacItem, TicTacBox, TicTacItemPlayer, TicTacItemComputer } from '../styled/tictac.styled';
-import { _CELL } from './tictacs/constants';
+import { _CELL, _WINS } from './tictacs/constants';
 
 
 function TicTacToe() {
 
-    const setBoxToPlayer = event => {
+    const playerTurn = event => {
         event.preventDefault();
         const target = event.target.id;
-        let copy = boxes;
-        copy[target] = 'x'
-        setBoxes(copy);
+        let boardCopy = boxes;
+        boardCopy[target] = 'x'
+        setPlayerSquares(playerSquares => [...playerSquares, parseInt(target) + 1]);
+        setBoxes(boardCopy);
         setTurns(turns + 1);
     }
 
-    const computerPlay = () => {
+    const computerTurn = () => {
         let potentials = [];
         boxes.forEach((box, index) => {
-            console.log('box :>> ', box);
             if (box === '') potentials.push(index);
         });
         let randomBox = Math.floor(Math.random() * potentials.length);
-        console.log('computer turn ', potentials);
         boxes[potentials[randomBox]] = 'o'
-        setBoxes(boxes);
+        setComputerSquares(computerSquares => [...computerSquares, potentials[randomBox] + 1]);
+        setBoxes([...boxes]);
         setTurns(turns + 1);
     }
 
-    const [ boxes, setBoxes ] = useState([]);
+    const calculatePotentialWins = (potentialWin) => {
+        let potentialWins = [];
+        _WINS.forEach(win => {
+            potentialWin.forEach(box => {
+                console.log('box :>> ', box);
+                if (win.indexOf(box) !== -1 && !potentialWins.includes(win)) {
+                    potentialWins.push(win)
+                } else if (win.every(x => potentialWin.indexOf(x) !== -1)) {
+                    setGameOver(true);
+                    console.log('win ', potentialWin)
+                }
+            })
+        })
+        return potentialWins;
+    }
+
+    const [ gameOver, setGameOver ] = useState(false);
     const [ turns, setTurns ] = useState(0);
+    const [ boxes, setBoxes ] = useState([]);
+    const [ playerSquares, setPlayerSquares ] = useState([]);
+    const [ computerSquares, setComputerSquares ] = useState([]);
 
     useEffect(() => {
         setBoxes(['', '', '', '', '', '', '', '', ''])
@@ -36,11 +55,26 @@ function TicTacToe() {
 
     useEffect(() => {
         if (turns % 2 === 1) {
-            computerPlay();
+            computerTurn();
         }
     }, [turns])
 
-    return (
+    useEffect(() => {
+        let playerWin = calculatePotentialWins(playerSquares);
+    }, [playerSquares])
+
+    useEffect(() => {
+        let computerWin = calculatePotentialWins(computerSquares);
+    }, [computerSquares])
+
+    if (gameOver === true) {
+        return (
+            <GameContainer>
+                Game over
+            </GameContainer>
+        )
+    }
+    else return (
         <GameContainer>
             <TicTacBox>
                 {boxes.map((box, index) => {
@@ -68,7 +102,7 @@ function TicTacToe() {
                         <TicTacItem 
                             key={index} 
                             id={index}
-                            onPointerDown={e => setBoxToPlayer(e)}
+                            onPointerDown={e => playerTurn(e)}
                         >
                             {box}
                         </TicTacItem>
